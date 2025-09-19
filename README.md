@@ -1,6 +1,6 @@
-# Axora Technologies Landing Page
+# Axora Inc Landing Page
 
-A professional, SEO-friendly landing page for Axora Technologies built with Next.js and Tailwind CSS.
+A professional, SEO-friendly landing page for Axora Inc built with Next.js and Tailwind CSS.
 
 ## Features
 

@@ -30,14 +30,15 @@ const Home: NextPage = () => {
         <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-sm shadow-sm">
           <nav className="container mx-auto px-4 py-4 flex justify-between items-center">
             {/* Logo */}
-            <a href="#" className="flex items-center">
-              <Image
-                src="/logo2.svg"
+            <a href="#" className="flex items-center text-2xl font-bold">
+              {/* <Image
+                src="/logo.png"
                 alt="Axora Inc Logo"
                 width={180}
                 height={40}
                 priority
-              />
+              /> */}
+              Axora<span className="text-primary-400">Inc</span>
             </a>
 
             {/* Desktop Menu */}

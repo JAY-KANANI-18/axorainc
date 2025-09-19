@@ -7,7 +7,7 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-1">
             <a href="#" className="text-2xl font-bold text-white">
-              Axora<span className="text-primary-400">Technologies</span>
+              Axora<span className="text-primary-400">Inc</span>
             </a>
             <p className="mt-4 text-gray-400">
               Smart SaaS Solutions for Growing Businesses
@@ -244,8 +244,7 @@ const Footer: React.FC = () => {
 
         <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
           <p>
-            &copy; {new Date().getFullYear()} Axora Technologies. All rights
-            reserved.
+            &copy; {new Date().getFullYear()} Axora Inc. All rights reserved.
           </p>
         </div>
       </div>
