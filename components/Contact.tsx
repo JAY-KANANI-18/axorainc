@@ -78,7 +78,7 @@ const Contact: React.FC = () => {
               </h3>
 
               <div className="space-y-6">
-                <div className="flex items-start">
+                {/* <div className="flex items-start">
                   <div className="flex-shrink-0 mt-1">
                     <svg
                       className="h-6 w-6 text-primary-500"
@@ -106,7 +106,7 @@ const Contact: React.FC = () => {
                       info@axoratechnologies.com
                     </a>
                   </div>
-                </div>
+                </div> */}
 
                 <div className="flex items-start">
                   <div className="flex-shrink-0 mt-1">
@@ -130,10 +130,10 @@ const Contact: React.FC = () => {
                       Phone
                     </h4>
                     <a
-                      href="tel:+1234567890"
+                      href="tel:+916353969157"
                       className="text-primary-600 hover:text-primary-700 transition-colors"
                     >
-                      +1 (234) 567-890
+                      +91 6353969157{" "}
                     </a>
                   </div>
                 </div>
@@ -168,7 +168,7 @@ const Contact: React.FC = () => {
                     <p className="text-secondary-600">
                       123 Tech Street, Suite 456
                       <br />
-                      San Francisco, CA 94107
+                      Ahmedabad, Gujarat 380008
                     </p>
                   </div>
                 </div>
