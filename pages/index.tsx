@@ -18,6 +18,8 @@ const Home: NextPage = () => {
     <>
       <Head>
         <title>Axora Inc - Smart SaaS Solutions for Growing Businesses</title>
+        <link rel="icon" href="/favicon.png" />
+
         <meta
           name="description"
           content="Axora Inc provides industry-ready SaaS solutions, web applications, AI integrations, and custom software for growing businesses."
