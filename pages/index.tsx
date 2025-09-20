@@ -3,6 +3,7 @@ import Head from "next/head";
 import { NextPage } from "next";
 import Image from "next/image";
 import Hero from "../components/Hero";
+import Products from "../components/Products";
 import Features from "../components/Features";
 import About from "../components/About";
 import Testimonials from "../components/Testimonials";
@@ -17,12 +18,12 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Axora Inc - Smart SaaS Solutions for Growing Businesses</title>
+        <title>Axora Inc - Intelligent Digital Solutions for Modern Enterprises</title>
         <link rel="icon" href="/favicon.png" />
 
         <meta
           name="description"
-          content="Axora Inc provides industry-ready SaaS solutions, web applications, AI integrations, and custom software for growing businesses."
+          content="Axora Inc provides AI-powered digital solutions including axoVision (Image Search Engine), axoConnect (Omnichannel Platform), and AxoAnalytics (Natural Language Database Queries) for modern enterprises."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
@@ -45,6 +46,12 @@ const Home: NextPage = () => {
 
             {/* Desktop Menu */}
             <div className="hidden md:flex space-x-8">
+              <a
+                href="#products"
+                className="text-secondary-600 hover:text-primary-600"
+              >
+                Products
+              </a>
               <a
                 href="#features"
                 className="text-secondary-600 hover:text-primary-600"
@@ -131,6 +138,13 @@ const Home: NextPage = () => {
             <div className="md:hidden bg-white border-t">
               <div className="flex flex-col space-y-4 px-6 py-4">
                 <a
+                  href="#products"
+                  onClick={() => setMenuOpen(false)}
+                  className="text-secondary-600 hover:text-primary-600"
+                >
+                  Products
+                </a>
+                <a
                   href="#features"
                   onClick={() => setMenuOpen(false)}
                   className="text-secondary-600 hover:text-primary-600"
@@ -180,6 +194,7 @@ const Home: NextPage = () => {
         {/* MAIN */}
         <main className="flex-grow">
           <Hero />
+          <Products />
           <Features />
           <About />
           <TechStack />
