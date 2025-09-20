@@ -33,8 +33,8 @@ const Products: React.FC = () => {
       bgGradient: "from-blue-500/10 to-cyan-500/10",
     },
     {
-      name: "Omnichannel Platform (AxoConnect)",
-      tagline: "Omnichannel Communication Platform",
+      name: "Multichannel Platform (AxoConnect)",
+      tagline: "Multichannel Communication Platform",
       description:
         "Seamlessly connect all your communication channels into one unified platform. Manage customer interactions across web, mobile, social media, and traditional channels.",
       features: [

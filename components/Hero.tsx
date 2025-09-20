@@ -21,7 +21,7 @@ const Hero: React.FC = () => {
           </h1>
           <p className="text-xl text-gray-300 mb-8 max-w-lg leading-relaxed">
             Transform your business with cutting-edge AI-powered solutions. From
-            intelligent image search to omnichannel connectivity and natural
+            intelligent image search to multichannel connectivity and natural
             language analytics.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
@@ -97,7 +97,7 @@ const Hero: React.FC = () => {
                     </svg>
                   </div>
                   <h3 className="text-white font-semibold mb-2">AxoConnect</h3>
-                  <p className="text-gray-300 text-sm">Omni Channel</p>
+                  <p className="text-gray-300 text-sm">Multi Channel</p>
                 </div>
                 <div className="bg-gradient-to-br from-cyan-500/20 to-blue-500/20 p-6 rounded-2xl backdrop-blur-sm border border-white/10 col-span-2">
                   <div className="w-12 h-12 bg-gradient-to-r from-cyan-400 to-cyan-600 rounded-xl flex items-center justify-center mb-4">

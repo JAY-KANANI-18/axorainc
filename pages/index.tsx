@@ -23,7 +23,7 @@ const Home: NextPage = () => {
 
         <meta
           name="description"
-          content="Axora Inc delivers next-gen AI-powered solutions including image search, omnichannel communication, and natural language analytics. Transform your enterprise with intelligent digital solutions."
+          content="Axora Inc delivers next-gen AI-powered solutions including image search, multichannel communication, and natural language analytics. Transform your enterprise with intelligent digital solutions."
         />
 
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -76,7 +76,7 @@ const Home: NextPage = () => {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Product",
-              name: "Omnichannel Platform (axoConnect)",
+              name: "Multichannel Platform (axoConnect)",
               description:
                 "Seamlessly connect all your communication channels into one unified platform. Manage customer interactions across web, mobile, social media, and traditional channels.",
               brand: { "@type": "Brand", name: "Axora Inc" },

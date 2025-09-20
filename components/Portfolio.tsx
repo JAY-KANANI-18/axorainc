@@ -155,7 +155,7 @@ const Portfolio: React.FC = () => {
       description:
         "Upload an image and instantly find visually similar images using AI embeddings.",
       image:
-        "https://images.unsplash.com/photo-1581091215364-2e1c7b9a21c8?crop=entropy&cs=tinysrgb&fit=max&h=400&w=600",
+        "https://media.istockphoto.com/id/1271072224/photo/hand-using-laptop-and-press-screen-to-search-browsing-on-the-internet-online.webp?a=1&b=1&s=612x612&w=0&k=20&c=69cBQpj7FhAtB7d4MjhnuneCdAKtWpH0KZs9Beww6oc=",
       client: "Axora Vision",
       industry: "AI / Image Search",
       year: "2025",
@@ -182,7 +182,7 @@ const Portfolio: React.FC = () => {
       description:
         "Matches job seekers with relevant opportunities using AI analysis of resumes and job descriptions.",
       image:
-        "https://images.unsplash.com/photo-1590608897129-79c9a15d85d3?crop=entropy&cs=tinysrgb&fit=max&h=400&w=600",
+        "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGpvYnxlbnwwfHwwfHx8MA%3D%3D",
       client: "Axora Careers",
       industry: "HR Tech",
       year: "2025",
@@ -260,7 +260,7 @@ const Portfolio: React.FC = () => {
       description:
         "Securely showcase your projects and achievements with blockchain verification.",
       image:
-        "https://images.unsplash.com/photo-1612831662907-0fdb0e285f5c?crop=entropy&cs=tinysrgb&fit=max&h=400&w=600",
+        "https://images.unsplash.com/photo-1639322537228-f710d846310a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmxvY2tjaGFpbnxlbnwwfHwwfHx8MA%3D%3D",
       client: "Axora Blockchain",
       industry: "Blockchain / Professional",
       year: "2025",
