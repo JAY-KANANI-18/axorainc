@@ -294,15 +294,15 @@ const Contact: React.FC = () => {
                       Location
                     </h4>
                     <p className="text-secondary-600">
-                      123 Tech Street, Suite 456
+                      242 Tech Street,
                       <br />
-                      Ahmedabad, Gujarat 380008
+                      Pune, Maharastra 411006
                     </p>
                   </div>
                 </div>
               </div>
 
-              <div className="mt-8">
+              {/* <div className="mt-8">
                 <h4 className="text-lg font-medium text-secondary-800 mb-4">
                   Connect With Us
                 </h4>
@@ -336,7 +336,7 @@ const Contact: React.FC = () => {
                     <FaTwitter className="h-6 w-6" />
                   </a>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

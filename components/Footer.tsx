@@ -197,9 +197,9 @@ const Footer: React.FC = () => {
                   />
                 </svg>
                 <span className="text-gray-400">
-                  123 Tech Street, Suite 456
+                  242 Tech Street,
                   <br />
-                  Ahmedabad, Gujarat 380008
+                  Pune, Maharastra 411006
                 </span>
               </li>
               <li className="flex items-center">
