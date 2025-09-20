@@ -1,5 +1,11 @@
 import React, { useState } from "react";
-import { FaFacebookF, FaLinkedinIn, FaGithub, FaTwitter } from "react-icons/fa";
+import {
+  FaFacebookF,
+  FaLinkedinIn,
+  FaGithub,
+  FaTwitter,
+  FaWhatsapp,
+} from "react-icons/fa";
 
 const socials = [
   { name: "Facebook", icon: <FaFacebookF />, url: "#" },
@@ -247,6 +253,17 @@ const Contact: React.FC = () => {
                       +91 6353969157
                     </a>
                   </div>
+                </div>
+                <div>
+                  <a
+                    href="https://wa.me/916353969157?text=Hi%20I%20visited%20your%20website%20and%20want%20to%20know%20more."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center space-x-2 text-primary-600 hover:text-green-700 transition-colors"
+                  >
+                    <FaWhatsapp size={20} />
+                    <span>Chat on WhatsApp</span>
+                  </a>
                 </div>
 
                 <div className="flex items-start">
