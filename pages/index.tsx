@@ -18,14 +18,100 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Axora Inc - Intelligent Digital Solutions for Modern Enterprises</title>
+        <title>Axora Inc | AI-Powered Digital Solutions for Enterprises</title>
         <link rel="icon" href="/favicon.png" />
 
         <meta
           name="description"
-          content="Axora Inc provides AI-powered digital solutions including axoVision (Image Search Engine), axoConnect (Omnichannel Platform), and AxoAnalytics (Natural Language Database Queries) for modern enterprises."
+          content="Axora Inc delivers next-gen AI-powered solutions including image search, omnichannel communication, and natural language analytics. Transform your enterprise with intelligent digital solutions."
         />
+
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        {/* Organization Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "Axora Inc",
+              url: "https://www.axorainc.com",
+              logo: "https://www.axorainc.com/logo.png",
+              contactPoint: {
+                "@type": "ContactPoint",
+                telephone: "+1-800-555-1212",
+                contactType: "Customer Service",
+              },
+            }),
+          }}
+        />
+
+        {/* Product Schema - axoVision */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Product",
+              name: "AI Image Search (AxoVision)",
+              description:
+                "Revolutionary visual search technology that understands and indexes images with unprecedented accuracy. Perfect for e-commerce, content management, and digital asset organization.",
+              brand: { "@type": "Brand", name: "Axora Inc" },
+              offers: {
+                "@type": "Offer",
+                priceCurrency: "USD",
+                price: "Contact for pricing",
+                itemCondition: "https://schema.org/NewCondition",
+                availability: "https://schema.org/InStock",
+              },
+            }),
+          }}
+        />
+
+        {/* Product Schema - axoConnect */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Product",
+              name: "Omnichannel Platform (axoConnect)",
+              description:
+                "Seamlessly connect all your communication channels into one unified platform. Manage customer interactions across web, mobile, social media, and traditional channels.",
+              brand: { "@type": "Brand", name: "Axora Inc" },
+              offers: {
+                "@type": "Offer",
+                priceCurrency: "USD",
+                price: "Contact for pricing",
+                itemCondition: "https://schema.org/NewCondition",
+                availability: "https://schema.org/InStock",
+              },
+            }),
+          }}
+        />
+
+        {/* Product Schema - AxoAnalytics */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Product",
+              name: "Natural Language Database Queries (AxoAnalytics)",
+              description:
+                "Transform complex database queries into simple conversations. Ask questions in plain English and get instant insights from your data without writing a single line of SQL.",
+              brand: { "@type": "Brand", name: "Axora Inc" },
+              offers: {
+                "@type": "Offer",
+                priceCurrency: "USD",
+                price: "Contact for pricing",
+                itemCondition: "https://schema.org/NewCondition",
+                availability: "https://schema.org/InStock",
+              },
+            }),
+          }}
+        />
       </Head>
 
       <div className="min-h-screen flex flex-col">

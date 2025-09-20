@@ -50,7 +50,7 @@ const Features: React.FC = () => {
             </span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-slate-900 via-blue-900 to-purple-900 bg-clip-text text-transparent mb-6">
-            Digital Excellence Features
+            Why Choose Axora Inc
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Experience the power of AI-driven solutions with cutting-edge
@@ -279,4 +279,3 @@ const Features: React.FC = () => {
 };
 
 export default Features;
-    
