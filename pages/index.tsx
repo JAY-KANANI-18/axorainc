@@ -121,10 +121,10 @@ const Home: NextPage = () => {
             {/* Logo */}
             <a href="#" className="flex items-center text-2xl font-bold">
               {/* <Image
-                src="/logo.png"
+                src="/axorainc-logo.png"
                 alt="Axora Inc Logo"
                 width={180}
-                height={40}
+                height={20}
                 priority
               /> */}
               Axora<span className="text-primary-400">Inc</span>
@@ -284,8 +284,8 @@ const Home: NextPage = () => {
           <Features />
           <About />
           <TechStack />
-          <Portfolio />
-          <Testimonials />
+          {/* <Portfolio /> */}
+          {/* <Testimonials /> */}
           <Contact />
         </main>
 
