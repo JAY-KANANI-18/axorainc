@@ -18,12 +18,12 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Axora Inc | AI-Powered Digital Solutions for Enterprises</title>
-        <link rel="icon" href="/favicon.png" />
+        <title>Axora | AI-Powered Digital Solutions for Enterprises</title>
+        <link rel="icon" href="/favicon.ico" />
 
         <meta
           name="description"
-          content="Axora Inc delivers next-gen AI-powered solutions including image search, multichannel communication, and natural language analytics. Transform your enterprise with intelligent digital solutions."
+          content="Axora delivers next-gen AI-powered solutions including image search, multichannel communication, and natural language analytics. Transform your enterprise with intelligent digital solutions."
         />
 
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -35,7 +35,7 @@ const Home: NextPage = () => {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              name: "Axora Inc",
+              name: "Axora",
               url: "https://www.axorainc.com",
               logo: "https://www.axorainc.com/logo.png",
               contactPoint: {
@@ -57,7 +57,7 @@ const Home: NextPage = () => {
               name: "AI Image Search (AxoVision)",
               description:
                 "Revolutionary visual search technology that understands and indexes images with unprecedented accuracy. Perfect for e-commerce, content management, and digital asset organization.",
-              brand: { "@type": "Brand", name: "Axora Inc" },
+              brand: { "@type": "Brand", name: "Axora" },
               offers: {
                 "@type": "Offer",
                 priceCurrency: "USD",
@@ -79,7 +79,7 @@ const Home: NextPage = () => {
               name: "Multichannel Platform (axoConnect)",
               description:
                 "Seamlessly connect all your communication channels into one unified platform. Manage customer interactions across web, mobile, social media, and traditional channels.",
-              brand: { "@type": "Brand", name: "Axora Inc" },
+              brand: { "@type": "Brand", name: "Axora" },
               offers: {
                 "@type": "Offer",
                 priceCurrency: "USD",
@@ -101,7 +101,7 @@ const Home: NextPage = () => {
               name: "Natural Language Database Queries (AxoAnalytics)",
               description:
                 "Transform complex database queries into simple conversations. Ask questions in plain English and get instant insights from your data without writing a single line of SQL.",
-              brand: { "@type": "Brand", name: "Axora Inc" },
+              brand: { "@type": "Brand", name: "Axora" },
               offers: {
                 "@type": "Offer",
                 priceCurrency: "USD",
@@ -120,14 +120,14 @@ const Home: NextPage = () => {
           <nav className="container mx-auto px-4 py-4 flex justify-between items-center">
             {/* Logo */}
             <a href="#" className="flex items-center text-2xl font-bold">
-              {/* <Image
-                src="/axorainc-logo.png"
-                alt="Axora Inc Logo"
-                width={180}
-                height={20}
+              <Image
+                src="/2.png"
+                alt="Axora  Logo"
+                width={150}
+                height={80}
                 priority
-              /> */}
-              Axora<span className="text-primary-400">Inc</span>
+              />
+              {/* Axora<span className="text-primary-400">Inc</span> */}
             </a>
 
             {/* Desktop Menu */}
@@ -156,7 +156,7 @@ const Home: NextPage = () => {
               >
                 Tech Stack
               </a>
-              <a
+              {/* <a
                 href="#portfolio"
                 className="text-secondary-600 hover:text-primary-600"
               >
@@ -167,7 +167,7 @@ const Home: NextPage = () => {
                 className="text-secondary-600 hover:text-primary-600"
               >
                 Testimonials
-              </a>
+              </a> */}
               <a
                 href="#contact"
                 className="text-secondary-600 hover:text-primary-600"
@@ -251,7 +251,7 @@ const Home: NextPage = () => {
                 >
                   Tech Stack
                 </a>
-                <a
+                {/* <a
                   href="#portfolio"
                   onClick={() => setMenuOpen(false)}
                   className="text-secondary-600 hover:text-primary-600"
@@ -264,7 +264,7 @@ const Home: NextPage = () => {
                   className="text-secondary-600 hover:text-primary-600"
                 >
                   Testimonials
-                </a>
+                </a> */}
                 <a
                   href="#contact"
                   onClick={() => setMenuOpen(false)}

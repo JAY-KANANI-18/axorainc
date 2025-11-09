@@ -7,12 +7,10 @@ const About: React.FC = () => {
         <div className="flex flex-col-reverse md:flex-row items-center gap-12">
           {/* Text Content */}
           <div className="md:w-1/2 space-y-6">
-            <h2 className="text-4xl font-bold text-gray-900">
-              About Axora Inc
-            </h2>
+            <h2 className="text-4xl font-bold text-gray-900">About Axora</h2>
             <p className="text-lg text-gray-700">
-              Axora Inc is a next-gen software company founded to empower
-              businesses with innovative, reliable, and scalable solutions.
+              Axora is a next-gen software company founded to empower businesses
+              with innovative, reliable, and scalable solutions.
             </p>
             <p className="text-lg text-gray-700">
               We transform business challenges into technological opportunities,

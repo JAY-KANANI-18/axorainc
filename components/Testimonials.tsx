@@ -41,7 +41,7 @@ const Testimonials: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <TestimonialCard
-            quote="Axora Inc transformed our customer management process. Their CRM solution is intuitive, powerful, and has significantly improved our sales performance."
+            quote="Axora transformed our customer management process. Their CRM solution is intuitive, powerful, and has significantly improved our sales performance."
             name="Sarah Johnson"
             position="CEO, TechStart Inc."
             avatar="https://randomuser.me/api/portraits/women/32.jpg"

@@ -1,4 +1,5 @@
 import React from "react";
+import { FaWhatsapp } from "react-icons/fa";
 
 const Footer: React.FC = () => {
   return (
@@ -217,7 +218,21 @@ const Footer: React.FC = () => {
                     d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
                   />
                 </svg>
+
                 <span className="text-gray-400">+91 6353969157</span>
+              </li>
+              <li>
+                <div>
+                  <a
+                    href="https://wa.me/916353969157?text=Hi%20I%20visited%20your%20website%20and%20want%20to%20know%20more."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center space-x-2 transition-colors"
+                  >
+                    <FaWhatsapp size={20} />
+                    <span>Chat on WhatsApp</span>
+                  </a>
+                </div>
               </li>
               {/* <li className="flex items-center">
                 <svg
@@ -243,9 +258,7 @@ const Footer: React.FC = () => {
         </div>
 
         <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-          <p>
-            &copy; {new Date().getFullYear()} Axora Inc. All rights reserved.
-          </p>
+          <p>&copy; {new Date().getFullYear()} Axora. All rights reserved.</p>
         </div>
       </div>
     </footer>
