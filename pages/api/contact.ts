@@ -67,7 +67,7 @@ export default async function handler(
     });
 
     await transporter.sendMail({
-      from: `"Axora Contact" <${process.env.GMAIL_USER}>`,
+      from: `"Axora Contact" <${process.env.EMAIL_FROM}>`,
       to: process.env.GMAIL_USER,
       subject: `New Contact Form Submission from ${name}`,
       html: `
