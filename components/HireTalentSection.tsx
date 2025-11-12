@@ -112,9 +112,9 @@ const HireTalentSection: React.FC = () => {
                 <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-blue-500/20 text-2xl">
                   {role.icon}
                 </div>
-                <h3 className="text-2xl font-semibold text-white">
+                <div className="text-2xl font-semibold text-white">
                   {role.title}
-                </h3>
+                </div>
                 <p className="text-blue-100 leading-relaxed">
                   {role.description}
                 </p>
@@ -132,7 +132,7 @@ const HireTalentSection: React.FC = () => {
                   href="#contact"
                   className="inline-flex items-center gap-2 text-blue-200 font-semibold hover:text-white transition-colors"
                 >
-                  Discuss talent needs
+                  Get started
                   <svg
                     className="w-4 h-4"
                     fill="none"

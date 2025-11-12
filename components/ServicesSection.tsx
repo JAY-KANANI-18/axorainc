@@ -117,9 +117,9 @@ const ServicesSection: React.FC = () => {
                 <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-blue-100 text-2xl">
                   {service.icon}
                 </div>
-                <h3 className="text-2xl font-semibold text-slate-900">
+                <div className="text-2xl font-semibold text-slate-900">
                   {service.title}
-                </h3>
+                </div>
                 <p className="text-slate-600 leading-relaxed">
                   {service.description}
                 </p>
@@ -137,7 +137,7 @@ const ServicesSection: React.FC = () => {
                   href="#contact"
                   className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-800 transition-colors"
                 >
-                  Book a discovery call
+                  Learn more
                   <svg
                     className="w-4 h-4"
                     fill="none"

@@ -58,7 +58,7 @@ const Home: NextPage = () => {
 
         <meta
           name="description"
-          content="Build custom SaaS platforms, CRM solutions, and AI-powered applications with Axora Infotech. Expert teams deliver enterprise web apps, mobile development, and intelligent automation."
+          content="Custom SaaS development, CRM solutions & AI applications. Expert React, Node.js teams deliver enterprise web apps & mobile development."
         />
 
         <meta
@@ -68,7 +68,7 @@ const Home: NextPage = () => {
 
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="index, follow, max-image-preview:large" />
-        <link rel="canonical" href="https://axorainfotech.com/" />
+        <link rel="canonical" href="https://axorainfotech.com" />
 
         {/* Apple Touch Icon */}
         <link rel="apple-touch-icon" sizes="180x180" href="/axora-icon.png" />
@@ -98,7 +98,7 @@ const Home: NextPage = () => {
         />
         <meta
           property="og:description"
-          content="Build custom SaaS platforms, CRM solutions, and AI-powered applications with expert development teams."
+          content="Custom SaaS development, CRM solutions & AI applications. Expert React, Node.js teams deliver enterprise web apps & mobile development."
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://axorainfotech.com" />
@@ -117,7 +117,7 @@ const Home: NextPage = () => {
         <meta name="twitter:site" content="@AxoraInfotech"></meta>
         <meta
           name="twitter:description"
-          content="Expert SaaS development, CRM solutions, and AI-powered applications for enterprises."
+          content="Custom SaaS development, CRM solutions & AI applications. Expert React, Node.js teams deliver enterprise web apps & mobile development."
         />
         <meta
           name="twitter:image"
@@ -390,7 +390,7 @@ const Home: NextPage = () => {
                 href="#contact"
                 className="text-secondary-600 hover:text-primary-600"
               >
-                Contact
+                Get Quote
               </a>
               <a
                 href="/careers"
