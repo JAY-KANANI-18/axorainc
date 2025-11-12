@@ -3,6 +3,8 @@ import Head from "next/head";
 import { NextPage } from "next";
 import Image from "next/image";
 import Hero from "../components/Hero";
+import ServicesSection from "../components/ServicesSection";
+import HireTalentSection from "../components/HireTalentSection";
 import Products from "../components/Products";
 import Features from "../components/Features";
 import About from "../components/About";
@@ -14,40 +16,113 @@ import Footer from "../components/Footer";
 
 const Home: NextPage = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [servicesMenuOpen, setServicesMenuOpen] = useState(false);
+  const [hireMenuOpen, setHireMenuOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const [mobileHireOpen, setMobileHireOpen] = useState(false);
+
+  const servicesMenu = [
+    { label: "AI Product Engineering", href: "#service-ai-product" },
+    { label: "Custom SaaS Platforms", href: "#service-saas-platforms" },
+    { label: "CRM Modernization", href: "#service-crm-modernization" },
+    { label: "Enterprise Web Applications", href: "#service-enterprise-web" },
+    { label: "Mobile App Development", href: "#service-mobile-apps" },
+    { label: "Cloud & DevOps Automation", href: "#service-cloud-devops" },
+    {
+      label: "Data Engineering & Analytics",
+      href: "#service-data-engineering",
+    },
+    { label: "Intelligent Process Automation", href: "#service-automation" },
+    { label: "Digital Commerce & Marketplaces", href: "#service-commerce" },
+    { label: "SEO & Growth Marketing", href: "#service-seo-growth" },
+  ];
+
+  const hireMenu = [
+    { label: "Hire React Developers", href: "#hire-react-developers" },
+    { label: "Hire Node.js Developers", href: "#hire-nodejs-developers" },
+    { label: "Hire Next.js Engineers", href: "#hire-nextjs-engineers" },
+    { label: "Hire Full-Stack Teams", href: "#hire-fullstack-teams" },
+    { label: "Hire Mobile App Developers", href: "#hire-mobile-developers" },
+    { label: "Hire DevOps & SRE Experts", href: "#hire-devops-experts" },
+    { label: "Hire Data Engineers", href: "#hire-data-engineers" },
+    { label: "Hire UI/UX Designers", href: "#hire-uiux-designers" },
+    { label: "Hire QA Automation Engineers", href: "#hire-qa-automation" },
+    { label: "Hire AI & ML Specialists", href: "#hire-ai-ml-specialists" },
+  ];
 
   return (
     <>
       <Head>
-        <title>Axora Infotech - AI Software Development Company | Computer Vision & Visual Search Solutions</title>
+        <title>Axora Infotech - Custom SaaS & AI Development Company</title>
         <link rel="icon" href="/favicon.ico" />
 
         <meta
           name="description"
-          content="Axora Infotech is a leading AI software development company specializing in computer vision, visual search engines, and intelligent digital solutions. We build AI-powered image recognition, multichannel platforms, and natural language analytics for enterprises globally."
+          content="Build custom SaaS platforms, CRM solutions, and AI-powered applications with Axora Infotech. Expert teams deliver enterprise web apps, mobile development, and intelligent automation."
         />
-        
+
         <meta
           name="keywords"
-          content="AI software development company, computer vision company India, AI image recognition company, visual search technology, custom AI solutions provider, machine learning company, AI development services, enterprise AI solutions, image search engine development, AI consulting services, artificial intelligence company"
+          content="custom SaaS development, CRM development company, AI software development, enterprise web applications, mobile app development, React developers, Node.js development, cloud DevOps automation, data engineering services, intelligent process automation"
         />
 
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="index, follow, max-image-preview:large" />
-        <link rel="canonical" href="https://axorainfotech.com" />
-        
+        <link rel="canonical" href="https://axorainfotech.com/" />
+
+        {/* Apple Touch Icon */}
+        <link rel="apple-touch-icon" sizes="180x180" href="/axora-icon.png" />
+
+        {/* Social Sharing Meta */}
+        <meta name="twitter:site" content="@AxoraInfotech" />
+        <meta name="twitter:creator" content="@AxoraInfotech" />
+        <meta property="fb:app_id" content="61583890823393" />
+        <meta property="instagram:site" content="@axorainfotech" />
+        <meta property="instagram:creator" content="@axorainfotech" />
+
+        {/* LinkedIn Meta Tags */}
+        <meta property="linkedin:owner" content="axora-infotech" />
+        <meta
+          property="linkedin:site"
+          content="https://www.linkedin.com/company/axora-infotech"
+        />
+        <meta
+          property="article:author"
+          content="https://www.linkedin.com/company/axora-infotech"
+        />
+
         {/* Open Graph Tags */}
-        <meta property="og:title" content="Axora Infotech - AI Software Development Company" />
-        <meta property="og:description" content="Leading AI software development company specializing in computer vision, visual search engines, and enterprise AI solutions." />
+        <meta
+          property="og:title"
+          content="Axora Infotech - Custom SaaS & AI Development Company"
+        />
+        <meta
+          property="og:description"
+          content="Build custom SaaS platforms, CRM solutions, and AI-powered applications with expert development teams."
+        />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://axorainfotech.com" />
-        <meta property="og:image" content="https://axorainfotech.com/og-image.jpg" />
+        <meta
+          property="og:image"
+          content="https://axorainfotech.com/og-image.jpg"
+        />
         <meta property="og:site_name" content="Axora Infotech" />
-        
+
         {/* Twitter Card Tags */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Axora Infotech - AI Software Development Company" />
-        <meta name="twitter:description" content="AI-powered solutions for enterprises. Computer vision, visual search, and intelligent analytics." />
-        <meta name="twitter:image" content="https://axorainfotech.com/twitter-image.jpg" />
+        <meta
+          name="twitter:title"
+          content="Axora Infotech - Custom SaaS & AI Development"
+        />
+        <meta name="twitter:site" content="@AxoraInfotech"></meta>
+        <meta
+          name="twitter:description"
+          content="Expert SaaS development, CRM solutions, and AI-powered applications for enterprises."
+        />
+        <meta
+          name="twitter:image"
+          content="https://axorainfotech.com/twitter-image.jpg"
+        />
 
         {/* Organization Schema */}
         <script
@@ -59,25 +134,45 @@ const Home: NextPage = () => {
               name: "Axora Infotech",
               alternateName: "Axora",
               url: "https://axorainfotech.com",
-              logo: "https://axorainfotech.com/logo.png",
-              description: "Leading AI software development company specializing in computer vision, visual search engines, and enterprise AI solutions.",
+              logo: "https://axorainfotech.com/2.png",
+              description:
+                "Leading AI software development company specializing in computer vision, visual search engines, and enterprise AI solutions.",
               foundingDate: "2020",
               contactPoint: {
                 "@type": "ContactPoint",
                 contactType: "Customer Service",
-                email: "contact@axorainfotech.com",
+                email: "info@axorainfotech.com",
                 availableLanguage: ["English"],
               },
               sameAs: [
-                "https://www.linkedin.com/company/axorainfotech",
-                "https://twitter.com/axorainfotech",
+                "https://www.linkedin.com/company/axora-infotech",
+                "https://x.com/AxoraInfotech",
+                "https://www.facebook.com/profile.php?id=61583890823393",
+                "https://www.instagram.com/axorainfotech",
               ],
               address: {
                 "@type": "PostalAddress",
                 addressCountry: "IN",
               },
               areaServed: "Worldwide",
-              knowsAbout: ["Artificial Intelligence", "Computer Vision", "Machine Learning", "Image Recognition", "Visual Search", "Natural Language Processing"],
+              knowsAbout: [
+                "Artificial Intelligence",
+                "Computer Vision",
+                "Machine Learning",
+                "Image Recognition",
+                "Visual Search",
+                "Natural Language Processing",
+                "AI Product Engineering",
+                "Custom SaaS Platforms",
+                "CRM Modernization",
+                "Enterprise Web Applications",
+                "Mobile App Development",
+                "Cloud & DevOps Automation",
+                "Data Engineering & Analytics",
+                "Intelligent Process Automation",
+                "Digital Commerce & Marketplaces",
+                "SEO & Growth Marketing",
+              ],
             }),
           }}
         />
@@ -166,13 +261,60 @@ const Home: NextPage = () => {
             </a>
 
             {/* Desktop Menu */}
-            <div className="hidden md:flex space-x-8">
-              <a
-                href="#products"
-                className="text-secondary-600 hover:text-primary-600"
+            <div className="hidden md:flex items-center space-x-6">
+              <div
+                className="relative"
+                onMouseEnter={() => setServicesMenuOpen(true)}
+                onMouseLeave={() => setServicesMenuOpen(false)}
               >
-                Products
-              </a>
+                <button
+                  type="button"
+                  onClick={() => setServicesMenuOpen((prev) => !prev)}
+                  className="inline-flex items-center gap-2 text-secondary-600 hover:text-primary-600 transition-colors"
+                >
+                  Services
+                  <svg
+                    className={`w-4 h-4 transition-transform ${
+                      servicesMenuOpen ? "rotate-180" : "rotate-0"
+                    }`}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </button>
+                <div
+                  className={`absolute left-0 top-full mt-4 w-72 bg-white border border-slate-200 rounded-2xl shadow-xl transition-all duration-200 ${
+                    servicesMenuOpen
+                      ? "opacity-100 visible translate-y-0"
+                      : "opacity-0 invisible -translate-y-2"
+                  }`}
+                >
+                  <div className="p-4 space-y-2">
+                    {servicesMenu.map((item) => (
+                      <a
+                        key={item.href}
+                        href={item.href}
+                        className="block rounded-xl px-4 py-2 text-sm text-slate-700 hover:bg-blue-50 hover:text-blue-700 transition-colors"
+                      >
+                        {item.label}
+                      </a>
+                    ))}
+                    <a
+                      href="#services"
+                      className="block rounded-xl px-4 py-2 text-sm font-semibold text-blue-600 hover:bg-blue-50"
+                    >
+                      Explore All Services →
+                    </a>
+                  </div>
+                </div>
+              </div>
               <a
                 href="/axovision"
                 className="text-secondary-600 hover:text-primary-600"
@@ -191,11 +333,70 @@ const Home: NextPage = () => {
               >
                 Blog
               </a>
+              <div
+                className="relative"
+                onMouseEnter={() => setHireMenuOpen(true)}
+                onMouseLeave={() => setHireMenuOpen(false)}
+              >
+                <button
+                  type="button"
+                  onClick={() => setHireMenuOpen((prev) => !prev)}
+                  className="inline-flex items-center gap-2 text-secondary-600 hover:text-primary-600 transition-colors"
+                >
+                  Hire
+                  <svg
+                    className={`w-4 h-4 transition-transform ${
+                      hireMenuOpen ? "rotate-180" : "rotate-0"
+                    }`}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </button>
+                <div
+                  className={`absolute left-0 top-full mt-4 w-72 bg-white border border-slate-200 rounded-2xl shadow-xl transition-all duration-200 ${
+                    hireMenuOpen
+                      ? "opacity-100 visible translate-y-0"
+                      : "opacity-0 invisible -translate-y-2"
+                  }`}
+                >
+                  <div className="p-4 space-y-2">
+                    {hireMenu.map((item) => (
+                      <a
+                        key={item.href}
+                        href={item.href}
+                        className="block rounded-xl px-4 py-2 text-sm text-slate-700 hover:bg-purple-50 hover:text-purple-700 transition-colors"
+                      >
+                        {item.label}
+                      </a>
+                    ))}
+                    <a
+                      href="#hire"
+                      className="block rounded-xl px-4 py-2 text-sm font-semibold text-purple-600 hover:bg-purple-50"
+                    >
+                      Meet Our Expert Teams →
+                    </a>
+                  </div>
+                </div>
+              </div>
               <a
                 href="#contact"
                 className="text-secondary-600 hover:text-primary-600"
               >
                 Contact
+              </a>
+              <a
+                href="/careers"
+                className="text-secondary-600 hover:text-primary-600"
+              >
+                Careers
               </a>
             </div>
 
@@ -246,13 +447,47 @@ const Home: NextPage = () => {
           {menuOpen && (
             <div className="md:hidden bg-white border-t">
               <div className="flex flex-col space-y-4 px-6 py-4">
-                <a
-                  href="#products"
-                  onClick={() => setMenuOpen(false)}
-                  className="text-secondary-600 hover:text-primary-600"
-                >
-                  Products
-                </a>
+                <div className="space-y-2">
+                  <button
+                    type="button"
+                    onClick={() => setMobileServicesOpen((prev) => !prev)}
+                    className="flex w-full items-center justify-between text-secondary-600 hover:text-primary-600"
+                  >
+                    <span>Services</span>
+                    <svg
+                      className={`w-4 h-4 transition-transform ${
+                        mobileServicesOpen ? "rotate-180" : "rotate-0"
+                      }`}
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
+                  </button>
+                  {mobileServicesOpen && (
+                    <div className="pl-4 border-l border-slate-200 space-y-2">
+                      {servicesMenu.map((item) => (
+                        <a
+                          key={item.href}
+                          href={item.href}
+                          onClick={() => {
+                            setMenuOpen(false);
+                            setMobileServicesOpen(false);
+                          }}
+                          className="block text-sm text-secondary-500 hover:text-primary-600"
+                        >
+                          {item.label}
+                        </a>
+                      ))}
+                    </div>
+                  )}
+                </div>
                 <a
                   href="/axovision"
                   onClick={() => setMenuOpen(false)}
@@ -274,6 +509,54 @@ const Home: NextPage = () => {
                 >
                   Blog
                 </a>
+                <div className="space-y-2">
+                  <button
+                    type="button"
+                    onClick={() => setMobileHireOpen((prev) => !prev)}
+                    className="flex w-full items-center justify-between text-secondary-600 hover:text-primary-600"
+                  >
+                    <span>Hire</span>
+                    <svg
+                      className={`w-4 h-4 transition-transform ${
+                        mobileHireOpen ? "rotate-180" : "rotate-0"
+                      }`}
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
+                  </button>
+                  {mobileHireOpen && (
+                    <div className="pl-4 border-l border-slate-200 space-y-2">
+                      {hireMenu.map((item) => (
+                        <a
+                          key={item.href}
+                          href={item.href}
+                          onClick={() => {
+                            setMenuOpen(false);
+                            setMobileHireOpen(false);
+                          }}
+                          className="block text-sm text-secondary-500 hover:text-primary-600"
+                        >
+                          {item.label}
+                        </a>
+                      ))}
+                    </div>
+                  )}
+                </div>
+                <a
+                  href="/careers"
+                  onClick={() => setMenuOpen(false)}
+                  className="text-secondary-600 hover:text-primary-600"
+                >
+                  Careers
+                </a>
                 <a
                   href="#contact"
                   onClick={() => setMenuOpen(false)}
@@ -289,6 +572,8 @@ const Home: NextPage = () => {
         {/* MAIN */}
         <main className="flex-grow">
           <Hero />
+          <ServicesSection />
+          <HireTalentSection />
           <Products />
           <Features />
           <About />

@@ -14,16 +14,17 @@ const Hero: React.FC = () => {
         <div className="md:w-1/2 mb-10 md:mb-0">
           <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-500/10 to-purple-500/10 backdrop-blur-sm border border-blue-500/20 rounded-full mb-6">
             <span className="text-blue-400 text-sm font-medium">
-              🚀 Next-Gen Digital Solutions
+              🚀 AI-Driven Software Innovation
             </span>
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-white via-blue-100 to-purple-100 bg-clip-text text-transparent leading-tight mb-6">
-            Next-Gen AI-Powered Digital Solutions for Enterprises
+            Building Enterprise SaaS, CRM, and Intelligent Digital Products
           </h1>
-          <p className="text-xl text-gray-300 mb-8 max-w-lg leading-relaxed">
-            Transform your business with cutting-edge AI-powered solutions. From
-            intelligent image search to multichannel connectivity and natural
-            language analytics.
+          <p className="text-xl text-gray-300 mb-8 max-w-xl leading-relaxed">
+            We design, build, and scale custom software platforms across web and
+            mobile, infusing every experience with AI, automation, and cloud-native
+            engineering. From bespoke SaaS to CRM modernization, we deliver
+            end-to-end product strategy, UX, and development.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <a
@@ -31,7 +32,7 @@ const Hero: React.FC = () => {
               className="group px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold rounded-xl transition-all duration-300 text-center shadow-2xl hover:shadow-blue-500/25 transform hover:-translate-y-1 hover:scale-105"
             >
               <span className="flex items-center justify-center gap-2">
-                Explore Solutions
+                Book Strategy Call
                 <svg
                   className="w-5 h-5 group-hover:translate-x-1 transition-transform"
                   fill="none"
@@ -48,10 +49,10 @@ const Hero: React.FC = () => {
               </span>
             </a>
             <a
-              href="#products"
+              href="#services"
               className="px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-xl border border-white/20 transition-all duration-300 text-center backdrop-blur-sm hover:backdrop-blur-md transform hover:-translate-y-1"
             >
-              View Products
+              Browse Services
             </a>
           </div>
         </div>
@@ -62,7 +63,7 @@ const Hero: React.FC = () => {
             <div className="absolute -bottom-8 -left-20 w-72 h-72 bg-gradient-to-r from-cyan-400/30 to-blue-500/30 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-4000"></div>
             <div className="relative bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 shadow-2xl">
               <div className="grid grid-cols-2 gap-6">
-                <a 
+                <a
                   href="/axovision"
                   className="bg-gradient-to-br from-blue-500/20 to-purple-500/20 p-6 rounded-2xl backdrop-blur-sm border border-white/10 hover:border-blue-400/40 transition-all duration-300 group cursor-pointer"
                 >

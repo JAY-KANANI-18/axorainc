@@ -177,7 +177,7 @@ const Products: React.FC = () => {
         <div className="text-center mt-16">
           <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-8 border border-white/20 shadow-xl max-w-2xl mx-auto">
             <h3 className="text-2xl font-bold text-slate-900 mb-4">
-              Ready to Transform Your Business?
+              Start Your Digital Transformation Journey
             </h3>
             <p className="text-gray-600 mb-6">
               Get started with our intelligent digital solutions today.
