@@ -18,15 +18,36 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Axora | AI-Powered Digital Solutions for Enterprises</title>
+        <title>Axora Infotech - AI Software Development Company | Computer Vision & Visual Search Solutions</title>
         <link rel="icon" href="/favicon.ico" />
 
         <meta
           name="description"
-          content="Axora delivers next-gen AI-powered solutions including image search, multichannel communication, and natural language analytics. Transform your enterprise with intelligent digital solutions."
+          content="Axora Infotech is a leading AI software development company specializing in computer vision, visual search engines, and intelligent digital solutions. We build AI-powered image recognition, multichannel platforms, and natural language analytics for enterprises globally."
+        />
+        
+        <meta
+          name="keywords"
+          content="AI software development company, computer vision company India, AI image recognition company, visual search technology, custom AI solutions provider, machine learning company, AI development services, enterprise AI solutions, image search engine development, AI consulting services, artificial intelligence company"
         />
 
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="robots" content="index, follow, max-image-preview:large" />
+        <link rel="canonical" href="https://axorainfotech.com" />
+        
+        {/* Open Graph Tags */}
+        <meta property="og:title" content="Axora Infotech - AI Software Development Company" />
+        <meta property="og:description" content="Leading AI software development company specializing in computer vision, visual search engines, and enterprise AI solutions." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://axorainfotech.com" />
+        <meta property="og:image" content="https://axorainfotech.com/og-image.jpg" />
+        <meta property="og:site_name" content="Axora Infotech" />
+        
+        {/* Twitter Card Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Axora Infotech - AI Software Development Company" />
+        <meta name="twitter:description" content="AI-powered solutions for enterprises. Computer vision, visual search, and intelligent analytics." />
+        <meta name="twitter:image" content="https://axorainfotech.com/twitter-image.jpg" />
 
         {/* Organization Schema */}
         <script
@@ -35,14 +56,28 @@ const Home: NextPage = () => {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              name: "Axora",
-              url: "https://www.axorainc.com",
-              logo: "https://www.axorainc.com/logo.png",
+              name: "Axora Infotech",
+              alternateName: "Axora",
+              url: "https://axorainfotech.com",
+              logo: "https://axorainfotech.com/logo.png",
+              description: "Leading AI software development company specializing in computer vision, visual search engines, and enterprise AI solutions.",
+              foundingDate: "2020",
               contactPoint: {
                 "@type": "ContactPoint",
-                telephone: "+1-800-555-1212",
                 contactType: "Customer Service",
+                email: "contact@axorainfotech.com",
+                availableLanguage: ["English"],
               },
+              sameAs: [
+                "https://www.linkedin.com/company/axorainfotech",
+                "https://twitter.com/axorainfotech",
+              ],
+              address: {
+                "@type": "PostalAddress",
+                addressCountry: "IN",
+              },
+              areaServed: "Worldwide",
+              knowsAbout: ["Artificial Intelligence", "Computer Vision", "Machine Learning", "Image Recognition", "Visual Search", "Natural Language Processing"],
             }),
           }}
         />
@@ -139,35 +174,23 @@ const Home: NextPage = () => {
                 Products
               </a>
               <a
+                href="/axovision"
+                className="text-secondary-600 hover:text-primary-600"
+              >
+                AxoVision
+              </a>
+              <a
                 href="#features"
                 className="text-secondary-600 hover:text-primary-600"
               >
                 Features
               </a>
               <a
-                href="#about"
+                href="/blog"
                 className="text-secondary-600 hover:text-primary-600"
               >
-                About
+                Blog
               </a>
-              <a
-                href="#tech-stack"
-                className="text-secondary-600 hover:text-primary-600"
-              >
-                Tech Stack
-              </a>
-              {/* <a
-                href="#portfolio"
-                className="text-secondary-600 hover:text-primary-600"
-              >
-                Portfolio
-              </a>
-              <a
-                href="#testimonials"
-                className="text-secondary-600 hover:text-primary-600"
-              >
-                Testimonials
-              </a> */}
               <a
                 href="#contact"
                 className="text-secondary-600 hover:text-primary-600"
@@ -231,6 +254,13 @@ const Home: NextPage = () => {
                   Products
                 </a>
                 <a
+                  href="/axovision"
+                  onClick={() => setMenuOpen(false)}
+                  className="text-secondary-600 hover:text-primary-600"
+                >
+                  AxoVision
+                </a>
+                <a
                   href="#features"
                   onClick={() => setMenuOpen(false)}
                   className="text-secondary-600 hover:text-primary-600"
@@ -238,33 +268,12 @@ const Home: NextPage = () => {
                   Features
                 </a>
                 <a
-                  href="#about"
+                  href="/blog"
                   onClick={() => setMenuOpen(false)}
                   className="text-secondary-600 hover:text-primary-600"
                 >
-                  About
+                  Blog
                 </a>
-                <a
-                  href="#tech-stack"
-                  onClick={() => setMenuOpen(false)}
-                  className="text-secondary-600 hover:text-primary-600"
-                >
-                  Tech Stack
-                </a>
-                {/* <a
-                  href="#portfolio"
-                  onClick={() => setMenuOpen(false)}
-                  className="text-secondary-600 hover:text-primary-600"
-                >
-                  Portfolio
-                </a>
-                <a
-                  href="#testimonials"
-                  onClick={() => setMenuOpen(false)}
-                  className="text-secondary-600 hover:text-primary-600"
-                >
-                  Testimonials
-                </a> */}
                 <a
                   href="#contact"
                   onClick={() => setMenuOpen(false)}

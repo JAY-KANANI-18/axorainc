@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 const Hero: React.FC = () => {
   return (
@@ -61,8 +62,11 @@ const Hero: React.FC = () => {
             <div className="absolute -bottom-8 -left-20 w-72 h-72 bg-gradient-to-r from-cyan-400/30 to-blue-500/30 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-4000"></div>
             <div className="relative bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 shadow-2xl">
               <div className="grid grid-cols-2 gap-6">
-                <div className="bg-gradient-to-br from-blue-500/20 to-purple-500/20 p-6 rounded-2xl backdrop-blur-sm border border-white/10">
-                  <div className="w-12 h-12 bg-gradient-to-r from-blue-400 to-blue-600 rounded-xl flex items-center justify-center mb-4">
+                <a 
+                  href="/axovision"
+                  className="bg-gradient-to-br from-blue-500/20 to-purple-500/20 p-6 rounded-2xl backdrop-blur-sm border border-white/10 hover:border-blue-400/40 transition-all duration-300 group cursor-pointer"
+                >
+                  <div className="w-12 h-12 bg-gradient-to-r from-blue-400 to-blue-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                     <svg
                       className="w-6 h-6 text-white"
                       fill="none"
@@ -79,8 +83,11 @@ const Hero: React.FC = () => {
                   </div>
                   <h3 className="text-white font-semibold mb-2">AxoVision</h3>
                   <p className="text-gray-300 text-sm">AI Image Search</p>
-                </div>
-                <div className="bg-gradient-to-br from-purple-500/20 to-pink-500/20 p-6 rounded-2xl backdrop-blur-sm border border-white/10">
+                </a>
+                <Link
+                  href="/axoconnect"
+                  className="bg-gradient-to-br from-purple-500/20 to-pink-500/20 p-6 rounded-2xl backdrop-blur-sm border border-white/10 hover:border-purple-400/40 transition-all duration-300 group cursor-pointer"
+                >
                   <div className="w-12 h-12 bg-gradient-to-r from-purple-400 to-purple-600 rounded-xl flex items-center justify-center mb-4">
                     <svg
                       className="w-6 h-6 text-white"
@@ -98,8 +105,11 @@ const Hero: React.FC = () => {
                   </div>
                   <h3 className="text-white font-semibold mb-2">AxoConnect</h3>
                   <p className="text-gray-300 text-sm">Multi Channel</p>
-                </div>
-                <div className="bg-gradient-to-br from-cyan-500/20 to-blue-500/20 p-6 rounded-2xl backdrop-blur-sm border border-white/10 col-span-2">
+                </Link>
+                <Link
+                  href="/axoanalytics"
+                  className="bg-gradient-to-br from-cyan-500/20 to-blue-500/20 p-6 rounded-2xl backdrop-blur-sm border border-white/10 hover:border-cyan-400/40 transition-all duration-300 col-span-2 group cursor-pointer"
+                >
                   <div className="w-12 h-12 bg-gradient-to-r from-cyan-400 to-cyan-600 rounded-xl flex items-center justify-center mb-4">
                     <svg
                       className="w-6 h-6 text-white"
@@ -121,7 +131,7 @@ const Hero: React.FC = () => {
                   <p className="text-gray-300 text-sm">
                     Natural Language Database Queries
                   </p>
-                </div>
+                </Link>
               </div>
             </div>
           </div>

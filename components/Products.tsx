@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 const Products: React.FC = () => {
   const products = [
@@ -31,6 +32,8 @@ const Products: React.FC = () => {
       ),
       gradient: "from-blue-500 to-cyan-500",
       bgGradient: "from-blue-500/10 to-cyan-500/10",
+      href: "/axovision",
+      cta: "Explore AxoVision →",
     },
     {
       name: "Multichannel Platform (AxoConnect)",
@@ -61,6 +64,8 @@ const Products: React.FC = () => {
       ),
       gradient: "from-purple-500 to-pink-500",
       bgGradient: "from-purple-500/10 to-pink-500/10",
+      href: "/axoconnect",
+      cta: "Preview AxoConnect →",
     },
     {
       name: "Natural Language Database Queries (AxoAnalytics)",
@@ -91,6 +96,8 @@ const Products: React.FC = () => {
       ),
       gradient: "from-emerald-500 to-teal-500",
       bgGradient: "from-emerald-500/10 to-teal-500/10",
+      href: "/axoanalytics",
+      cta: "Preview AxoAnalytics →",
     },
   ];
 
@@ -155,11 +162,12 @@ const Products: React.FC = () => {
                 </div>
 
                 {/* CTA Button */}
-                <button
-                  className={`w-full py-3 px-6 bg-gradient-to-r ${product.gradient} text-white font-semibold rounded-xl hover:shadow-lg transform hover:scale-105 transition-all duration-300`}
+                <Link
+                  href={product.href}
+                  className={`block w-full py-3 px-6 bg-gradient-to-r ${product.gradient} text-white font-semibold rounded-xl hover:shadow-lg transform hover:scale-105 transition-all duration-300 text-center`}
                 >
-                  Learn More
-                </button>
+                  {product.cta}
+                </Link>
               </div>
             </div>
           ))}
