@@ -36,21 +36,39 @@ export default async function handler(
       createdAt: new Date(),
     });
 
+    const smtpHost = process.env.SMTP_HOST;
+    const smtpPort = Number(process.env.SMTP_PORT || 587);
+    const smtpSecure = process.env.SMTP_SECURE
+      ? process.env.SMTP_SECURE === "true"
+      : smtpPort === 465;
+    const smtpUser = process.env.SMTP_USER;
+    const smtpPass = process.env.SMTP_PASS;
+    const emailFrom = process.env.EMAIL_FROM || smtpUser;
+    const emailTo = process.env.EMAIL_TO || emailFrom;
+
+    if (!smtpHost || !emailFrom || !emailTo) {
+      return res.status(500).json({
+        message:
+          "SMTP configuration missing. Please set SMTP_HOST, EMAIL_FROM, and EMAIL_TO environment variables.",
+        success: false,
+      });
+    }
 
     const transporter = nodemailer.createTransport({
-      service: "gmail",
-      auth: {
-        type: "OAuth2",
-        user: process.env.GMAIL_USER,
-        clientId: process.env.GMAIL_CLIENT_ID,
-        clientSecret: process.env.GMAIL_CLIENT_SECRET,
-        refreshToken: process.env.GMAIL_REFRESH_TOKEN,
-      },
+      host: smtpHost,
+      port: smtpPort,
+      secure: smtpSecure,
+      auth: smtpUser
+        ? {
+          user: smtpUser,
+          pass: smtpPass,
+        }
+        : undefined,
     });
 
     await transporter.sendMail({
       from: `"Axora Contact" <${process.env.GMAIL_USER}>`,
-      to: process.env.GMAIL_USER, // send to yourself
+      to: process.env.GMAIL_USER,
       subject: `New Contact Form Submission from ${name}`,
       html: `
         <h2>New Contact Submission</h2>
