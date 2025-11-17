@@ -1,16 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
-        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+       >
   
   <!-- Homepage -->
   <url>
-    <loc>https://axorainfotech.com/</loc>
-    <lastmod>2025-11-11</lastmod>
+    <loc>https://axorainfotech.com</loc>
+    <lastmod>2025-11-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+  </url>
+  
+  <!-- Blog Index -->
+  <url>
+    <loc>https://axorainfotech.com/blog</loc>
+    <lastmod>2025-11-17</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Blog Posts -->
+  <url>
+    <loc>https://axorainfotech.com/blog/ai-transforming-modern-software-development-2025</loc>
+    <lastmod>2025-11-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://axorainfotech.com/blog/how-ai-finds-similar-tiles</loc>
+    <lastmod>2025-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://axorainfotech.com/blog/future-of-tile-design-discovery</loc>
+    <lastmod>2025-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   
   <!-- AxoVision Product Landing Page -->
@@ -21,12 +46,5 @@
     <priority>0.9</priority>
   </url>
   
-  <!-- Vision Suite App (Subdomain) -->
-  <url>
-    <loc>https://vision.axorainfotech.com/</loc>
-    <lastmod>2025-11-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
+ 
 </urlset>

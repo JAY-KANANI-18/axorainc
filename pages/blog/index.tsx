@@ -13,6 +13,10 @@ const Blog: NextPage = () => {
       year: "numeric",
     }).format(new Date(dateString));
 
+  const postsSorted = [...blogPosts].sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+  );
+
   return (
     <>
       <Head>
@@ -21,20 +25,28 @@ const Blog: NextPage = () => {
         </title>
         <meta
           name="description"
-          content="Read the latest insights on AI-powered visual search, computer vision technology, and innovations in tile and textile industry. Expert articles from Axora Infotech."
+          content="AI, SaaS, and cloud engineering insights by Axora Infotech. Learn AI Product Engineering, SaaS multitenancy, DevOps automation, and CRM modernization."
         />
         <meta
           name="keywords"
           content="AI blog, computer vision articles, visual search technology, tile industry trends, AI technology insights, machine learning blog"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="Axora Infotech" />
         <link rel="canonical" href="https://axorainfotech.com/blog" />
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title="Axora Infotech Blog RSS"
+          href="/rss.xml"
+        />
 
         {/* Open Graph Tags */}
         <meta property="og:title" content="Blog - AI & Visual Search Insights" />
         <meta
           property="og:description"
-          content="Expert insights on AI-powered visual search and computer vision technology."
+          content="Expert insights on AI, SaaS platforms, and cloud-native engineering."
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://axorainfotech.com/blog" />
@@ -42,14 +54,19 @@ const Blog: NextPage = () => {
           property="og:image"
           content="https://axorainfotech.com/blog-og-image.jpg"
         />
+        <meta property="og:image:alt" content="Axora Infotech Blog" />
+        <meta property="og:site_name" content="Axora Infotech" />
+        <meta property="og:locale" content="en_US" />
 
         {/* Twitter Card Tags */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Blog - AI & Visual Search Insights" />
         <meta
           name="twitter:description"
-          content="Expert insights on AI-powered visual search technology."
+          content="Expert insights on AI, SaaS platforms, and cloud-native engineering."
         />
+        <meta name="twitter:site" content="@AxoraInfotech" />
+        <meta name="twitter:creator" content="@AxoraInfotech" />
 
         {/* Structured Data - Blog */}
         <script
@@ -60,16 +77,58 @@ const Blog: NextPage = () => {
               "@type": "Blog",
               name: "Axora Infotech Blog",
               description:
-                "Insights on AI-powered visual search and computer vision technology",
+                "Insights on AI, SaaS platforms, and cloud-native engineering",
               url: "https://axorainfotech.com/blog",
               publisher: {
                 "@type": "Organization",
                 name: "Axora Infotech",
                 logo: {
                   "@type": "ImageObject",
-                  url: "https://axorainfotech.com/logo.png",
+                  url: "https://axorainfotech.com/2.png",
                 },
               },
+            }),
+          }}
+        />
+
+        {/* Structured Data - ItemList of Blog Posts */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "ItemList",
+              itemListElement: blogPosts.map((post, index) => ({
+                "@type": "ListItem",
+                position: index + 1,
+                url: `https://axorainfotech.com/blog/${post.slug}`,
+                name: post.title,
+              })),
+            }),
+          }}
+        />
+
+        {/* Structured Data - Breadcrumbs */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                {
+                  "@type": "ListItem",
+                  position: 1,
+                  name: "Home",
+                  item: "https://axorainfotech.com",
+                },
+                {
+                  "@type": "ListItem",
+                  position: 2,
+                  name: "Blog",
+                  item: "https://axorainfotech.com/blog",
+                },
+              ],
             }),
           }}
         />
@@ -131,7 +190,7 @@ const Blog: NextPage = () => {
           <section className="py-20 bg-gray-50">
             <div className="container mx-auto px-4">
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-                {blogPosts.map((post, index) => (
+                {postsSorted.map((post, index) => (
                   <article
                     key={index}
                     className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"

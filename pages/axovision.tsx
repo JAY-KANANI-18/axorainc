@@ -121,7 +121,7 @@ const AxoVision: NextPage = () => {
         />
         <meta
           name="keywords"
-          content="tile image search, find similar tiles, AI tile search, ceramic design search, textile pattern matching, fabric image search, visual search for tiles, reverse image search tiles, tile design finder, pattern recognition AI, similar tile finder, tile matching software, design pattern search, texture search engine, interior design search"
+          content="tile image search, find similar tiles, AI tile search, ceramic design search, textile pattern matching, fabric image search, visual search for tiles, reverse image search tiles, tile design finder, pattern recognition AI, similar tile finder, tile matching software, design pattern search, texture search engine, interior design search, similar image search, reverse image search, image finder"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="canonical" href="https://axorainfotech.com/axovision" />
