@@ -228,19 +228,19 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({ post }) => {
                   </h3>
                   <div className="flex flex-wrap gap-3">
                     <Link
-                      href="/#service-ai-product"
+                      href="/services/ai-product-engineering"
                       className="px-4 py-2 bg-blue-500/20 text-blue-100 rounded-lg hover:bg-blue-500/30 transition-colors"
                     >
                       AI Product Engineering
                     </Link>
                     <Link
-                      href="/#service-saas-platforms"
+                      href="/services/custom-saas-development"
                       className="px-4 py-2 bg-blue-500/20 text-blue-100 rounded-lg hover:bg-blue-500/30 transition-colors"
                     >
                       Custom SaaS Platforms
                     </Link>
                     <Link
-                      href="/#service-cloud-devops"
+                      href="/services/cloud-devops-automation"
                       className="px-4 py-2 bg-blue-500/20 text-blue-100 rounded-lg hover:bg-blue-500/30 transition-colors"
                     >
                       Cloud & DevOps Automation

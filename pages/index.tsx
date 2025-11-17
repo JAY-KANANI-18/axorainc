@@ -22,32 +22,30 @@ const Home: NextPage = () => {
   const [mobileHireOpen, setMobileHireOpen] = useState(false);
 
   const servicesMenu = [
-    { label: "AI Product Engineering", href: "#service-ai-product" },
-    { label: "Custom SaaS Platforms", href: "#service-saas-platforms" },
-    { label: "CRM Modernization", href: "#service-crm-modernization" },
-    { label: "Enterprise Web Applications", href: "#service-enterprise-web" },
-    { label: "Mobile App Development", href: "#service-mobile-apps" },
-    { label: "Cloud & DevOps Automation", href: "#service-cloud-devops" },
-    {
-      label: "Data Engineering & Analytics",
-      href: "#service-data-engineering",
-    },
-    { label: "Intelligent Process Automation", href: "#service-automation" },
-    { label: "Digital Commerce & Marketplaces", href: "#service-commerce" },
-    { label: "SEO & Growth Marketing", href: "#service-seo-growth" },
+    { label: "AI Product Engineering", href: "/services/ai-product-engineering" },
+    { label: "Custom SaaS platforms", href: "/services/custom-saas-development" },
+    { label: "CRM Modernization", href: "/services/crm-modernization" },
+    { label: "Enterprise Web Applications", href: "/services/enterprise-web-applications" },
+    { label: "Mobile App Development", href: "/services/mobile-app-development" },
+    { label: "Cloud & DevOps Automation", href: "/services/cloud-devops-automation" },
+    { label: "Data Engineering & Analytics", href: "/services/data-engineering-analytics" },
+    { label: "Intelligent Process Automation", href: "/services/intelligent-process-automation" },
+    { label: "Digital Commerce & Marketplaces", href: "/services/digital-commerce-marketplaces" },
+    { label: "SEO & Growth Marketing", href: "/services/seo-growth-marketing" },
+    { label: "View all services", href: "/services" },
   ];
 
   const hireMenu = [
-    { label: "Hire React Developers", href: "#hire-react-developers" },
-    { label: "Hire Node.js Developers", href: "#hire-nodejs-developers" },
-    { label: "Hire Next.js Engineers", href: "#hire-nextjs-engineers" },
-    { label: "Hire Full-Stack Teams", href: "#hire-fullstack-teams" },
-    { label: "Hire Mobile App Developers", href: "#hire-mobile-developers" },
-    { label: "Hire DevOps & SRE Experts", href: "#hire-devops-experts" },
-    { label: "Hire Data Engineers", href: "#hire-data-engineers" },
-    { label: "Hire UI/UX Designers", href: "#hire-uiux-designers" },
-    { label: "Hire QA Automation Engineers", href: "#hire-qa-automation" },
-    { label: "Hire AI & ML Specialists", href: "#hire-ai-ml-specialists" },
+    { label: "Hire React Developers", href: "/hire/react-developers" },
+    { label: "Hire Node.js Developers", href: "/hire/nodejs-developers" },
+    { label: "Hire Next.js Engineers", href: "/hire/nextjs-engineers" },
+    { label: "Hire Full-Stack Teams", href: "/hire/fullstack-teams" },
+    { label: "Hire Mobile App Developers", href: "/hire/mobile-developers" },
+    { label: "Hire DevOps & SRE Experts", href: "/hire/devops-experts" },
+    { label: "Hire Data Engineers", href: "/hire/data-engineers" },
+    { label: "Hire UI/UX Designers", href: "/hire/uiux-designers" },
+    { label: "Hire QA Automation Engineers", href: "/hire/qa-automation" },
+    { label: "Hire AI & ML Specialists", href: "/hire/ai-ml-specialists" },
   ];
 
   return (
@@ -307,7 +305,7 @@ const Home: NextPage = () => {
                       </a>
                     ))}
                     <a
-                      href="#services"
+                      href="/services"
                       className="block rounded-xl px-4 py-2 text-sm font-semibold text-blue-600 hover:bg-blue-50"
                     >
                       Explore All Services →
@@ -378,7 +376,7 @@ const Home: NextPage = () => {
                       </a>
                     ))}
                     <a
-                      href="#hire"
+                      href="/hire"
                       className="block rounded-xl px-4 py-2 text-sm font-semibold text-purple-600 hover:bg-purple-50"
                     >
                       Meet Our Expert Teams →

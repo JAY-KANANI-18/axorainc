@@ -85,6 +85,18 @@ const services = [
 ];
 
 const ServicesSection: React.FC = () => {
+  const slugMap: Record<string, string> = {
+    "service-ai-product": "ai-product-engineering",
+    "service-saas-platforms": "custom-saas-development",
+    "service-crm-modernization": "crm-modernization",
+    "service-enterprise-web": "enterprise-web-applications",
+    "service-mobile-apps": "mobile-app-development",
+    "service-cloud-devops": "cloud-devops-automation",
+    "service-data-engineering": "data-engineering-analytics",
+    "service-automation": "intelligent-process-automation",
+    "service-commerce": "digital-commerce-marketplaces",
+    "service-seo-growth": "seo-growth-marketing",
+  };
   return (
     <section
       id="services"
@@ -134,7 +146,7 @@ const ServicesSection: React.FC = () => {
                   ))}
                 </div>
                 <Link
-                  href="#contact"
+                  href={slugMap[service.anchor] ? `/services/${slugMap[service.anchor]}` : "/services"}
                   className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-800 transition-colors"
                 >
                   Learn more
