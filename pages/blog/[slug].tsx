@@ -4,6 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import Footer from "../../components/Footer";
 import { blogPosts, BlogPost } from "../../data/blogPosts";
+import { FaArrowLeftLong } from "react-icons/fa6";
+import { useRouter } from "next/navigation";
 
 interface BlogPostPageProps {
   post: BlogPost;
@@ -17,11 +19,14 @@ const formatDate = (dateString: string) =>
   }).format(new Date(dateString));
 
 const BlogPostPage: NextPage<BlogPostPageProps> = ({ post }) => {
+  const router = useRouter();
+
   const seoTitle = `${post.title} | Axora Infotech Blog`;
   const description = post.excerpt;
   const canonicalUrl = `https://axorainfotech.com/blog/${post.slug}`;
   const ogImage = post.ogImage || "https://axorainfotech.com/blog-og-image.jpg";
-  const keywords = post.keywords?.join(", ") ||
+  const keywords =
+    post.keywords?.join(", ") ||
     "visual search, computer vision, tile industry, AI insights";
   const currentIndex = blogPosts.findIndex((p) => p.slug === post.slug);
   const prevPost =
@@ -64,8 +69,14 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({ post }) => {
         <meta name="twitter:image:alt" content={post.title} />
 
         {/* LinkedIn / Article Meta */}
-        <meta property="article:author" content="https://www.linkedin.com/company/axora-infotech" />
-        <meta property="article:publisher" content="https://www.linkedin.com/company/axora-infotech" />
+        <meta
+          property="article:author"
+          content="https://www.linkedin.com/company/axora-infotech"
+        />
+        <meta
+          property="article:publisher"
+          content="https://www.linkedin.com/company/axora-infotech"
+        />
         <meta property="article:section" content={post.category} />
         <meta property="article:published_time" content={post.date} />
         <meta property="article:modified_time" content={post.date} />
@@ -151,18 +162,18 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({ post }) => {
               />
             </Link>
             <div className="flex gap-6">
-              <Link
+              {/* <Link
                 href="/blog"
                 className="text-gray-600 hover:text-blue-600 transition-colors"
               >
-                Back to Blog
-              </Link>
-              <Link
+                Blog
+              </Link> */}
+              {/* <Link
                 href="/axovision"
                 className="text-gray-600 hover:text-blue-600 transition-colors"
               >
                 AxoVision
-              </Link>
+              </Link> */}
               <Link
                 href="/#contact"
                 className="px-6 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:shadow-lg transition-all"
@@ -175,6 +186,14 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({ post }) => {
 
         <main className="flex-grow">
           <article className="bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 py-20 text-white">
+            <div className="m-4">
+              <button
+                onClick={() => router.back()}
+                className="px-6 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:shadow-lg transition-all"
+              >
+                <FaArrowLeftLong />
+              </button>
+            </div>
             <div className="container mx-auto px-4 max-w-4xl">
               <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-3xl p-10 shadow-2xl">
                 <div className="flex flex-wrap items-center gap-4 text-sm text-blue-200 mb-6">

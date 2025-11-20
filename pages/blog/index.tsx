@@ -4,8 +4,12 @@ import Image from "next/image";
 import Link from "next/link";
 import Footer from "../../components/Footer";
 import { BlogPost, blogPosts } from "../../data/blogPosts";
+import { FaArrowLeftLong } from "react-icons/fa6";
+import { useRouter } from "next/navigation";
 
 const Blog: NextPage = () => {
+  const router = useRouter();
+
   const formatDate = (dateString: string) =>
     new Intl.DateTimeFormat("en-US", {
       month: "long",
@@ -20,9 +24,7 @@ const Blog: NextPage = () => {
   return (
     <>
       <Head>
-        <title>
-          Blog - AI & Visual Search Insights | Axora Infotech
-        </title>
+        <title>Blog - AI & Visual Search Insights | Axora Infotech</title>
         <meta
           name="description"
           content="AI, SaaS, and cloud engineering insights by Axora Infotech. Learn AI Product Engineering, SaaS multitenancy, DevOps automation, and CRM modernization."
@@ -43,7 +45,10 @@ const Blog: NextPage = () => {
         />
 
         {/* Open Graph Tags */}
-        <meta property="og:title" content="Blog - AI & Visual Search Insights" />
+        <meta
+          property="og:title"
+          content="Blog - AI & Visual Search Insights"
+        />
         <meta
           property="og:description"
           content="Expert insights on AI, SaaS platforms, and cloud-native engineering."
@@ -60,7 +65,10 @@ const Blog: NextPage = () => {
 
         {/* Twitter Card Tags */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Blog - AI & Visual Search Insights" />
+        <meta
+          name="twitter:title"
+          content="Blog - AI & Visual Search Insights"
+        />
         <meta
           name="twitter:description"
           content="Expert insights on AI, SaaS platforms, and cloud-native engineering."
@@ -148,7 +156,7 @@ const Blog: NextPage = () => {
               />
             </a>
             <div className="flex gap-6">
-              <a
+              {/* <a
                 href="/"
                 className="text-gray-600 hover:text-blue-600 transition-colors"
               >
@@ -159,7 +167,7 @@ const Blog: NextPage = () => {
                 className="text-gray-600 hover:text-blue-600 transition-colors"
               >
                 AxoVision
-              </a>
+              </a> */}
               <a
                 href="/#contact"
                 className="px-6 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:shadow-lg transition-all"
@@ -188,6 +196,14 @@ const Blog: NextPage = () => {
 
           {/* BLOG POSTS GRID */}
           <section className="py-20 bg-gray-50">
+            <div className="m-4">
+              <button
+                onClick={() => router.back()}
+                className="px-6 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:shadow-lg transition-all"
+              >
+                <FaArrowLeftLong />
+              </button>
+            </div>
             <div className="container mx-auto px-4">
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
                 {postsSorted.map((post, index) => (

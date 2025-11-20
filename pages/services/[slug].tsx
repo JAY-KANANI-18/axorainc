@@ -5,6 +5,8 @@ import Link from "next/link";
 import Footer from "../../components/Footer";
 import { services, ServicePage } from "../../data/services";
 import EnquiryForm from "../../components/EnquiryForm";
+import { FaArrowLeftLong } from "react-icons/fa6";
+import { useRouter } from "next/navigation";
 
 interface Props {
   service: ServicePage;
@@ -16,8 +18,11 @@ const ServiceLandingPage: NextPage<Props> = ({ service }) => {
   const canonical = `https://axorainfotech.com/services/${service.slug}`;
   const ogImage = service.ogImage || "https://axorainfotech.com/og-image.jpg";
   const keywords = service.keywords.join(", ");
+  const router = useRouter();
 
-  const otherServices = services.filter((s) => s.slug !== service.slug).slice(0, 6);
+  const otherServices = services
+    .filter((s) => s.slug !== service.slug)
+    .slice(0, 6);
 
   return (
     <>
@@ -102,9 +107,24 @@ const ServiceLandingPage: NextPage<Props> = ({ service }) => {
               "@context": "https://schema.org",
               "@type": "BreadcrumbList",
               itemListElement: [
-                { "@type": "ListItem", position: 1, name: "Home", item: "https://axorainfotech.com" },
-                { "@type": "ListItem", position: 2, name: "Services", item: "https://axorainfotech.com/services" },
-                { "@type": "ListItem", position: 3, name: service.title, item: canonical },
+                {
+                  "@type": "ListItem",
+                  position: 1,
+                  name: "Home",
+                  item: "https://axorainfotech.com",
+                },
+                {
+                  "@type": "ListItem",
+                  position: 2,
+                  name: "Services",
+                  item: "https://axorainfotech.com/services",
+                },
+                {
+                  "@type": "ListItem",
+                  position: 3,
+                  name: service.title,
+                  item: canonical,
+                },
               ],
             }),
           }}
@@ -150,9 +170,13 @@ const ServiceLandingPage: NextPage<Props> = ({ service }) => {
                 publisher: {
                   "@type": "Organization",
                   name: "Axora Infotech",
-                  logo: { "@type": "ImageObject", url: "https://axorainfotech.com/2.png" },
+                  logo: {
+                    "@type": "ImageObject",
+                    url: "https://axorainfotech.com/2.png",
+                  },
                 },
-                image: service.ogImage || "https://axorainfotech.com/og-image.jpg",
+                image:
+                  service.ogImage || "https://axorainfotech.com/og-image.jpg",
                 keywords: service.keywords,
                 articleSection: "Results",
                 text: service.caseStudy.results?.join(" | "),
@@ -166,29 +190,69 @@ const ServiceLandingPage: NextPage<Props> = ({ service }) => {
         <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-sm shadow-sm">
           <nav className="container mx-auto px-4 py-4 flex justify-between items-center">
             <Link href="/" className="flex items-center text-2xl font-bold">
-              <Image src="/2.png" alt="Axora Infotech Logo" width={150} height={80} priority />
+              <Image
+                src="/2.png"
+                alt="Axora Infotech Logo"
+                width={150}
+                height={80}
+                priority
+              />
             </Link>
             <div className="flex gap-6">
-              <Link href="/blog" className="text-gray-600 hover:text-blue-600 transition-colors">Blog</Link>
-              <Link href="/#contact" className="px-6 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:shadow-lg transition-all">Contact</Link>
+              {/* <Link href="/blog" className="text-gray-600 hover:text-blue-600 transition-colors">Blog</Link> */}
+              <Link
+                href="/#contact"
+                className="px-6 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:shadow-lg transition-all"
+              >
+                Contact
+              </Link>
             </div>
           </nav>
         </header>
 
         <main className="flex-grow">
-          <section className="bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white py-20">
+          <section className="bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white py-10">
+            <div className="m-4">
+              <button
+                onClick={() => router.back()}
+                className="px-6 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:shadow-lg transition-all"
+              >
+                <FaArrowLeftLong />
+              </button>
+            </div>
+
             <div className="container mx-auto px-4 max-w-5xl">
               <div className="grid md:grid-cols-2 gap-10 items-center">
                 <div>
-                  <h1 className="text-4xl md:text-5xl font-bold mb-6">{service.title}</h1>
-                  <p className="text-blue-100 text-lg mb-8">{service.excerpt}</p>
+                  <h1 className="text-4xl md:text-5xl font-bold mb-6">
+                    {service.title}
+                  </h1>
+                  <p className="text-blue-100 text-lg mb-8">
+                    {service.excerpt}
+                  </p>
                   <div className="flex gap-4">
-                    <a href="#enquiry" className="px-6 py-3 bg-white text-blue-700 font-semibold rounded-xl hover:bg-blue-50 transition-all">Book Strategy Call</a>
-                    <a href="/blog" className="px-6 py-3 bg-white/10 border border-white/20 text-white font-semibold rounded-xl hover:bg-white/20 transition-all">Read Case Studies</a>
+                    <a
+                      href="#enquiry"
+                      className="px-6 py-3 bg-white text-blue-700 font-semibold rounded-xl hover:bg-blue-50 transition-all"
+                    >
+                      Book Strategy Call
+                    </a>
+                    <a
+                      href="/blog"
+                      className="px-6 py-3 bg-white/10 border border-white/20 text-white font-semibold rounded-xl hover:bg-white/20 transition-all"
+                    >
+                      Read Case Studies
+                    </a>
                   </div>
                 </div>
                 <div>
-                  <Image src={service.image || "/2.png"} alt={service.title} width={1200} height={800} className="rounded-2xl shadow-2xl w-full h-auto" />
+                  <Image
+                    src={service.image || "/2.png"}
+                    alt={service.title}
+                    width={1200}
+                    height={800}
+                    className="rounded-2xl shadow-2xl w-full h-auto"
+                  />
                 </div>
               </div>
             </div>
@@ -209,7 +273,9 @@ const ServiceLandingPage: NextPage<Props> = ({ service }) => {
 
               <div className="mt-10 grid md:grid-cols-2 gap-8">
                 <div className="bg-blue-50 border border-blue-100 rounded-2xl p-6">
-                  <h3 className="text-xl font-semibold mb-3 text-blue-900">Key Benefits</h3>
+                  <h3 className="text-xl font-semibold mb-3 text-blue-900">
+                    Key Benefits
+                  </h3>
                   <ul className="list-disc pl-5 space-y-2 text-blue-900/90">
                     {service.benefits.map((b) => (
                       <li key={b}>{b}</li>
@@ -217,7 +283,9 @@ const ServiceLandingPage: NextPage<Props> = ({ service }) => {
                   </ul>
                 </div>
                 <div className="bg-purple-50 border border-purple-100 rounded-2xl p-6">
-                  <h3 className="text-xl font-semibold mb-3 text-purple-900">Use Cases</h3>
+                  <h3 className="text-xl font-semibold mb-3 text-purple-900">
+                    Use Cases
+                  </h3>
                   <ul className="list-disc pl-5 space-y-2 text-purple-900/90">
                     {service.useCases.map((u) => (
                       <li key={u}>{u}</li>
@@ -243,11 +311,18 @@ const ServiceLandingPage: NextPage<Props> = ({ service }) => {
 
               {service.faqs?.length > 0 && (
                 <div className="mt-12">
-                  <h3 className="text-2xl font-bold mb-4">Frequently Asked Questions</h3>
+                  <h3 className="text-2xl font-bold mb-4">
+                    Frequently Asked Questions
+                  </h3>
                   <div className="space-y-4">
                     {service.faqs.map((f) => (
-                      <details key={f.question} className="group border border-slate-200 rounded-xl p-4">
-                        <summary className="cursor-pointer font-semibold">{f.question}</summary>
+                      <details
+                        key={f.question}
+                        className="group border border-slate-200 rounded-xl p-4"
+                      >
+                        <summary className="cursor-pointer font-semibold">
+                          {f.question}
+                        </summary>
                         <p className="mt-2 text-slate-700">{f.answer}</p>
                       </details>
                     ))}
@@ -260,7 +335,11 @@ const ServiceLandingPage: NextPage<Props> = ({ service }) => {
                 <h3 className="text-2xl font-bold mb-6">Related Services</h3>
                 <div className="grid md:grid-cols-3 gap-6">
                   {otherServices.map((s) => (
-                    <Link key={s.slug} href={`/services/${s.slug}`} className="block rounded-2xl p-6 border hover:border-blue-300 hover:shadow-lg transition-all">
+                    <Link
+                      key={s.slug}
+                      href={`/services/${s.slug}`}
+                      className="block rounded-2xl p-6 border hover:border-blue-300 hover:shadow-lg transition-all"
+                    >
                       <h4 className="text-lg font-semibold mb-2">{s.title}</h4>
                       <p className="text-slate-600 line-clamp-3">{s.excerpt}</p>
                     </Link>
@@ -271,11 +350,22 @@ const ServiceLandingPage: NextPage<Props> = ({ service }) => {
               {/* Enquiry Form */}
               <div className="mt-16" id="enquiry">
                 <h3 className="text-2xl font-bold mb-4">Start Your Project</h3>
-                <EnquiryForm context={{ category: service.category, pageSlug: service.slug, pageTitle: service.title }} />
+                <EnquiryForm
+                  context={{
+                    category: service.category,
+                    pageSlug: service.slug,
+                    pageTitle: service.title,
+                  }}
+                />
               </div>
 
               <div className="mt-16 text-center">
-                <a href="#enquiry" className="inline-block px-10 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-xl hover:shadow-xl transition-all">Start Your Project</a>
+                <a
+                  href="#enquiry"
+                  className="inline-block px-10 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-xl hover:shadow-xl transition-all"
+                >
+                  Start Your Project
+                </a>
               </div>
             </div>
           </section>
