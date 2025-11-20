@@ -211,12 +211,15 @@ const Blog: NextPage = () => {
                     key={index}
                     className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
                   >
-                    <div className="h-48 bg-gradient-to-br from-blue-500 to-purple-500 relative">
-                      {/* TODO: Replace with actual images */}
-                      <div className="absolute inset-0 flex items-center justify-center text-white text-6xl">
-                        📝
-                      </div>
+                    <div className="h-48 w-full bg-gradient-to-br from-blue-500 to-purple-500 relative">
+                      <Image
+                        src={post.image}
+                        alt={post.slug}
+                        fill
+                        className="object-cover"
+                      />
                     </div>
+
                     <div className="p-6">
                       <div className="flex items-center gap-4 text-sm text-gray-500 mb-3">
                         <span className="bg-blue-100 text-blue-600 px-3 py-1 rounded-full">

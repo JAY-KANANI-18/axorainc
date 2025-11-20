@@ -27,8 +27,8 @@ export const blogPosts: BlogPost[] = [
     author: "Axora Infotech",
     category: "AI Product Engineering",
     readTime: "7 min read",
-    image: "/blog/ai-transforming-2025.jpg",
-    ogImage: "https://axorainfotech.com/blog/ai-transforming-2025-og.jpg",
+    image: "/images/How-to-Build-an-AI-SaaS-Product-Banner.png",
+    ogImage: "https://axorainfotech.com/blog/images/How-to-Build-an-AI-SaaS-Product-Banner.png",
     keywords: [
       "AI software development 2025",
       "AI Product Engineering",
@@ -99,73 +99,18 @@ export const blogPosts: BlogPost[] = [
       },
     ],
   },
-  {
-    slug: "how-ai-finds-similar-tiles",
-    title: "How AI Finds Similar Tiles from a Photo: Complete Guide",
-    excerpt:
-      "Discover the technology behind AI-powered visual search and how computer vision is revolutionizing tile and design discovery.",
-    date: "2025-11-11",
-    author: "Axora Team",
-    category: "Technology",
-    readTime: "8 min read",
-    image: "/blog/ai-tile-search.jpg",
-    ogImage: "https://axorainfotech.com/blog/how-ai-finds-similar-tiles-og.jpg",
-    keywords: [
-      "tile image search",
-      "AI tile matching",
-      "visual search technology",
-      "computer vision tiles",
-    ],
-    content: [
-      {
-        heading: "Introduction",
-        paragraphs: [
-          "Customers often arrive with inspiration photos and expect instant matches. Traditional search fails because design is visual, not textual.",
-          "Artificial intelligence closes this gap by interpreting patterns, colors, and textures to deliver accurate tile recommendations within seconds.",
-        ],
-      },
-      {
-        heading: "Why Traditional Search Fails",
-        paragraphs: [
-          "Product metadata rarely captures the nuance of patterns or color variations, leading to poor search results and lost sales opportunities.",
-          "Customers struggle with terminology, while sales teams waste time navigating catalogs instead of providing consultative support.",
-        ],
-      },
-      {
-        heading: "How AxoVision Solves the Problem",
-        paragraphs: [
-          "AxoVision analyses each image using deep learning models trained on thousands of tile designs to understand complex pattern geometry and color palettes.",
-          "With a simple photo upload, the system returns relevant results ranked by similarity, enabling customers to make confident purchase decisions quickly.",
-        ],
-      },
-      {
-        heading: "Implementation Checklist",
-        paragraphs: [
-          "Digitize your catalog with high-quality imagery and consistent metadata.",
-          "Connect AxoVision via API to your e-commerce platform or internal inventory tools.",
-          "Train sales teams to incorporate visual search into their showroom workflows.",
-        ],
-      },
-      {
-        heading: "Key Takeaways",
-        paragraphs: [
-          "Visual search increases conversion rates by up to 40% for tile retailers embracing AI-driven discovery.",
-          "Early adopters build defensible competitive advantages and gather rich data on customer design preferences.",
-        ],
-      },
-    ],
-  },
+
   {
     slug: "future-of-tile-design-discovery",
     title: "The Future of Tile Design Discovery Using Computer Vision",
     excerpt:
       "Explore how computer vision and AI are transforming the tile industry and what it means for manufacturers and designers.",
     date: "2025-11-04",
-    author: "Axora Team",
+    author: "Axora Infotech",
     category: "Industry Trends",
     readTime: "6 min read",
-    image: "/blog/future-tile-design.jpg",
-    ogImage: "https://axorainfotech.com/blog/future-of-tile-design-og.jpg",
+    image: "/images/tiles.jpeg",
+    ogImage: "https://axorainfotech.com/images/tiles.jpeg",
     keywords: [
       "tile industry trends",
       "computer vision",
@@ -212,8 +157,8 @@ export const blogPosts: BlogPost[] = [
     author: "Axora Infotech",
     category: "AI Product Engineering",
     readTime: "7 min read",
-    image: "/blog/ai-saas-improvement.jpg",
-    ogImage: "https://axorainfotech.com/blog/ai-saas-improvement-og.jpg",
+    image: "/images/ai-saas.jpg",
+    ogImage: "https://axorainfotech.com/images/ai-saas.jpg",
     keywords: [
       "AI SaaS improvement",
       "AI in SaaS",
