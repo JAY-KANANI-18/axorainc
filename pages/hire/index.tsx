@@ -1,15 +1,19 @@
-import { NextPage } from "next";
+import { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import Footer from "../../components/Footer";
-import { hires } from "../../data/hire";
+import { hires, HirePage } from "../../data/hire";
+import { fetchHires } from "../../lib/cms";
 
-const HireIndex: NextPage = () => {
+interface Props { items: HirePage[] }
+
+const HireIndex: NextPage<Props> = ({ items }) => {
   const title = "Hire Engineers & Product Teams | Axora Infotech";
   const description =
     "Hire React, Node.js, Next.js, Mobile, DevOps/SRE, Data Engineers, QA Automation, AI/ML Specialists, and Full-Stack Teams. Vetted talent with enterprise delivery experience.";
   const canonical = "https://axorainfotech.com/hire";
+  const list = items && items.length ? items : hires;
 
   return (
     <>
@@ -42,7 +46,7 @@ const HireIndex: NextPage = () => {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "ItemList",
-              itemListElement: hires.map((h, index) => ({
+              itemListElement: list.map((h, index) => ({
                 "@type": "ListItem",
                 position: index + 1,
                 url: `https://axorainfotech.com/hire/${h.slug}`,
@@ -94,7 +98,7 @@ const HireIndex: NextPage = () => {
           <section className="py-16 bg-gray-50">
             <div className="container mx-auto px-4 max-w-6xl">
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {hires.map((h) => (
+                {list.map((h) => (
                   <Link key={h.slug} href={`/hire/${h.slug}`} className="block bg-white rounded-2xl p-6 shadow hover:shadow-xl hover:-translate-y-1 transition-all border">
                     <div className="h-40 mb-4 bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-xl flex items-center justify-center text-5xl">👩‍💻</div>
                     <h2 className="text-xl font-bold mb-2">{h.title}</h2>

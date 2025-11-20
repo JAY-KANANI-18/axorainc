@@ -5,6 +5,7 @@ import Link from "next/link";
 import Footer from "../../components/Footer";
 import { services, ServicePage } from "../../data/services";
 import EnquiryForm from "../../components/EnquiryForm";
+import { fetchServiceBySlug, fetchServiceSlugs } from "../../lib/cms";
 
 interface Props {
   service: ServicePage;
@@ -288,13 +289,15 @@ const ServiceLandingPage: NextPage<Props> = ({ service }) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = services.map((s) => ({ params: { slug: s.slug } }));
-  return { paths, fallback: false };
+  const slugs = await fetchServiceSlugs();
+  const list = slugs && slugs.length ? slugs : services.map((s) => s.slug);
+  return { paths: list.map((slug) => ({ params: { slug } })), fallback: false };
 };
 
 export const getStaticProps: GetStaticProps<Props> = async (ctx) => {
   const slug = ctx.params?.slug as string;
-  const service = services.find((s) => s.slug === slug);
+  const fromCms = await fetchServiceBySlug(slug);
+  const service = fromCms || services.find((s) => s.slug === slug);
   if (!service) return { notFound: true };
   return { props: { service } };
 };

@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Footer from "../../components/Footer";
 import { blogPosts, BlogPost } from "../../data/blogPosts";
+import { fetchBlogPostBySlug, fetchBlogSlugs } from "../../lib/cms";
 
 interface BlogPostPageProps {
   post: BlogPost;
@@ -21,7 +22,8 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({ post }) => {
   const description = post.excerpt;
   const canonicalUrl = `https://axorainfotech.com/blog/${post.slug}`;
   const ogImage = post.ogImage || "https://axorainfotech.com/blog-og-image.jpg";
-  const keywords = post.keywords?.join(", ") ||
+  const keywords =
+    post.keywords?.join(", ") ||
     "visual search, computer vision, tile industry, AI insights";
   const currentIndex = blogPosts.findIndex((p) => p.slug === post.slug);
   const prevPost =
@@ -64,8 +66,14 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({ post }) => {
         <meta name="twitter:image:alt" content={post.title} />
 
         {/* LinkedIn / Article Meta */}
-        <meta property="article:author" content="https://www.linkedin.com/company/axora-infotech" />
-        <meta property="article:publisher" content="https://www.linkedin.com/company/axora-infotech" />
+        <meta
+          property="article:author"
+          content="https://www.linkedin.com/company/axora-infotech"
+        />
+        <meta
+          property="article:publisher"
+          content="https://www.linkedin.com/company/axora-infotech"
+        />
         <meta property="article:section" content={post.category} />
         <meta property="article:published_time" content={post.date} />
         <meta property="article:modified_time" content={post.date} />
@@ -211,7 +219,7 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({ post }) => {
                 </div>
 
                 <div className="prose prose-lg prose-invert max-w-none">
-                  {post.content.map((section) => (
+                  {post.content?.map((section) => (
                     <section key={section.heading} className="mb-10">
                       <h2>{section.heading}</h2>
                       {section.paragraphs.map((paragraph, index) => (
@@ -332,12 +340,10 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({ post }) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = blogPosts.map((post) => ({
-    params: { slug: post.slug },
-  }));
-
+  const slugs = await fetchBlogSlugs();
+  const list = slugs && slugs.length ? slugs : blogPosts.map((p) => p.slug);
   return {
-    paths,
+    paths: list.map((slug) => ({ params: { slug } })),
     fallback: false,
   };
 };
@@ -346,7 +352,8 @@ export const getStaticProps: GetStaticProps<BlogPostPageProps> = async (
   context
 ) => {
   const slug = context.params?.slug as string;
-  const post = blogPosts.find((item) => item.slug === slug);
+  const fromCms = await fetchBlogPostBySlug(slug);
+  const post = fromCms || blogPosts.find((item) => item.slug === slug);
 
   if (!post) {
     return {

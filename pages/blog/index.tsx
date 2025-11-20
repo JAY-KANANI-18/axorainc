@@ -1,11 +1,14 @@
-import { NextPage } from "next";
+import { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import Footer from "../../components/Footer";
 import { BlogPost, blogPosts } from "../../data/blogPosts";
+import { fetchBlogPosts } from "../../lib/cms";
 
-const Blog: NextPage = () => {
+interface Props { posts: BlogPost[] }
+
+const Blog: NextPage<Props> = ({ posts }) => {
   const formatDate = (dateString: string) =>
     new Intl.DateTimeFormat("en-US", {
       month: "long",
@@ -13,7 +16,8 @@ const Blog: NextPage = () => {
       year: "numeric",
     }).format(new Date(dateString));
 
-  const postsSorted = [...blogPosts].sort(
+  const list = posts && posts.length ? posts : blogPosts;
+  const postsSorted = [...list].sort(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
   );
 
@@ -98,7 +102,7 @@ const Blog: NextPage = () => {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "ItemList",
-              itemListElement: blogPosts.map((post, index) => ({
+              itemListElement: list.map((post, index) => ({
                 "@type": "ListItem",
                 position: index + 1,
                 url: `https://axorainfotech.com/blog/${post.slug}`,
@@ -245,7 +249,7 @@ const Blog: NextPage = () => {
               </div>
 
               {/* Coming Soon Message */}
-              {blogPosts.length === 0 && (
+              {list.length === 0 && (
                 <div className="text-center max-w-2xl mx-auto">
                   <div className="text-6xl mb-6">📚</div>
                   <h2 className="text-3xl font-bold text-gray-900 mb-4">
@@ -301,3 +305,13 @@ const Blog: NextPage = () => {
 };
 
 export default Blog;
+
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  const posts = await fetchBlogPosts();
+  return {
+    props: {
+      posts: posts ?? [],
+    },
+    revalidate: 60,
+  };
+};

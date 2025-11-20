@@ -5,6 +5,7 @@ import Link from "next/link";
 import Footer from "../../components/Footer";
 import { hires, HirePage } from "../../data/hire";
 import EnquiryForm from "../../components/EnquiryForm";
+import { fetchHireBySlug, fetchHireSlugs } from "../../lib/cms";
 
 interface Props {
   page: HirePage;
@@ -280,13 +281,15 @@ const HireLandingPage: NextPage<Props> = ({ page }) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = hires.map((h) => ({ params: { slug: h.slug } }));
-  return { paths, fallback: false };
+  const slugs = await fetchHireSlugs();
+  const list = slugs && slugs.length ? slugs : hires.map((h) => h.slug);
+  return { paths: list.map((slug) => ({ params: { slug } })), fallback: false };
 };
 
 export const getStaticProps: GetStaticProps<Props> = async (ctx) => {
   const slug = ctx.params?.slug as string;
-  const page = hires.find((h) => h.slug === slug);
+  const fromCms = await fetchHireBySlug(slug);
+  const page = fromCms || hires.find((h) => h.slug === slug);
   if (!page) return { notFound: true };
   return { props: { page } };
 };

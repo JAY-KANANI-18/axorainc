@@ -1,17 +1,21 @@
-import { NextPage } from "next";
+import { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import Footer from "../../components/Footer";
-import { services } from "../../data/services";
+import { services, ServicePage } from "../../data/services";
 import EnquiryForm from "../../components/EnquiryForm";
+import { fetchServices } from "../../lib/cms";
 
-const ServicesIndex: NextPage = () => {
+interface Props { items: ServicePage[] }
+
+const ServicesIndex: NextPage<Props> = ({ items }) => {
   const title = "Services | Axora Infotech";
   const description =
     "Explore Axora Infotech's services: AI Product Engineering, Custom SaaS Development, CRM Modernization, Enterprise Web Apps, Mobile Apps, Cloud & DevOps Automation, Data Engineering & Analytics, Intelligent Process Automation, Digital Commerce, and SEO & Growth.";
   const canonical = "https://axorainfotech.com/services";
-  const highlights = services
+  const list = items && items.length ? items : services;
+  const highlights = list
     .filter((s) => s.caseStudy && s.caseStudy.results?.length)
     .flatMap((s) => s.caseStudy!.results.map((r) => ({ service: s.title, metric: r })))
     .slice(0, 6);
@@ -47,7 +51,7 @@ const ServicesIndex: NextPage = () => {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "ItemList",
-              itemListElement: services.map((s, index) => ({
+              itemListElement: list.map((s, index) => ({
                 "@type": "ListItem",
                 position: index + 1,
                 url: `https://axorainfotech.com/services/${s.slug}`,
@@ -122,7 +126,7 @@ const ServicesIndex: NextPage = () => {
           <section className="py-16 bg-gray-50">
             <div className="container mx-auto px-4 max-w-6xl">
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {services.map((s) => (
+                {list.map((s) => (
                   <Link key={s.slug} href={`/services/${s.slug}`} className="block bg-white rounded-2xl p-6 shadow hover:shadow-xl hover:-translate-y-1 transition-all border">
                     <div className="h-40 mb-4 bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-xl flex items-center justify-center text-5xl">🧩</div>
                     <h2 className="text-xl font-bold mb-2">{s.title}</h2>
@@ -170,3 +174,11 @@ const ServicesIndex: NextPage = () => {
 };
 
 export default ServicesIndex;
+
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  const items = await fetchServices();
+  return {
+    props: { items: items ?? [] },
+    revalidate: 60,
+  };
+};
