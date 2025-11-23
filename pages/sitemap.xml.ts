@@ -55,15 +55,30 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
         )
         .join("");
 
-    // ---- BLOG XML (dynamic) ----
-    const blogXml = blogPosts
-        .map(
-            (post) => `
+    // ---- BLOG XML (dynamic, sorted + priority) ----
+    const sortedBlogs = [...blogPosts].sort(
+        (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+    );
+
+    const priorityFor = (dateStr?: string): string => {
+        const d = dateStr ? new Date(dateStr) : new Date();
+        const days = Math.floor((Date.now() - d.getTime()) / (1000 * 60 * 60 * 24));
+        if (days <= 7) return "1.0";
+        if (days <= 30) return "0.8";
+        return "0.6";
+    };
+
+    const blogXml = sortedBlogs
+        .map((post) => {
+            const lastmod = post.date || new Date().toISOString().split("T")[0];
+            const priority = priorityFor(lastmod);
+            return `
     <url>
       <loc>${baseUrl}/blog/${post.slug}</loc>
-      <lastmod>${post.date || new Date().toISOString().split("T")[0]}</lastmod>
-    </url>`
-        )
+      <lastmod>${lastmod}</lastmod>
+      <priority>${priority}</priority>
+    </url>`;
+        })
         .join("");
 
     // ---- FINAL XML ----
@@ -74,6 +89,7 @@ ${blogXml}
 </urlset>`;
 
     res.setHeader("Content-Type", "application/xml");
+    res.setHeader("Cache-Control", "s-maxage=3600, stale-while-revalidate");
     res.write(xml);
     res.end();
 

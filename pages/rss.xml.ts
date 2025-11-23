@@ -26,6 +26,10 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
             const author = escapeCdata(post.author || "Axora Infotech");
             const category = escapeCdata(post.category || "Blog");
 
+            const fullImageUrl = post.ogImage || toAbsoluteUrl(baseUrl, post.image);
+            const imageMime = getMimeTypeFromUrl(fullImageUrl);
+            const commentsUrl = `${link}#comments`;
+
             // Rich feed support
             const fullContent = escapeCdata(
                 post.content
@@ -51,6 +55,11 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
   <description><![CDATA[${description}]]></description>
 
   <content:encoded><![CDATA[${fullContent}]]></content:encoded>
+  <enclosure url="${fullImageUrl}" type="${imageMime}" />
+  <media:thumbnail url="${fullImageUrl}" />
+  <media:content url="${fullImageUrl}" medium="image" />
+  <dc:creator><![CDATA[${author}]]></dc:creator>
+  <comments>${commentsUrl}</comments>
 </item>`;
         })
         .join("");
@@ -62,6 +71,8 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
     const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0"
   xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:media="http://search.yahoo.com/mrss/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
 >
   <channel>
     <title>Axora Infotech Blog</title>
@@ -74,7 +85,8 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
   </channel>
 </rss>`;
 
-    res.setHeader("Content-Type", "application/rss+xml");
+    res.setHeader("Content-Type", "application/rss+xml; charset=utf-8");
+    res.setHeader("Cache-Control", "public, s-maxage=600, stale-while-revalidate=86400");
     res.write(xml);
     res.end();
 
@@ -88,4 +100,20 @@ export default RssFeed;
 
 function escapeCdata(str: string = ""): string {
     return str.replace(/\]\]>/g, "]]]]><![CDATA[>");
+}
+
+function toAbsoluteUrl(base: string, path?: string): string {
+    if (!path) return base;
+    if (/^https?:\/\//i.test(path)) return path;
+    return `${base}${path.startsWith("/") ? path : `/${path}`}`;
+}
+
+function getMimeTypeFromUrl(url: string): string {
+    const lower = url.split('?')[0].toLowerCase();
+    if (lower.endsWith('.png')) return 'image/png';
+    if (lower.endsWith('.webp')) return 'image/webp';
+    if (lower.endsWith('.gif')) return 'image/gif';
+    if (lower.endsWith('.svg')) return 'image/svg+xml';
+    if (lower.endsWith('.jpg') || lower.endsWith('.jpeg')) return 'image/jpeg';
+    return 'image/jpeg';
 }

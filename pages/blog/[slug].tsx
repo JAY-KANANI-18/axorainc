@@ -90,7 +90,7 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({ post }) => {
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "BlogPosting",
+              "@type": "Article",
               headline: post.title,
               description: post.excerpt,
               image: ogImage,
