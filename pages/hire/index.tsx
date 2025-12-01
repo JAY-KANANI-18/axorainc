@@ -93,7 +93,7 @@ const HireIndex: NextPage = () => {
           <nav className="container mx-auto px-4 py-4 flex justify-between items-center">
             <Link href="/" className="flex items-center text-2xl font-bold">
               <Image
-                src="/2.png"
+                src="/axora-main.png"
                 alt="Axora Infotech Logo"
                 width={150}
                 height={80}

@@ -41,7 +41,7 @@ export const hires: HirePage[] = [
     date: "2025-11-17",
     category: "Front-end",
     readTime: "12 min read",
-    image: "/2.png",
+    image: "/axora-main.png",
     ogImage: "https://axorainfotech.com/hire/react-developers-og.jpg",
     keywords: [
       "hire react developers",
@@ -94,7 +94,7 @@ export const hires: HirePage[] = [
     date: "2025-11-17",
     category: "Back-end",
     readTime: "11 min read",
-    image: "/2.png",
+    image: "/axora-main.png",
     ogImage: "https://axorainfotech.com/hire/nodejs-developers-og.jpg",
     keywords: [
       "hire nodejs developers",
@@ -143,7 +143,7 @@ export const hires: HirePage[] = [
     date: "2025-11-17",
     category: "Teams",
     readTime: "10 min read",
-    image: "/2.png",
+    image: "/axora-main.png",
     ogImage: "https://axorainfotech.com/hire/fullstack-teams-og.jpg",
     keywords: [
       "hire fullstack team",
@@ -189,7 +189,7 @@ export const hires: HirePage[] = [
     date: "2025-11-17",
     category: "Front-end",
     readTime: "8 min read",
-    image: "/2.png",
+    image: "/axora-main.png",
     keywords: ["next.js engineers", "seo", "app router", "edge rendering"],
     skills: ["Next.js", "Vercel", "TypeScript"],
     content: [
@@ -215,7 +215,7 @@ export const hires: HirePage[] = [
     date: "2025-11-17",
     category: "Mobile",
     readTime: "8 min read",
-    image: "/2.png",
+    image: "/axora-main.png",
     keywords: ["mobile developers", "react native", "flutter"],
     skills: ["Swift", "Kotlin", "React Native", "Flutter"],
     content: [
@@ -241,7 +241,7 @@ export const hires: HirePage[] = [
     date: "2025-11-17",
     category: "DevOps",
     readTime: "8 min read",
-    image: "/2.png",
+    image: "/axora-main.png",
     keywords: ["devops", "sre", "kubernetes", "terraform"],
     skills: ["Kubernetes", "Terraform", "Prometheus/Grafana"],
     content: [
@@ -267,7 +267,7 @@ export const hires: HirePage[] = [
     date: "2025-11-17",
     category: "Data",
     readTime: "8 min read",
-    image: "/2.png",
+    image: "/axora-main.png",
     keywords: ["data engineers", "dbt", "snowflake", "kafka"],
     skills: ["dbt", "Snowflake", "Kafka"],
     content: [
@@ -293,7 +293,7 @@ export const hires: HirePage[] = [
     date: "2025-11-17",
     category: "Design",
     readTime: "7 min read",
-    image: "/2.png",
+    image: "/axora-main.png",
     keywords: ["ui ux designers", "design systems", "figma"],
     skills: ["Figma", "Accessibility", "Prototyping"],
     content: [
@@ -319,7 +319,7 @@ export const hires: HirePage[] = [
     date: "2025-11-17",
     category: "QA",
     readTime: "7 min read",
-    image: "/2.png",
+    image: "/axora-main.png",
     keywords: ["qa automation", "cypress", "playwright"],
     skills: ["Cypress", "Playwright", "k6"],
     content: [
@@ -345,7 +345,7 @@ export const hires: HirePage[] = [
     date: "2025-11-17",
     category: "AI/ML",
     readTime: "9 min read",
-    image: "/2.png",
+    image: "/axora-main.png",
     keywords: ["ai specialists", "ml engineers", "llms", "computer vision"],
     skills: ["LLMs", "CV", "MLOps"],
     content: [

@@ -66,7 +66,7 @@ const HireLandingPage: NextPage<Props> = ({ page }) => {
                 "@type": "Organization",
                 name: "Axora Infotech",
                 url: "https://axorainfotech.com",
-                logo: "https://axorainfotech.com/2.png",
+                logo: "https://axorainfotech.com/axora-main.png",
               },
               url: canonical,
               offers: {
@@ -138,7 +138,7 @@ const HireLandingPage: NextPage<Props> = ({ page }) => {
               "@type": "Organization",
               name: "Axora Infotech",
               url: "https://axorainfotech.com",
-              logo: "https://axorainfotech.com/2.png",
+              logo: "https://axorainfotech.com/axora-main.png",
               contactPoint: [
                 {
                   "@type": "ContactPoint",
@@ -171,7 +171,7 @@ const HireLandingPage: NextPage<Props> = ({ page }) => {
                   name: "Axora Infotech",
                   logo: {
                     "@type": "ImageObject",
-                    url: "https://axorainfotech.com/2.png",
+                    url: "https://axorainfotech.com/axora-main.png",
                   },
                 },
                 image: page.ogImage || "https://axorainfotech.com/og-image.jpg",
@@ -189,7 +189,7 @@ const HireLandingPage: NextPage<Props> = ({ page }) => {
           <nav className="container mx-auto px-4 py-4 flex justify-between items-center">
             <Link href="/" className="flex items-center text-2xl font-bold">
               <Image
-                src="/2.png"
+                src="/axora-main.png"
                 alt="Axora Infotech Logo"
                 width={150}
                 height={80}
@@ -242,7 +242,7 @@ const HireLandingPage: NextPage<Props> = ({ page }) => {
                 </div>
                 <div>
                   <Image
-                    src={page.image || "/2.png"}
+                    src={page.image || "/axora-main.png"}
                     alt={page.title}
                     width={1200}
                     height={800}
