@@ -67,7 +67,7 @@ const ServiceLandingPage: NextPage<Props> = ({ service }) => {
                 "@type": "Organization",
                 name: "Axora Infotech",
                 url: "https://axorainfotech.com",
-                logo: "https://axorainfotech.com/axora-main.png",
+                logo: "https://axorainfotech.com/axora-full-main.png",
               },
               url: canonical,
               offers: {
@@ -139,7 +139,7 @@ const ServiceLandingPage: NextPage<Props> = ({ service }) => {
               "@type": "Organization",
               name: "Axora Infotech",
               url: "https://axorainfotech.com",
-              logo: "https://axorainfotech.com/axora-main.png",
+              logo: "https://axorainfotech.com/axora-full-main.png",
               contactPoint: [
                 {
                   "@type": "ContactPoint",
@@ -172,7 +172,7 @@ const ServiceLandingPage: NextPage<Props> = ({ service }) => {
                   name: "Axora Infotech",
                   logo: {
                     "@type": "ImageObject",
-                    url: "https://axorainfotech.com/axora-main.png",
+                    url: "https://axorainfotech.com/axora-full-main.png",
                   },
                 },
                 image:
@@ -191,7 +191,7 @@ const ServiceLandingPage: NextPage<Props> = ({ service }) => {
           <nav className="container mx-auto px-4 py-4 flex justify-between items-center">
             <Link href="/" className="flex items-center text-2xl font-bold">
               <Image
-                src="/axora-main.png"
+                src="/axora-full-main.png"
                 alt="Axora Infotech Logo"
                 width={150}
                 height={80}
@@ -247,7 +247,7 @@ const ServiceLandingPage: NextPage<Props> = ({ service }) => {
                 </div>
                 <div>
                   <Image
-                    src={service.image || "/axora-main.png"}
+                    src={service.image || "/axora-full-main.png"}
                     alt={service.title}
                     width={1200}
                     height={800}

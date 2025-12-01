@@ -132,7 +132,7 @@ const Home: NextPage = () => {
               name: "Axora Infotech",
               alternateName: "Axora",
               url: "https://axorainfotech.com",
-              logo: "https://axorainfotech.com/axora-main.png",
+              logo: "https://axorainfotech.com/axora-full-main.png",
               description:
                 "Leading AI software development company specializing in computer vision, visual search engines, and enterprise AI solutions.",
               foundingDate: "2020",
@@ -249,7 +249,7 @@ const Home: NextPage = () => {
             {/* Logo */}
             <a href="#" className="flex items-center text-2xl font-bold">
               <Image
-                src="/axora-main.png"
+                src="/axora-full-main.png"
                 alt="Axora  Logo"
                 width={150}
                 height={80}

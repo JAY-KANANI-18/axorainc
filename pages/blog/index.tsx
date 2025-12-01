@@ -92,7 +92,7 @@ const Blog: NextPage = () => {
                 name: "Axora Infotech",
                 logo: {
                   "@type": "ImageObject",
-                  url: "https://axorainfotech.com/axora-main.png",
+                  url: "https://axorainfotech.com/axora-full-main.png",
                 },
               },
             }),
@@ -148,7 +148,7 @@ const Blog: NextPage = () => {
           <nav className="container mx-auto px-4 py-4 flex justify-between items-center">
             <a href="/" className="flex items-center text-2xl font-bold">
               <Image
-                src="/axora-main.png"
+                src="/axora-full-main.png"
                 alt="Axora Infotech Logo"
                 width={150}
                 height={80}
