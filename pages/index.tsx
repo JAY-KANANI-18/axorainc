@@ -244,7 +244,7 @@ const Home: NextPage = () => {
 
       <div className="min-h-screen flex flex-col">
         {/* HEADER */}
-        <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-sm shadow-sm">
+        <header className="sticky top-0 z-50 bg-white">
           <nav className="container mx-auto px-4 py-4 flex justify-between items-center">
             {/* Logo */}
             <a href="#" className="flex items-center text-2xl font-bold">
