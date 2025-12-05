@@ -42,7 +42,7 @@ const Hero: React.FC = () => {
     from-rose-400/30 to-fuchsia-500/30 rounded-full mix-blend-multiply 
     filter blur-xl animate-blob animation-delay-1000"
         ></div>
-        <div className="mb-10 md:mb-0 ">
+        <div className="mb-10 md:mb-0  ">
           <div
             className="inline-flex items-center px-4 py-2 
           bg-gradient-to-r from-blue-500/10 to-purple-500/10 
@@ -56,12 +56,14 @@ const Hero: React.FC = () => {
           </div>
 
           <h1
-            className="text-4xl md:text-5xl lg:text-6xl font-bold 
-          bg-gradient-to-r from-white via-blue-100 to-purple-100 
-          bg-clip-text text-transparent leading-tight mb-6"
-          >
-            Building the Digital Products That Power Tomorrow
-          </h1>
+  className="text-4xl md:text-5xl lg:text-6xl font-bold 
+  bg-gradient-to-r from-white via-blue-100 to-purple-100 
+  bg-clip-text text-transparent  mb-6"
+  style={{ lineHeight: "1.2" }}
+>
+  Building the Digital Products That Power Tomorrow
+</h1>
+
 
           <p className="text-xl text-gray-300 mb-8 leading-relaxed max-w-xl">
             We craft enterprise SaaS, CRM systems, and intelligent platforms
