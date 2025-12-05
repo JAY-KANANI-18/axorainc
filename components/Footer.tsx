@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-1">
             <a href="#" className="text-2xl font-bold text-white">
-              Axora<span className="text-primary-400"></span>
+              Axora<span className="text-primary-400"></span> Infotech
             </a>
             <p className="mt-4 text-gray-400">
               Smart SaaS Solutions for Growing Businesses

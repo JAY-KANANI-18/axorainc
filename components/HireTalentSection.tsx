@@ -1,5 +1,7 @@
 import Link from "next/link";
 import React from "react";
+import { FaReact, FaNodeJs, FaMobileAlt, FaUsers, FaTools, FaDatabase, FaRobot, FaPalette, FaCheckCircle } from "react-icons/fa";
+import { SiNextdotjs } from "react-icons/si";
 
 const roles = [
   {
@@ -8,7 +10,7 @@ const roles = [
     description:
       "Build lightning-fast interfaces, PWAs, and design systems with senior React engineers experienced in enterprise-scale applications.",
     skills: ["React 18", "Next.js", "TypeScript"],
-    icon: "⚛️",
+    icon: <FaReact className="text-3xl text-blue-500" />,
   },
   {
     title: "Hire Node.js Developers",
@@ -16,7 +18,7 @@ const roles = [
     description:
       "Deliver resilient APIs, microservices, and event-driven architectures powered by modern Node.js stacks.",
     skills: ["NestJS", "Express", "Serverless"],
-    icon: "🟢",
+    icon: <FaNodeJs className="text-3xl text-green-500" />,
   },
   {
     title: "Hire Next.js Engineers",
@@ -24,7 +26,7 @@ const roles = [
     description:
       "Ship production-ready Next.js platforms optimized for SEO, edge delivery, and omnichannel experiences.",
     skills: ["App Router", "ISR", "Vercel"],
-    icon: "🧭",
+    icon: <SiNextdotjs className="text-3xl text-black" />,
   },
   {
     title: "Hire Full-Stack Teams",
@@ -32,7 +34,7 @@ const roles = [
     description:
       "Assemble cross-functional squads covering UX, front-end, back-end, QA, and product leadership to accelerate roadmaps.",
     skills: ["Agile Pods", "Product Strategy", "QA Automation"],
-    icon: "🧑‍🤝‍🧑",
+    icon: <FaUsers className="text-3xl text-purple-500" />,
   },
   {
     title: "Hire Mobile App Developers",
@@ -40,7 +42,7 @@ const roles = [
     description:
       "Launch iOS, Android, and cross-platform apps with engaging UX, offline-first capability, and analytics instrumentation.",
     skills: ["Swift", "Kotlin", "Flutter"],
-    icon: "📱",
+    icon: <FaMobileAlt className="text-3xl text-blue-400" />,
   },
   {
     title: "Hire DevOps & SRE Experts",
@@ -48,7 +50,7 @@ const roles = [
     description:
       "Implement CI/CD, observability, and cloud governance to deliver reliable, scalable software delivery pipelines.",
     skills: ["Kubernetes", "Terraform", "AWS/GCP"],
-    icon: "⚙️",
+    icon: <FaTools className="text-3xl text-gray-600" />,
   },
   {
     title: "Hire Data Engineers",
@@ -56,7 +58,7 @@ const roles = [
     description:
       "Design modern data platforms, streaming pipelines, and governed warehouses driving analytics-led decision making.",
     skills: ["dbt", "Snowflake", "Kafka"],
-    icon: "📊",
+    icon: <FaDatabase className="text-3xl text-blue-400" />,
   },
   {
     title: "Hire UI/UX Designers",
@@ -64,7 +66,7 @@ const roles = [
     description:
       "Elevate customer journeys with research-backed UX, component libraries, and accessible design systems.",
     skills: ["Design Systems", "Figma", "Interaction Design"],
-    icon: "🎨",
+    icon: <FaPalette className="text-3xl text-pink-400" />,
   },
   {
     title: "Hire QA Automation Engineers",
@@ -72,7 +74,7 @@ const roles = [
     description:
       "Safeguard quality with automated test suites, performance benchmarking, and release readiness metrics.",
     skills: ["Cypress", "Playwright", "Performance Testing"],
-    icon: "✅",
+    icon: <FaCheckCircle className="text-3xl text-green-400" />,
   },
   {
     title: "Hire AI & ML Specialists",
@@ -80,7 +82,7 @@ const roles = [
     description:
       "Prototype and productionize AI solutions covering LLMs, computer vision, NLP, and predictive analytics.",
     skills: ["LLMs", "Computer Vision", "MLOps"],
-    icon: "🤖",
+    icon: <FaRobot className="text-3xl text-blue-300" />,
   },
 ];
 
@@ -109,7 +111,7 @@ const HireTalentSection: React.FC = () => {
             >
               <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
               <div className="relative z-10 space-y-5">
-                <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-blue-500/20 text-2xl">
+                <div className="mb-2">
                   {role.icon}
                 </div>
                 <div className="text-2xl font-semibold text-white">
@@ -118,7 +120,6 @@ const HireTalentSection: React.FC = () => {
                 <p className="text-blue-100 leading-relaxed">
                   {role.description}
                 </p>
-                <div className="flex flex-wrap gap-2">
                   {role.skills.map((skill) => (
                     <span
                       key={skill}
@@ -127,26 +128,27 @@ const HireTalentSection: React.FC = () => {
                       {skill}
                     </span>
                   ))}
-                </div>
-                <Link
-                  href="#contact"
-                  className="inline-flex items-center gap-2 text-blue-200 font-semibold hover:text-white transition-colors"
-                >
-                  Get started
-                  <svg
-                    className="w-4 h-4"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
+                <div className="mt-6">
+                  <Link
+                    href="#contact"
+                    className="inline-flex items-center gap-2 text-blue-200 font-semibold hover:text-white transition-colors"
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
-                </Link>
+                    Get started
+                    <svg
+                      className="w-4 h-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 5l7 7-7 7"
+                      />
+                    </svg>
+                  </Link>
+                </div>
               </div>
             </div>
           ))}

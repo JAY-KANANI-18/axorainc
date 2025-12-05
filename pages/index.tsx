@@ -617,9 +617,9 @@ const Home: NextPage = () => {
           <Products />
           <Features />
           <About />
-          <TechStack />
+          {/* <TechStack /> */}
           {/* <Portfolio /> */}
-          {/* <Testimonials /> */}
+          <Testimonials />
           <Contact />
         </main>
 

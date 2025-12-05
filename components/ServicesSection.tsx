@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+import { FaRobot, FaRocket, FaBrain, FaBuilding, FaMobileAlt, FaCloud, FaChartBar, FaCogs, FaShoppingCart, FaChartLine } from "react-icons/fa";
 
 const services = [
   {
@@ -8,7 +9,7 @@ const services = [
     description:
       "Design, build, and iterate AI-native applications that blend machine learning, computer vision, and generative AI to automate critical decision making.",
     focusAreas: ["ML Ops", "Generative AI", "Vision AI"],
-    icon: "🤖",
+    icon: <FaRobot className="text-2xl text-blue-400" />,
   },
   {
     title: "Custom SaaS Platforms",
@@ -16,7 +17,7 @@ const services = [
     description:
       "Launch subscription-based products faster with multitenant architectures, billing, analytics, and scalable cloud foundations.",
     focusAreas: ["Multitenancy", "Billing Engines", "Product Roadmaps"],
-    icon: "🚀",
+    icon: <FaRocket className="text-2xl text-purple-400" />,
   },
   {
     title: "CRM Modernization",
@@ -24,7 +25,7 @@ const services = [
     description:
       "Reimagine customer journeys with tailored CRM workflows, intelligent automation, and integrations across sales, support, and marketing stacks.",
     focusAreas: ["Salesforce", "HubSpot", "Custom CRM"],
-    icon: "🧠",
+    icon: <FaBrain className="text-2xl text-pink-400" />,
   },
   {
     title: "Enterprise Web Applications",
@@ -32,7 +33,7 @@ const services = [
     description:
       "Craft secure, high-performing web platforms with future-ready architectures, micro frontends, and design systems.",
     focusAreas: ["Next.js", "Micro Frontends", "Design Systems"],
-    icon: "🏗️",
+    icon: <FaBuilding className="text-2xl text-indigo-400" />,
   },
   {
     title: "Mobile App Development",
@@ -40,7 +41,7 @@ const services = [
     description:
       "Deliver native and cross-platform experiences tuned for performance, offline-first usage, and delightful UX across devices.",
     focusAreas: ["iOS & Android", "Flutter", "React Native"],
-    icon: "📱",
+    icon: <FaMobileAlt className="text-2xl text-green-400" />,
   },
   {
     title: "Cloud & DevOps Automation",
@@ -48,7 +49,7 @@ const services = [
     description:
       "Automate deployments, observability, and resilience across AWS, Azure, and GCP with infrastructure-as-code and FinOps best practices.",
     focusAreas: ["IaC", "Kubernetes", "FinOps"],
-    icon: "☁️",
+    icon: <FaCloud className="text-2xl text-blue-300" />,
   },
   {
     title: "Data Engineering & Analytics",
@@ -56,7 +57,7 @@ const services = [
     description:
       "Unlock insights with modern data stacks, governed pipelines, real-time dashboards, and AI-assisted analytics experiences.",
     focusAreas: ["Modern Data Stack", "ETL/ELT", "BI Dashboards"],
-    icon: "📊",
+    icon: <FaChartBar className="text-2xl text-blue-400" />,
   },
   {
     title: "Intelligent Process Automation",
@@ -64,7 +65,7 @@ const services = [
     description:
       "Streamline operations by blending RPA, low-code, and AI assistants to orchestrate complex business workflows end-to-end.",
     focusAreas: ["Hyperautomation", "RPA", "Workflow Design"],
-    icon: "⚙️",
+    icon: <FaCogs className="text-2xl text-gray-400" />,
   },
   {
     title: "Digital Commerce & Marketplaces",
@@ -72,7 +73,7 @@ const services = [
     description:
       "Build conversion-first eCommerce and marketplace experiences with headless architectures, personalization, and analytics.",
     focusAreas: ["Headless Commerce", "Personalization", "Growth"],
-    icon: "🛒",
+    icon: <FaShoppingCart className="text-2xl text-purple-400" />,
   },
   {
     title: "SEO & Growth Marketing",
@@ -80,7 +81,7 @@ const services = [
     description:
       "Accelerate organic and paid acquisition with technical SEO, content marketing, conversion optimization, and analytics insights.",
     focusAreas: ["Technical SEO", "Content Ops", "CRO"],
-    icon: "📈",
+    icon: <FaChartLine className="text-2xl text-green-400" />,
   },
 ];
 
@@ -126,7 +127,7 @@ const ServicesSection: React.FC = () => {
             >
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-white to-purple-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
               <div className="relative z-10 space-y-5">
-                <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-blue-100 text-2xl">
+                <div className="mb-2">
                   {service.icon}
                 </div>
                 <div className="text-2xl font-semibold text-slate-900">
@@ -135,35 +136,37 @@ const ServicesSection: React.FC = () => {
                 <p className="text-slate-600 leading-relaxed">
                   {service.description}
                 </p>
-                <div className="flex flex-wrap gap-2">
-                  {service.focusAreas.map((area) => (
-                    <span
-                      key={area}
-                      className="px-3 py-1 bg-blue-50 text-blue-600 rounded-full text-xs font-semibold"
-                    >
-                      {area}
-                    </span>
-                  ))}
-                </div>
-                <Link
-                  href={slugMap[service.anchor] ? `/services/${slugMap[service.anchor]}` : "/services"}
-                  className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-800 transition-colors"
-                >
-                  Learn more
-                  <svg
-                    className="w-4 h-4"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
+                  <div className="flex flex-wrap gap-2 mt-4">
+                    {service.focusAreas.map((area) => (
+                      <span
+                        key={area}
+                        className="px-3 py-1 bg-blue-50 text-blue-600 rounded-full text-xs font-semibold"
+                      >
+                        {area}
+                      </span>
+                    ))}
+                  </div>
+                <div className="mt-6">
+                  <Link
+                    href={slugMap[service.anchor] ? `/services/${slugMap[service.anchor]}` : "/services"}
+                    className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-800 transition-colors"
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
-                </Link>
+                    Learn more
+                    <svg
+                      className="w-4 h-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 5l7 7-7 7"
+                      />
+                    </svg>
+                  </Link>
+                </div>
               </div>
             </div>
           ))}

@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import { FaRocket } from "react-icons/fa";
 
 const Hero: React.FC = () => {
   return (
@@ -13,8 +14,9 @@ const Hero: React.FC = () => {
       <div className="container mx-auto px-4 md:px-6 flex flex-col md:flex-row items-center relative z-10">
         <div className="md:w-1/2 mb-10 md:mb-0">
           <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-500/10 to-purple-500/10 backdrop-blur-sm border border-blue-500/20 rounded-full mb-6">
-            <span className="text-blue-400 text-sm font-medium">
-              🚀 AI-Driven Software Innovation
+            <span className="text-blue-400 text-sm font-medium flex items-center gap-2">
+              <FaRocket className="text-blue-300" />
+              AI-Driven Software Innovation
             </span>
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-white via-blue-100 to-purple-100 bg-clip-text text-transparent leading-tight mb-6">
