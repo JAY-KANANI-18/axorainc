@@ -22,9 +22,9 @@ const Hero: React.FC = () => {
           </h1>
           <p className="text-xl text-gray-300 mb-8 max-w-xl leading-relaxed">
             We design, build, and scale custom software platforms across web and
-            mobile, infusing every experience with AI, automation, and cloud-native
-            engineering. From bespoke SaaS to CRM modernization, we deliver
-            end-to-end product strategy, UX, and development.
+            mobile, infusing every experience with AI, automation, and
+            cloud-native engineering. From bespoke SaaS to CRM modernization, we
+            deliver end-to-end product strategy, UX, and development.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <a

@@ -22,15 +22,39 @@ const Home: NextPage = () => {
   const [mobileHireOpen, setMobileHireOpen] = useState(false);
 
   const servicesMenu = [
-    { label: "AI Product Engineering", href: "/services/ai-product-engineering" },
-    { label: "Custom SaaS platforms", href: "/services/custom-saas-development" },
+    {
+      label: "AI Product Engineering",
+      href: "/services/ai-product-engineering",
+    },
+    {
+      label: "Custom SaaS platforms",
+      href: "/services/custom-saas-development",
+    },
     { label: "CRM Modernization", href: "/services/crm-modernization" },
-    { label: "Enterprise Web Applications", href: "/services/enterprise-web-applications" },
-    { label: "Mobile App Development", href: "/services/mobile-app-development" },
-    { label: "Cloud & DevOps Automation", href: "/services/cloud-devops-automation" },
-    { label: "Data Engineering & Analytics", href: "/services/data-engineering-analytics" },
-    { label: "Intelligent Process Automation", href: "/services/intelligent-process-automation" },
-    { label: "Digital Commerce & Marketplaces", href: "/services/digital-commerce-marketplaces" },
+    {
+      label: "Enterprise Web Applications",
+      href: "/services/enterprise-web-applications",
+    },
+    {
+      label: "Mobile App Development",
+      href: "/services/mobile-app-development",
+    },
+    {
+      label: "Cloud & DevOps Automation",
+      href: "/services/cloud-devops-automation",
+    },
+    {
+      label: "Data Engineering & Analytics",
+      href: "/services/data-engineering-analytics",
+    },
+    {
+      label: "Intelligent Process Automation",
+      href: "/services/intelligent-process-automation",
+    },
+    {
+      label: "Digital Commerce & Marketplaces",
+      href: "/services/digital-commerce-marketplaces",
+    },
     { label: "SEO & Growth Marketing", href: "/services/seo-growth-marketing" },
     { label: "View all services", href: "/services" },
   ];
@@ -248,18 +272,32 @@ const Home: NextPage = () => {
           <nav className="container mx-auto px-4 py-4 flex justify-between items-center">
             {/* Logo */}
             <a href="#" className="flex items-center text-2xl font-bold">
+              {/* if desktop this logo*/}
+
               <Image
                 src="/axora-full-main.png"
-                alt="Axora  Logo"
+                alt="Axora Logo Desktop"
                 width={150}
                 height={80}
                 priority
+                className="hidden md:block"
               />
+
+              {/* Mobile Logo */}
+              <Image
+                src="/axora-main.png" // ← your mobile version
+                alt="Axora Logo Mobile"
+                width={80}
+                height={50}
+                priority
+                className="block md:hidden"
+              />
+
               {/* Axora<span className="text-primary-400">Inc</span> */}
             </a>
 
             {/* Desktop Menu */}
-            <div className="hidden md:flex items-center space-x-6">
+            <div className="hidden lg:flex items-center space-x-6">
               <div
                 className="relative"
                 onMouseEnter={() => setServicesMenuOpen(true)}
@@ -384,12 +422,7 @@ const Home: NextPage = () => {
                   </div>
                 </div>
               </div>
-              <a
-                href="#contact"
-                className="text-secondary-600 hover:text-primary-600"
-              >
-                Get Quote
-              </a>
+
               <a
                 href="/careers"
                 className="text-secondary-600 hover:text-primary-600"
@@ -397,9 +430,18 @@ const Home: NextPage = () => {
                 Careers
               </a>
             </div>
+            <div>
+              {" "}
+              <a
+                href="#contact"
+                className="group px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold rounded-xl transition-all duration-300 text-center shadow-2xl hover:shadow-blue-500/25 transform hover:-translate-y-1 hover:scale-105"
+              >
+                Connect
+              </a>
+            </div>
 
             {/* Mobile Hamburger */}
-            <div className="md:hidden">
+            <div className="lg:hidden">
               <button
                 onClick={() => setMenuOpen(!menuOpen)}
                 className="text-secondary-800 hover:text-primary-600"
@@ -443,7 +485,7 @@ const Home: NextPage = () => {
 
           {/* Mobile Menu Items */}
           {menuOpen && (
-            <div className="md:hidden bg-white border-t">
+            <div className="lg:hidden bg-white border-t">
               <div className="flex flex-col space-y-4 px-6 py-4">
                 <div className="space-y-2">
                   <button
