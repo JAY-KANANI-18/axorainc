@@ -266,7 +266,7 @@ const Home: NextPage = () => {
         />
       </Head>
 
-      <div className="min-h-screen flex flex-col">
+      <div className="min-h-screen flex flex-col font-bold">
         {/* HEADER */}
         <header className="sticky top-0 z-50 bg-white">
           <nav className="container mx-auto px-4 py-4 flex justify-between items-center">
@@ -297,7 +297,7 @@ const Home: NextPage = () => {
             </a>
 
             {/* Desktop Menu */}
-            <div className="hidden lg:flex items-center space-x-6">
+            <div className="hidden lg:flex items-center space-x-10">
               <div
                 className="relative"
                 onMouseEnter={() => setServicesMenuOpen(true)}
