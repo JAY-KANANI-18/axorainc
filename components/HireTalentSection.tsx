@@ -1,7 +1,18 @@
 import Link from "next/link";
 import React from "react";
-import { FaReact, FaNodeJs, FaMobileAlt, FaUsers, FaTools, FaDatabase, FaRobot, FaPalette, FaCheckCircle } from "react-icons/fa";
+import {
+  FaReact,
+  FaNodeJs,
+  FaMobileAlt,
+  FaUsers,
+  FaDatabase,
+  FaRobot,
+  FaPalette,
+  FaCheckCircle,
+  FaCloud,
+} from "react-icons/fa";
 import { SiNextdotjs } from "react-icons/si";
+import { GiArtificialIntelligence } from "react-icons/gi";
 
 const roles = [
   {
@@ -26,7 +37,7 @@ const roles = [
     description:
       "Ship production-ready Next.js platforms optimized for SEO, edge delivery, and omnichannel experiences.",
     skills: ["App Router", "ISR", "Vercel"],
-    icon: <SiNextdotjs className="text-3xl text-black" />,
+    icon: <SiNextdotjs className="text-3xl text-white" />,
   },
   {
     title: "Hire Full-Stack Teams",
@@ -50,7 +61,7 @@ const roles = [
     description:
       "Implement CI/CD, observability, and cloud governance to deliver reliable, scalable software delivery pipelines.",
     skills: ["Kubernetes", "Terraform", "AWS/GCP"],
-    icon: <FaTools className="text-3xl text-gray-600" />,
+    icon: <FaCloud className="text-3xl text-blue-400" />,
   },
   {
     title: "Hire Data Engineers",
@@ -82,7 +93,7 @@ const roles = [
     description:
       "Prototype and productionize AI solutions covering LLMs, computer vision, NLP, and predictive analytics.",
     skills: ["LLMs", "Computer Vision", "MLOps"],
-    icon: <FaRobot className="text-3xl text-blue-300" />,
+    icon: <GiArtificialIntelligence className="text-3xl text-blue-300" />,
   },
 ];
 
@@ -98,7 +109,9 @@ const HireTalentSection: React.FC = () => {
             Hire Elite Product Teams & Specialists On Demand
           </h2>
           <p className="text-lg text-blue-100">
-            Scale engineering velocity with vetted experts embedded within your workflows. Flexible engagement models span staff augmentation, agile pods, and turnkey delivery squads.
+            Scale engineering velocity with vetted experts embedded within your
+            workflows. Flexible engagement models span staff augmentation, agile
+            pods, and turnkey delivery squads.
           </p>
         </div>
 
@@ -111,23 +124,21 @@ const HireTalentSection: React.FC = () => {
             >
               <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
               <div className="relative z-10 space-y-5">
-                <div className="mb-2">
-                  {role.icon}
-                </div>
+                <div className="mb-2">{role.icon}</div>
                 <div className="text-2xl font-semibold text-white">
                   {role.title}
                 </div>
                 <p className="text-blue-100 leading-relaxed">
                   {role.description}
                 </p>
-                  {role.skills.map((skill) => (
-                    <span
-                      key={skill}
-                      className="px-3 py-1 bg-white/10 text-blue-100 rounded-full text-xs font-semibold"
-                    >
-                      {skill}
-                    </span>
-                  ))}
+                {role.skills.map((skill) => (
+                  <span
+                    key={skill}
+                    className="px-3 py-1 bg-white/10 text-blue-100 rounded-full text-xs font-semibold"
+                  >
+                    {skill}
+                  </span>
+                ))}
                 <div className="mt-6">
                   <Link
                     href="#contact"

@@ -268,7 +268,7 @@ const Home: NextPage = () => {
 
       <div className="min-h-screen flex flex-col font-bold">
         {/* HEADER */}
-        <header className="sticky top-0 z-50 bg-white">
+        <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-sm shadow-sm text-black">
           <nav className="container mx-auto px-4 py-4 flex justify-between items-center">
             {/* Logo */}
             <a href="#" className="flex items-center text-2xl font-bold">
@@ -297,7 +297,7 @@ const Home: NextPage = () => {
             </a>
 
             {/* Desktop Menu */}
-            <div className="hidden lg:flex items-center space-x-10">
+            <div className="hidden lg:flex items-center space-x-10 text-lg">
               <div
                 className="relative"
                 onMouseEnter={() => setServicesMenuOpen(true)}
@@ -306,7 +306,7 @@ const Home: NextPage = () => {
                 <button
                   type="button"
                   onClick={() => setServicesMenuOpen((prev) => !prev)}
-                  className="inline-flex items-center gap-2 text-secondary-600 hover:text-primary-600 transition-colors"
+                  className="inline-flex items-center gap-2  hover:text-purple-800 transition-colors"
                 >
                   Services
                   <svg
@@ -337,7 +337,7 @@ const Home: NextPage = () => {
                       <a
                         key={item.href}
                         href={item.href}
-                        className="block rounded-xl px-4 py-2 text-sm text-slate-700 hover:bg-blue-50 hover:text-blue-700 transition-colors"
+                        className="block rounded-xl px-4 py-2 text-sm text-slate-700 hover:bg-blue-50 hover:text-purple-800 transition-colors"
                       >
                         {item.label}
                       </a>
@@ -351,22 +351,13 @@ const Home: NextPage = () => {
                   </div>
                 </div>
               </div>
-              <a
-                href="/axovision"
-                className="text-secondary-600 hover:text-primary-600"
-              >
+              <a href="/axovision" className=" hover:text-purple-800">
                 AxoVision
               </a>
-              <a
-                href="#features"
-                className="text-secondary-600 hover:text-primary-600"
-              >
+              <a href="#features" className=" hover:text-purple-800">
                 Features
               </a>
-              <a
-                href="/blog"
-                className="text-secondary-600 hover:text-primary-600"
-              >
+              <a href="/blog" className=" hover:text-purple-800">
                 Blog
               </a>
               <div
@@ -377,7 +368,7 @@ const Home: NextPage = () => {
                 <button
                   type="button"
                   onClick={() => setHireMenuOpen((prev) => !prev)}
-                  className="inline-flex items-center gap-2 text-secondary-600 hover:text-primary-600 transition-colors"
+                  className="inline-flex items-center gap-2  hover:text-purple-800 transition-colors"
                 >
                   Hire
                   <svg
@@ -423,10 +414,7 @@ const Home: NextPage = () => {
                 </div>
               </div>
 
-              <a
-                href="/careers"
-                className="text-secondary-600 hover:text-primary-600"
-              >
+              <a href="/careers" className=" hover:text-purple-800">
                 Careers
               </a>
             </div>
@@ -444,7 +432,7 @@ const Home: NextPage = () => {
             <div className="lg:hidden">
               <button
                 onClick={() => setMenuOpen(!menuOpen)}
-                className="text-secondary-800 hover:text-primary-600"
+                className="text-secondary-800 hover:text-purple-800"
               >
                 {menuOpen ? (
                   // X icon when open
@@ -491,7 +479,7 @@ const Home: NextPage = () => {
                   <button
                     type="button"
                     onClick={() => setMobileServicesOpen((prev) => !prev)}
-                    className="flex w-full items-center justify-between text-secondary-600 hover:text-primary-600"
+                    className="flex w-full items-center justify-between  hover:text-purple-800"
                   >
                     <span>Services</span>
                     <svg
@@ -520,7 +508,7 @@ const Home: NextPage = () => {
                             setMenuOpen(false);
                             setMobileServicesOpen(false);
                           }}
-                          className="block text-sm text-secondary-500 hover:text-primary-600"
+                          className="block text-sm text-secondary-500 hover:text-purple-800"
                         >
                           {item.label}
                         </a>
@@ -531,21 +519,21 @@ const Home: NextPage = () => {
                 <a
                   href="/axovision"
                   onClick={() => setMenuOpen(false)}
-                  className="text-secondary-600 hover:text-primary-600"
+                  className=" hover:text-purple-800"
                 >
                   AxoVision
                 </a>
                 <a
                   href="#features"
                   onClick={() => setMenuOpen(false)}
-                  className="text-secondary-600 hover:text-primary-600"
+                  className=" hover:text-purple-800"
                 >
                   Features
                 </a>
                 <a
                   href="/blog"
                   onClick={() => setMenuOpen(false)}
-                  className="text-secondary-600 hover:text-primary-600"
+                  className=" hover:text-purple-800"
                 >
                   Blog
                 </a>
@@ -553,7 +541,7 @@ const Home: NextPage = () => {
                   <button
                     type="button"
                     onClick={() => setMobileHireOpen((prev) => !prev)}
-                    className="flex w-full items-center justify-between text-secondary-600 hover:text-primary-600"
+                    className="flex w-full items-center justify-between  hover:text-purple-800"
                   >
                     <span>Hire</span>
                     <svg
@@ -582,7 +570,7 @@ const Home: NextPage = () => {
                             setMenuOpen(false);
                             setMobileHireOpen(false);
                           }}
-                          className="block text-sm text-secondary-500 hover:text-primary-600"
+                          className="block text-sm text-secondary-500 hover:text-purple-800"
                         >
                           {item.label}
                         </a>
@@ -593,14 +581,14 @@ const Home: NextPage = () => {
                 <a
                   href="/careers"
                   onClick={() => setMenuOpen(false)}
-                  className="text-secondary-600 hover:text-primary-600"
+                  className=" hover:text-purple-800"
                 >
                   Careers
                 </a>
                 <a
                   href="#contact"
                   onClick={() => setMenuOpen(false)}
-                  className="text-secondary-600 hover:text-primary-600"
+                  className=" hover:text-purple-800"
                 >
                   Contact
                 </a>

@@ -213,6 +213,7 @@ const Features: React.FC = () => {
           <FeatureCard
             title="Online Booking App"
             description="Streamline appointment scheduling with an intuitive booking system that integrates with your calendar and sends automated reminders."
+            gradient="from-blue-500 to-indigo-500"
             icon={
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -234,6 +235,7 @@ const Features: React.FC = () => {
           <FeatureCard
             title="AI Chatbot"
             description="Intelligent conversational AI to handle customer inquiries, provide support, and gather valuable insights 24/7."
+            gradient="from-purple-500 to-fuchsia-500"
             icon={
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -255,6 +257,7 @@ const Features: React.FC = () => {
           <FeatureCard
             title="Inventory Tool"
             description="Powerful inventory management system to track stock levels, automate reordering, and optimize your supply chain."
+            gradient="from-emerald-500 to-green-600"
             icon={
               <svg
                 xmlns="http://www.w3.org/2000/svg"
