@@ -6,6 +6,7 @@ import Footer from "../../components/Footer";
 import { hires } from "../../data/hire";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import { useRouter } from "next/navigation";
+import Nav from "@/components/Nav";
 
 const HireIndex: NextPage = () => {
   const router = useRouter();
@@ -89,28 +90,7 @@ const HireIndex: NextPage = () => {
       </Head>
 
       <div className="min-h-screen flex flex-col">
-        <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-sm shadow-sm">
-          <nav className="container mx-auto px-4 py-4 flex justify-between items-center">
-            <Link href="/" className="flex items-center text-2xl font-bold">
-              <Image
-                src="/axora-full-main.png"
-                alt="Axora Infotech Logo"
-                width={150}
-                height={80}
-                priority
-              />
-            </Link>
-            <div className="flex gap-6">
-              {/* <Link href="/blog" className="text-gray-600 hover:text-blue-600 transition-colors">Blog</Link> */}
-              <Link
-                href="/#contact"
-                className="px-6 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:shadow-lg transition-all"
-              >
-                Contact
-              </Link>
-            </div>
-          </nav>
-        </header>
+          <Nav />
 
         <main className="flex-grow">
           <section className="bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white py-20">
@@ -142,8 +122,13 @@ const HireIndex: NextPage = () => {
                     href={`/hire/${h.slug}`}
                     className="block bg-white rounded-2xl p-6 shadow hover:shadow-xl hover:-translate-y-1 transition-all border"
                   >
-                    <div className="h-40 mb-4 bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-xl flex items-center justify-center text-5xl">
-                      👩‍💻
+                   <div className="h-48 w-full bg-gradient-to-br from-blue-500 to-purple-500 relative">
+                      <Image
+                        src={h.image}
+                        alt={h.slug}
+                        fill
+                        className="object-cover"
+                      />
                     </div>
                     <h2 className="text-xl font-bold mb-2">{h.title}</h2>
                     <p className="text-slate-600 line-clamp-3">{h.excerpt}</p>

@@ -2,6 +2,7 @@ import { NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
 import Footer from "../components/Footer";
+import Nav from "@/components/Nav";
 
 const positions = [
   {
@@ -74,11 +75,11 @@ const Careers: NextPage = () => {
       </Head>
 
       <div className="min-h-screen flex flex-col bg-gradient-to-br from-slate-900 via-blue-900 to-purple-900 text-white">
-        <header className="py-6">
+        {/* <header className="py-6">
           <div className="container mx-auto px-4 flex justify-between items-center">
             <Link href="/" className="text-2xl font-bold">
               <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-                Axora Infotech Careers
+                  Axora Infotech Careers
               </span>
             </Link>
             <Link
@@ -88,8 +89,8 @@ const Careers: NextPage = () => {
               Talk to Talent Team
             </Link>
           </div>
-        </header>
-
+        </header> */}
+  <Nav />
         <main className="flex-grow">
           <section className="py-20">
             <div className="container mx-auto px-4 max-w-5xl text-center">

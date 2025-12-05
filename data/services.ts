@@ -42,8 +42,8 @@ export const services: ServicePage[] = [
     date: "2025-11-17",
     category: "AI Engineering",
     readTime: "10 min read",
-    image: "/services/ai-product-engineering-hero.jpg",
-    ogImage: "https://axorainfotech.com/services/ai-product-engineering-og.jpg",
+    image: "/images/services/ai-product-engineering.png",
+    ogImage: "https://axorainfotech.com/images/services/ai-product-engineering.png",
     keywords: [
       "AI product engineering",
       "LLM applications",
@@ -160,8 +160,8 @@ export const services: ServicePage[] = [
     date: "2025-11-17",
     category: "SaaS Engineering",
     readTime: "11 min read",
-    image: "/services/custom-saas-development-hero.jpg",
-    ogImage: "https://axorainfotech.com/services/custom-saas-development-og.jpg",
+    image: "/images/services/saas-development.png",
+    ogImage: "https://axorainfotech.com/images/services/saas-development.png",
     keywords: [
       "custom saas development",
       "multi-tenant architecture",
@@ -263,8 +263,8 @@ export const services: ServicePage[] = [
     date: "2025-11-17",
     category: "CRM",
     readTime: "9 min read",
-    image: "/services/crm-modernization-hero.jpg",
-    ogImage: "https://axorainfotech.com/services/crm-modernization-og.jpg",
+    image: "/images/services/crm-modernization.png",
+    ogImage: "https://axorainfotech.com/images/services/crm-modernization.png",
     keywords: [
       "crm modernization",
       "crm automation",
@@ -369,8 +369,8 @@ export const services: ServicePage[] = [
     date: "2025-11-17",
     category: "Web Apps",
     readTime: "14 min read",
-    image: "/services/enterprise-web-applications-hero.jpg",
-    ogImage: "https://axorainfotech.com/services/enterprise-web-applications-og.jpg",
+    image: "/images/services/enterprise-web-app.png",
+    ogImage: "https://axorainfotech.com/services/images/enterprise-web-app.png",
     keywords: [
       "enterprise web applications",
       "next.js",
@@ -531,8 +531,8 @@ export const services: ServicePage[] = [
     date: "2025-11-17",
     category: "Mobile",
     readTime: "13 min read",
-    image: "/services/mobile-app-development-hero.jpg",
-    ogImage: "https://axorainfotech.com/services/mobile-app-development-og.jpg",
+    image: "/images/services/mobile-dev.png",
+    ogImage: "https://axorainfotech.com/images/services/mobile-dev.png",
     keywords: [
       "mobile app development",
       "react native",
@@ -700,8 +700,8 @@ export const services: ServicePage[] = [
     date: "2025-11-17",
     category: "Cloud & DevOps",
     readTime: "10 min read",
-    image: "/services/cloud-devops-automation-hero.jpg",
-    ogImage: "https://axorainfotech.com/services/cloud-devops-automation-og.jpg",
+    image: "/images/services/cloud-eng.png",
+    ogImage: "https://axorainfotech.com/images/services/cloud-eng.png",
     keywords: [
       "devops automation",
       "kubernetes",
@@ -795,8 +795,8 @@ export const services: ServicePage[] = [
     date: "2025-11-17",
     category: "Data",
     readTime: "14 min read",
-    image: "/services/data-engineering-analytics-hero.jpg",
-    ogImage: "https://axorainfotech.com/services/data-engineering-analytics-og.jpg",
+    image: "/images/services/data-eng.png",
+    ogImage: "https://axorainfotech.com/images/services/data-eng.png",
     keywords: [
       "data engineering",
       "elt etl",
@@ -937,9 +937,9 @@ export const services: ServicePage[] = [
     date: "2025-11-17",
     category: "Automation",
     readTime: "12 min read",
-    image: "/services/intelligent-process-automation-hero.jpg",
+    image: "/images/services/automation.png",
     ogImage:
-      "https://axorainfotech.com/services/intelligent-process-automation-og.jpg",
+      "https://axorainfotech.com/images/services/automation.png",
     keywords: [
       "intelligent automation",
       "rpa",
@@ -1075,9 +1075,9 @@ export const services: ServicePage[] = [
     date: "2025-11-17",
     category: "Commerce",
     readTime: "13 min read",
-    image: "/services/digital-commerce-marketplaces-hero.jpg",
+    image: "/images/services/e-commerce.png",
     ogImage:
-      "https://axorainfotech.com/services/digital-commerce-marketplaces-og.jpg",
+      "https://axorainfotech.com/images/services/e-commerce.png",
     keywords: [
       "headless commerce",
       "marketplaces",
@@ -1223,8 +1223,8 @@ export const services: ServicePage[] = [
     date: "2025-11-17",
     category: "Growth",
     readTime: "14 min read",
-    image: "/services/seo-growth-marketing-hero.jpg",
-    ogImage: "https://axorainfotech.com/services/seo-growth-marketing-og.jpg",
+    image: "/images/services/seo.png",
+    ogImage: "https://axorainfotech.com/images/services/seo.png",
     keywords: [
       "technical seo",
       "content marketing",

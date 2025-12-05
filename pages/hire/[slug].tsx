@@ -7,6 +7,7 @@ import { hires, HirePage } from "../../data/hire";
 import EnquiryForm from "../../components/EnquiryForm";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import { useRouter } from "next/navigation";
+import Nav from "@/components/Nav";
 
 interface Props {
   page: HirePage;
@@ -185,28 +186,7 @@ const HireLandingPage: NextPage<Props> = ({ page }) => {
       </Head>
 
       <div className="min-h-screen flex flex-col">
-        <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-sm shadow-sm">
-          <nav className="container mx-auto px-4 py-4 flex justify-between items-center">
-            <Link href="/" className="flex items-center text-2xl font-bold">
-              <Image
-                src="/axora-full-main.png"
-                alt="Axora Infotech Logo"
-                width={150}
-                height={80}
-                priority
-              />
-            </Link>
-            <div className="flex gap-6">
-              {/* <Link href="/blog" className="text-gray-600 hover:text-blue-600 transition-colors">Blog</Link> */}
-              <Link
-                href="/#contact"
-                className="px-6 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:shadow-lg transition-all"
-              >
-                Contact
-              </Link>
-            </div>
-          </nav>
-        </header>
+        <Nav />
 
         <main className="flex-grow">
           <section className="bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white py-20">
