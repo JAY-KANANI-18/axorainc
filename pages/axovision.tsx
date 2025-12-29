@@ -469,15 +469,15 @@ const AxoVision: NextPage = () => {
                 {useCases.map((useCase) => (
                   <button
                     key={useCase.id}
-                    onClick={() => setActiveTab(useCase.id)}
+                    onClick={() => setActiveTab(useCase?.id)}
                     className={`px-6 py-3 rounded-xl font-semibold transition-all ${
-                      activeTab === useCase.id
+                      activeTab === useCase?.id
                         ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg"
                         : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                     }`}
                   >
-                    <span className="mr-2">{useCase.icon}</span>
-                    {useCase.name}
+                    {/* <span className="mr-2">{useCase?.icon}</span> */}
+                    {useCase?.name}
                   </button>
                 ))}
               </div>
@@ -485,14 +485,14 @@ const AxoVision: NextPage = () => {
               <div className="max-w-4xl mx-auto bg-gradient-to-br from-blue-50 to-purple-50 rounded-3xl p-8 md:p-12">
                 {useCases.map(
                   (useCase) =>
-                    activeTab === useCase.id && (
-                      <div key={useCase.id} className="text-center">
-                        <div className="text-6xl mb-6">{useCase.icon}</div>
+                    activeTab === useCase?.id && (
+                      <div key={useCase?.id} className="text-center">
+                        <div className="text-6xl mb-6">{useCase?.icon}</div>
                         <h3 className="text-3xl font-bold text-gray-900 mb-4">
-                          {useCase.name}
+                          {useCase?.name}
                         </h3>
                         <p className="text-xl text-gray-600 mb-8">
-                          {useCase.description}
+                          {useCase?.description}
                         </p>
                         <a
                           href="#contact"
