@@ -487,7 +487,7 @@ const AxoVision: NextPage = () => {
                   (useCase) =>
                     activeTab === useCase?.id && (
                       <div key={useCase?.id} className="text-center">
-                        <div className="text-6xl mb-6">{useCase?.icon}</div>
+                        {/* <div className="text-6xl mb-6">{useCase?.icon}</div> */}
                         <h3 className="text-3xl font-bold text-gray-900 mb-4">
                           {useCase?.name}
                         </h3>
