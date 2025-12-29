@@ -4,28 +4,51 @@ import Image from "next/image";
 import { useState } from "react";
 import Footer from "../components/Footer";
 
+import {
+  FaThLarge,
+  FaTshirt,
+  FaHome,
+  FaRobot,
+  FaBolt,
+  FaBullseye,
+  FaPalette,
+  FaCamera,
+  FaCheckCircle,
+  FaRocket,
+  FaPlayCircle,
+  FaLanguage,
+} from "react-icons/fa";
+
 const AxoVision: NextPage = () => {
   const [activeTab, setActiveTab] = useState("tiles");
+  const [activeLang, setActiveLang] = useState<"en" | "hi" | "gu">("en");
+
+  // Set your static demo video URLs here
+  const demoVideos: Record<"en" | "hi" | "gu", string | null> = {
+    en: "https://www.youtube.com/watch?v=PiN-Xc5t9zU", // e.g., "https://www.youtube.com/watch?v=YOUR_ENGLISH_VIDEO_ID"
+    hi: "https://www.youtube.com/watch?v=PiN-Xc5t9zU", // e.g., "https://www.youtube.com/watch?v=YOUR_HINDI_VIDEO_ID"
+    gu: "https://www.youtube.com/watch?v=PiN-Xc5t9zU", // e.g., "https://www.youtube.com/watch?v=YOUR_GUJARATI_VIDEO_ID"
+  };
 
   const useCases = [
     {
       id: "tiles",
       name: "Tile & Ceramic Industry",
-      icon: "🏺",
+      // icon: <FaThLarge />,
       description: "Find similar tile designs instantly from any image",
     },
     {
       id: "textiles",
       name: "Textile & Fabric",
-      icon: "🧵",
+      // icon: <FaTshirt />,
       description: "Match fabric patterns and textile designs effortlessly",
     },
-    {
-      id: "interior",
-      name: "Interior Design",
-      icon: "🏠",
-      description: "Discover matching design elements for your projects",
-    },
+    // {
+    //   id: "interior",
+    //   name: "Interior Design",
+    //   icon: <FaHome />,
+    //   description: "Discover matching design elements for your projects",
+    // },
   ];
 
   const features = [
@@ -33,31 +56,31 @@ const AxoVision: NextPage = () => {
       title: "AI-Powered Visual Search",
       description:
         "Our advanced computer vision AI understands patterns, colors, and textures to find similar designs instantly.",
-      icon: "🤖",
+      icon: <FaRobot />,
     },
     {
       title: "Real-Time Image Recognition",
       description:
         "Upload a photo and get instant results. Our system processes images in milliseconds to find the best matches.",
-      icon: "⚡",
+      icon: <FaBolt />,
     },
     {
       title: "Pattern Matching Technology",
       description:
         "Advanced algorithms detect intricate patterns in tiles, textiles, and design elements with precision.",
-      icon: "🎯",
+      icon: <FaBullseye />,
     },
     {
       title: "Color & Texture Analysis",
       description:
         "Sophisticated color palette extraction and texture analysis for accurate similarity matching.",
-      icon: "🎨",
+      icon: <FaPalette />,
     },
     {
       title: "Multi-Format Support",
       description:
         "Works with JPG, PNG, WEBP, and all major image formats. Search from phone photos or professional shots.",
-      icon: "📸",
+      icon: <FaCamera />,
     },
     // {
     //   title: "API Integration Ready",
@@ -66,6 +89,34 @@ const AxoVision: NextPage = () => {
     //   icon: "🔌",
     // },
   ];
+
+  const getEmbedUrl = (url?: string | null) => {
+    if (!url) return null;
+    try {
+      const u = new URL(url);
+      if (u.hostname.includes("youtu.be")) {
+        return `https://www.youtube.com/embed/${u.pathname.replace("/", "")}`;
+      }
+      if (u.hostname.includes("youtube.com")) {
+        const v = u.searchParams.get("v");
+        if (v) return `https://www.youtube.com/embed/${v}`;
+        if (u.pathname.includes("/embed/")) return url;
+      }
+      if (u.hostname.includes("vimeo.com")) {
+        const parts = u.pathname.split("/").filter(Boolean);
+        const id = parts.pop();
+        if (id) return `https://player.vimeo.com/video/${id}`;
+      }
+    } catch (e) {
+      // ignore
+    }
+    return null;
+  };
+
+  const isVideoFile = (url?: string | null) => {
+    if (!url) return false;
+    return /\.(mp4|webm|ogg)(\?.*)?$/i.test(url);
+  };
 
   const benefits = [
     {
@@ -112,16 +163,16 @@ const AxoVision: NextPage = () => {
     <>
       <Head>
         <title>
-          AxoVision - AI Tile Image Search Engine | Find Similar Tiles from
+          AxoVision - AI Visual Search Engine | Find Similar Designs from Any
           Photo
         </title>
         <meta
           name="description"
-          content="AxoVision is an AI-powered visual search engine for tiles, ceramics, and textiles. Upload a photo and instantly find similar tile designs, fabric patterns, and design elements. Perfect for manufacturers, designers, and e-commerce."
+          content="AxoVision is a generic AI-powered visual search engine for designs across tiles, textiles, décor and more. Upload a photo and instantly find visually similar products. Built for manufacturers, designers, and e-commerce."
         />
         <meta
           name="keywords"
-          content="tile image search, find similar tiles, AI tile search, ceramic design search, textile pattern matching, fabric image search, visual search for tiles, reverse image search tiles, tile design finder, pattern recognition AI, similar tile finder, tile matching software, design pattern search, texture search engine, interior design search, similar image search, reverse image search, image finder"
+          content="visual search engine, AI visual search, design image search, similar image search, tile image search, textile pattern matching, fabric image search, interior design search, pattern recognition AI, similar design finder"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="canonical" href="https://axorainfotech.com/axovision" />
@@ -129,11 +180,11 @@ const AxoVision: NextPage = () => {
         {/* Open Graph Tags */}
         <meta
           property="og:title"
-          content="AxoVision - AI Tile & Textile Image Search Engine"
+          content="AxoVision - AI Visual Search Engine for Designs"
         />
         <meta
           property="og:description"
-          content="Find similar tiles and textile designs instantly using AI-powered visual search. Upload a photo and discover matching patterns in seconds."
+          content="Find similar designs instantly using AI-powered visual search. Upload a photo and discover matching products in seconds."
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://axorainfotech.com/axovision" />
@@ -147,11 +198,11 @@ const AxoVision: NextPage = () => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
-          content="AxoVision - AI Tile Image Search Engine"
+          content="AxoVision - AI Visual Search Engine"
         />
         <meta
           name="twitter:description"
-          content="Upload a tile photo and find similar designs instantly with AI-powered visual search technology."
+          content="Upload a photo and find similar designs instantly with AI-powered visual search technology."
         />
         <meta
           name="twitter:image"
@@ -179,7 +230,7 @@ const AxoVision: NextPage = () => {
                 ratingCount: "127",
               },
               description:
-                "AI-powered visual search engine for tiles, ceramics, and textiles. Find similar designs instantly from any photo.",
+                "AI-powered visual search engine for designs across tiles, textiles, décor and more. Find similar designs instantly from any photo.",
               screenshot: "https://axorainfotech.com/axovision-screenshot.jpg",
               softwareVersion: "3.0",
               author: {
@@ -199,7 +250,7 @@ const AxoVision: NextPage = () => {
               "@type": "Product",
               name: "AxoVision - AI Image Search Engine",
               description:
-                "Revolutionary AI-powered visual search platform for finding similar tile designs, textile patterns, and design elements from photos.",
+                "Revolutionary AI-powered visual search platform for finding similar designs across tiles, textiles, décor and more from photos.",
               brand: {
                 "@type": "Brand",
                 name: "Axora Infotech",
@@ -301,7 +352,7 @@ const AxoVision: NextPage = () => {
                 Pricing
               </a> */}
               <a
-                href="#contact"
+                href="https://vision.axorainfotech.com"
                 className="px-6 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:shadow-lg transition-all"
               >
                 Get Started
@@ -322,21 +373,24 @@ const AxoVision: NextPage = () => {
               <div className="max-w-4xl mx-auto text-center">
                 <div className="inline-flex items-center px-4 py-2 bg-blue-500/20 backdrop-blur-sm border border-blue-500/30 rounded-full mb-6">
                   <span className="text-blue-300 text-sm font-medium">
-                    🚀 AI-Powered Visual Search for Tiles & Textiles
+                    <span className="inline-flex items-center gap-2">
+                      <FaRocket className="text-blue-300" />
+                      AI-Powered Visual Search for Designs & Products
+                    </span>
                   </span>
                 </div>
 
                 <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
                   Find Similar{" "}
                   <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-                    Tile Designs
+                    Designs
                   </span>{" "}
                   from Any Photo
                 </h1>
 
                 <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
                   AxoVision uses advanced AI computer vision to instantly find
-                  matching tiles, ceramics, textiles, and design patterns.
+                  matching designs across tiles, textiles, décor and more.
                   Upload a photo and discover similar products in seconds.
                 </p>
 
@@ -368,16 +422,25 @@ const AxoVision: NextPage = () => {
                   >
                     See How It Works
                   </a>
+                  <a
+                    href="#demo"
+                    className="px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-xl border border-white/20 transition-all duration-300 backdrop-blur-sm"
+                  >
+                    <span className="flex items-center justify-center gap-2">
+                      <FaPlayCircle className="text-white" />
+                      Watch Demo
+                    </span>
+                  </a>
                 </div>
 
                 {/* Trust Indicators */}
                 <div className="flex flex-wrap justify-center gap-8 text-sm text-gray-400">
                   <div className="flex items-center gap-2">
-                    <span className="text-green-400 text-xl">✓</span>
+                    <FaCheckCircle className="text-green-400 text-xl" />
                     <span>Free Version</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="text-green-400 text-xl">✓</span>
+                    <FaCheckCircle className="text-green-400 text-xl" />
                     <span>No Credit Card Required</span>
                   </div>
 
@@ -499,6 +562,113 @@ const AxoVision: NextPage = () => {
                   </p>
                 </div>
               </div>
+            </div>
+          </section>
+
+          {/* DEMO VIDEO */}
+          <section id="demo" className="py-20 bg-white">
+            <div className="container mx-auto px-4">
+              <div className="text-center mb-12">
+                <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                  How it works
+                </h2>
+                {/* <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+                  See AxoVision in action: upload, analyze, and get results.
+                </p> */}
+              </div>
+
+              {/* Language selector */}
+              <div className="flex justify-center mb-8">
+                <div className="inline-flex items-center gap-2 bg-gray-100 rounded-2xl p-1 border border-gray-200">
+                  <span className="hidden sm:inline-flex items-center gap-2 text-gray-600 px-3">
+                    <FaLanguage />
+                    Language
+                  </span>
+                  <button
+                    onClick={() => setActiveLang("en")}
+                    className={`px-4 py-2 rounded-xl text-sm font-semibold transition ${
+                      activeLang === "en"
+                        ? "bg-white shadow border border-gray-200"
+                        : "hover:bg-white/70"
+                    }`}
+                  >
+                    English
+                  </button>
+                  <button
+                    onClick={() => setActiveLang("hi")}
+                    className={`px-4 py-2 rounded-xl text-sm font-semibold transition ${
+                      activeLang === "hi"
+                        ? "bg-white shadow border border-gray-200"
+                        : "hover:bg-white/70"
+                    }`}
+                  >
+                    हिन्दी
+                  </button>
+                  <button
+                    onClick={() => setActiveLang("gu")}
+                    className={`px-4 py-2 rounded-xl text-sm font-semibold transition ${
+                      activeLang === "gu"
+                        ? "bg-white shadow border border-gray-200"
+                        : "hover:bg-white/70"
+                    }`}
+                  >
+                    ગુજરાતી
+                  </button>
+                </div>
+              </div>
+
+              {(() => {
+                const currentUrl = demoVideos[activeLang];
+                const embed = getEmbedUrl(currentUrl || undefined);
+                if (currentUrl && embed) {
+                  return (
+                    <div className="relative max-w-5xl mx-auto rounded-2xl overflow-hidden shadow-2xl border border-gray-200">
+                      <div className="relative pt-[56.25%] bg-black">
+                        <iframe
+                          className="absolute inset-0 w-full h-full"
+                          src={embed}
+                          title="AxoVision Demo"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                          allowFullScreen
+                        />
+                      </div>
+                    </div>
+                  );
+                }
+                if (currentUrl && isVideoFile(currentUrl)) {
+                  return (
+                    <div className="relative max-w-5xl mx-auto rounded-2xl overflow-hidden shadow-2xl border border-gray-200 bg-black">
+                      <video
+                        className="w-full h-auto"
+                        controls
+                        preload="metadata"
+                      >
+                        <source src={currentUrl} />
+                        Your browser does not support the video tag.
+                      </video>
+                    </div>
+                  );
+                }
+                return (
+                  <div className="text-center">
+                    <div className="max-w-3xl mx-auto bg-gradient-to-br from-gray-50 to-blue-50 border border-gray-200 rounded-2xl p-8">
+                      <p className="text-gray-700 mb-4">
+                        Provide your demo video links for each language in{" "}
+                        <code className="px-1 py-0.5 bg-gray-100 rounded">
+                          demoVideos
+                        </code>{" "}
+                        at the top of this page. You can use YouTube, Vimeo, or
+                        direct MP4 links.
+                      </p>
+                      <p className="text-gray-600 text-sm">
+                        Currently selected:{" "}
+                        <strong>{activeLang.toUpperCase()}</strong> — no demo
+                        link configured.
+                      </p>
+                    </div>
+                  </div>
+                );
+              })()}
             </div>
           </section>
 
