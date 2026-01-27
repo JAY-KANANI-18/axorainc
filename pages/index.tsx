@@ -227,7 +227,7 @@ const Home: NextPage = () => {
           <About />
           <TechStack />
           {/* <Portfolio /> */}
-          <Testimonials />
+          {/* <Testimonials /> */}
           <Contact />
         </main>
 
