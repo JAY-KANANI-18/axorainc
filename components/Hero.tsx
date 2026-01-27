@@ -1,71 +1,59 @@
 import React from "react";
 import Link from "next/link";
 import { FaRocket } from "react-icons/fa";
+import theme from "@/styles/theme";
 
 const Hero: React.FC = () => {
   return (
-    <section className="relative w-full h-full bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 py-20 overflow-hidden">
+    <section
+      className="relative w-full h-full py-20 overflow-hidden"
+    >
       {/* Floating animated background bubbles */}
 
-      {/* Content wrapper (now full-width, not constrained by container class) */}
-      <div className="relative z-10 w-full px-4 md:px-20 py-20  flex flex-col md:flex-row">
-        <div
-          className="absolute top-[5%] left-[5%] w-72 h-72 bg-gradient-to-r 
-    from-blue-400/30 to-purple-500/30 rounded-full mix-blend-multiply 
-    filter blur-xl animate-blob"
-        ></div>
-
+      <div className="relative z-10 w-full px-4 md:px-20 py-20 flex flex-col md:flex-row">
         {/* Top-Right */}
         <div
           className="absolute top-[10%] right-[5%] w-72 h-72 bg-gradient-to-r 
-    from-cyan-400/30 to-blue-500/30 rounded-full mix-blend-multiply 
-    filter blur-xl animate-blob animation-delay-2000"
+          from-cyan-400/30 to-blue-500/30 rounded-full mix-blend-multiply 
+          animate-blob -z-10 animation-delay-2000"
         ></div>
 
         {/* Center */}
-        <div
+        {/* <div
           className="absolute top-[40%] left-[45%] w-72 h-72 bg-gradient-to-r 
-    from-teal-400/30 to-indigo-500/30 rounded-full mix-blend-multiply 
-    filter blur-xl animate-blob animation-delay-4000"
-        ></div>
-
-        {/* Bottom-Left */}
-        <div
-          className="absolute bottom-[10%] left-[8%] w-72 h-72 bg-gradient-to-r 
-    from-purple-400/30 to-pink-500/30 rounded-full mix-blend-multiply 
-    filter blur-xl animate-blob animation-delay-3000"
-        ></div>
+          from-teal-400/30 to-indigo-500/30 rounded-full mix-blend-multiply 
+          animate-blob -z-10 animation-delay-4000"
+        ></div> */}
 
         {/* Bottom-Right */}
         <div
-          className="absolute bottom-[5%] right-[10%] w-72 h-72 bg-gradient-to-r 
-    from-rose-400/30 to-fuchsia-500/30 rounded-full mix-blend-multiply 
-    filter blur-xl animate-blob animation-delay-1000"
+          className=" absolute bottom-[5%] right-[10%] w-72 h-72 bg-gradient-to-r 
+          from-rose-400/30 to-fuchsia-500/30 rounded-full mix-blend-multiply 
+          animate-blob -z-10 animation-delay-1000"
         ></div>
-        <div className="mb-10 md:mb-0  ">
-          <div
-            className="inline-flex items-center px-4 py-2 
-          bg-gradient-to-r from-blue-500/10 to-purple-500/10 
-          backdrop-blur-sm border border-blue-500/20 
-          rounded-full mb-6"
-          >
-            <span className="text-blue-400 text-sm font-medium flex items-center gap-2">
-              <FaRocket className="text-blue-300" />
-              AI-Driven Software Innovation
-            </span>
-          </div>
 
+        <div className="mb-10 md:mb-0">
+          {/* =================== POLISHED HEADLINE =================== */}
           <h1
-  className="text-4xl md:text-5xl lg:text-6xl font-bold 
-  bg-gradient-to-r from-white via-blue-100 to-purple-100 
-  bg-clip-text text-transparent  mb-6"
-  style={{ lineHeight: "1.2" }}
->
-  Building the Digital Products That Power Tomorrow
-</h1>
+            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
+          >
+            Building the{" "}
+            <span className="relative inline-block">
+              <span className="bg-gradient-to-r from-cyan-600 via-blue-700 to-indigo-700 bg-clip-text text-transparent">
+                Digital Products
+              </span>
+              {/* subtle glow underline */}
+              <span className="absolute left-0 -bottom-1 w-full h-2 bg-blue-400/30 blur-md"></span>
+            </span>{" "}
+            that power{" "}
+            <span className="relative inline-block text-indigo-700">
+              Tomorrow
+              {/* small accent dot */}
+              <span className="absolute -right-2 top-2 w-2 h-2 rounded-full bg-fuchsia-500"></span>
+            </span>
+          </h1>
 
-
-          <p className="text-xl text-gray-300 mb-8 leading-relaxed max-w-xl">
+          <p className="text-xl mb-8 leading-relaxed max-w-xl">
             We craft enterprise SaaS, CRM systems, and intelligent platforms
             using AI, automation, and cloud-native technologies.
           </p>
@@ -73,10 +61,10 @@ const Hero: React.FC = () => {
           <div className="flex flex-col sm:flex-row gap-4">
             <a
               href="#contact"
-              className="group px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 
-            hover:from-blue-700 hover:to-purple-700 text-white font-semibold rounded-xl
-            transition-all duration-300 text-center shadow-2xl hover:shadow-blue-500/25 
-            transform hover:-translate-y-1 hover:scale-105"
+              className="group px-8 py-4 bg-blue-900 
+              text-white font-semibold rounded-xl
+              transition-all duration-300 text-center shadow-2xl
+              hover:shadow-blue-500/25 hover:-translate-y-1 hover:scale-105"
             >
               <span className="flex items-center justify-center gap-2">
                 Book Strategy Call
@@ -98,22 +86,21 @@ const Hero: React.FC = () => {
 
             <a
               href="#services"
-              className="px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-semibold 
-            rounded-xl border border-white/20 transition-all duration-300 
-            backdrop-blur-sm hover:backdrop-blur-md transform hover:-translate-y-1"
+              className="px-8 py-4 bg-white hover:bg-gray-50 text-black font-semibold 
+              rounded-xl border border-white/20 transition-all duration-300 
+              backdrop-blur-sm hover:backdrop-blur-md hover:-translate-y-1"
             >
               Browse Services
             </a>
           </div>
         </div>
 
-        <div className="md:w-1/2 relative">
-          {/* Right-side blobs (still floating) */}
+        <div className=" md:w-1/2 relative">
           <div
-            className="absolute -top-4 -left-4 w-72 h-72 
-          bg-gradient-to-r from-blue-400/30 to-purple-500/30 rounded-full 
-          blur-xl mix-blend-multiply 
-          animate-[float_6s_ease-in-out_infinite]"
+            className="absolute bottom-[30%] right-[40%] w-72 h-72 bg-gradient-to-r 
+            from-blue-400/30 to-purple-500/30 rounded-full 
+            mix-blend-multiply animate-blob -z-10 animation-delay-3000
+            animate-[float_6s_ease-in-out_infinite]"
           ></div>
         </div>
       </div>

@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import theme from "@/styles/theme";
 
 const Products: React.FC = () => {
   const products = [
@@ -104,7 +105,8 @@ const Products: React.FC = () => {
   return (
     <section
       id="products"
-      className="py-20 bg-gradient-to-br from-slate-50 to-blue-50"
+      className="py-20 "
+      style={{ backgroundColor: theme.colors.background.light }}
     >
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
@@ -174,7 +176,7 @@ const Products: React.FC = () => {
         </div>
 
         {/* Bottom CTA */}
-        <div className="text-center mt-16">
+        {/* <div className="text-center mt-16">
           <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-8 border border-white/20 shadow-xl max-w-2xl mx-auto">
             <h3 className="text-2xl font-bold text-slate-900 mb-4">
               Start Your Digital Transformation Journey
@@ -197,7 +199,7 @@ const Products: React.FC = () => {
               </a>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

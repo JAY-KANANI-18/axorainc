@@ -1,15 +1,19 @@
 import React from "react";
 import Link from "next/link";
 import { FaWhatsapp } from "react-icons/fa";
+import theme from "@/styles/theme";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-secondary-900 text-white py-12">
+    <footer
+      className=" text-white py-12"
+      style={{ backgroundColor: theme.colors.background.dark }}
+    >
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-1">
             <a href="#" className="text-2xl font-bold text-white">
-              Axora<span className="text-primary-400"></span> Infotech
+              Axora<span className="text-blue-900"></span> Infotech
             </a>
             <p className="mt-4 text-gray-400">
               Smart SaaS Solutions for Growing Businesses
@@ -19,7 +23,7 @@ const Footer: React.FC = () => {
                 href="https://www.linkedin.com/company/axora-infotech"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-primary-400 transition-colors"
+                className="text-gray-400 hover:text-blue-900 transition-colors"
                 aria-label="Follow us on LinkedIn"
               >
                 <svg
@@ -34,7 +38,7 @@ const Footer: React.FC = () => {
                 href="https://x.com/AxoraInfotech"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-primary-400 transition-colors"
+                className="text-gray-400 hover:text-blue-900 transition-colors"
                 aria-label="Follow us on Twitter"
               >
                 <svg
@@ -49,7 +53,7 @@ const Footer: React.FC = () => {
                 href="https://www.facebook.com/profile.php?id=61583890823393"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-primary-400 transition-colors"
+                className="text-gray-400 hover:text-blue-900 transition-colors"
                 aria-label="Follow us on Facebook"
               >
                 <svg
@@ -64,7 +68,7 @@ const Footer: React.FC = () => {
                 href="https://www.instagram.com/axorainfotech"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-primary-400 transition-colors"
+                className="text-gray-400 hover:text-blue-900 transition-colors"
                 aria-label="Follow us on Instagram"
               >
                 <svg
@@ -84,7 +88,7 @@ const Footer: React.FC = () => {
               <li>
                 <a
                   href="#"
-                  className="text-gray-400 hover:text-primary-400 transition-colors"
+                  className="text-gray-400 hover:text-blue-900 transition-colors"
                 >
                   Home
                 </a>
@@ -92,7 +96,7 @@ const Footer: React.FC = () => {
               <li>
                 <a
                   href="/services"
-                  className="text-gray-400 hover:text-primary-400 transition-colors"
+                  className="text-gray-400 hover:text-blue-900 transition-colors"
                 >
                   Services
                 </a>
@@ -100,7 +104,7 @@ const Footer: React.FC = () => {
               <li>
                 <a
                   href="/hire"
-                  className="text-gray-400 hover:text-primary-400 transition-colors"
+                  className="text-gray-400 hover:text-blue-900 transition-colors"
                 >
                   Hire
                 </a>
@@ -108,7 +112,7 @@ const Footer: React.FC = () => {
               <li>
                 <a
                   href="/blog"
-                  className="text-gray-400 hover:text-primary-400 transition-colors"
+                  className="text-gray-400 hover:text-blue-900 transition-colors"
                 >
                   Blog
                 </a>
@@ -116,7 +120,7 @@ const Footer: React.FC = () => {
               <li>
                 <a
                   href="#features"
-                  className="text-gray-400 hover:text-primary-400 transition-colors"
+                  className="text-gray-400 hover:text-blue-900 transition-colors"
                 >
                   Features
                 </a>
@@ -124,7 +128,7 @@ const Footer: React.FC = () => {
               <li>
                 <a
                   href="#about"
-                  className="text-gray-400 hover:text-primary-400 transition-colors"
+                  className="text-gray-400 hover:text-blue-900 transition-colors"
                 >
                   About
                 </a>
@@ -132,7 +136,7 @@ const Footer: React.FC = () => {
               <li>
                 <a
                   href="#testimonials"
-                  className="text-gray-400 hover:text-primary-400 transition-colors"
+                  className="text-gray-400 hover:text-blue-900 transition-colors"
                 >
                   Testimonials
                 </a>
@@ -140,7 +144,7 @@ const Footer: React.FC = () => {
               <li>
                 <a
                   href="#portfolio"
-                  className="text-gray-400 hover:text-primary-400 transition-colors"
+                  className="text-gray-400 hover:text-blue-900 transition-colors"
                 >
                   Portfolio
                 </a>
@@ -148,7 +152,7 @@ const Footer: React.FC = () => {
               <li>
                 <a
                   href="#contact"
-                  className="text-gray-400 hover:text-primary-400 transition-colors"
+                  className="text-gray-400 hover:text-blue-900 transition-colors"
                 >
                   Contact
                 </a>
@@ -162,7 +166,7 @@ const Footer: React.FC = () => {
               <li>
                 <a
                   href="#"
-                  className="text-gray-400 hover:text-primary-400 transition-colors"
+                  className="text-gray-400 hover:text-blue-900 transition-colors"
                 >
                   SaaS Applications
                 </a>
@@ -170,7 +174,7 @@ const Footer: React.FC = () => {
               <li>
                 <a
                   href="#"
-                  className="text-gray-400 hover:text-primary-400 transition-colors"
+                  className="text-gray-400 hover:text-blue-900 transition-colors"
                 >
                   Web Applications
                 </a>
@@ -178,7 +182,7 @@ const Footer: React.FC = () => {
               <li>
                 <a
                   href="#"
-                  className="text-gray-400 hover:text-primary-400 transition-colors"
+                  className="text-gray-400 hover:text-blue-900 transition-colors"
                 >
                   AI Integrations
                 </a>
@@ -186,7 +190,7 @@ const Footer: React.FC = () => {
               <li>
                 <a
                   href="#"
-                  className="text-gray-400 hover:text-primary-400 transition-colors"
+                  className="text-gray-400 hover:text-blue-900 transition-colors"
                 >
                   Custom Software
                 </a>
@@ -194,7 +198,7 @@ const Footer: React.FC = () => {
               <li>
                 <a
                   href="#"
-                  className="text-gray-400 hover:text-primary-400 transition-colors"
+                  className="text-gray-400 hover:text-blue-900 transition-colors"
                 >
                   Consulting
                 </a>
@@ -202,7 +206,7 @@ const Footer: React.FC = () => {
               <li>
                 <a
                   href="#"
-                  className="text-gray-400 hover:text-primary-400 transition-colors"
+                  className="text-gray-400 hover:text-blue-900 transition-colors"
                 >
                   Support
                 </a>
@@ -295,7 +299,10 @@ const Footer: React.FC = () => {
         </div>
 
         <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-          <p>&copy; {new Date().getFullYear()} Axora Infotech. All rights reserved.</p>
+          <p>
+            &copy; {new Date().getFullYear()} Axora Infotech. All rights
+            reserved.
+          </p>
         </div>
       </div>
     </footer>

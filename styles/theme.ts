@@ -47,8 +47,8 @@ export const theme = {
     info: '#3b82f6',
     // Background colors
     background: {
-      light: '#ffffff',
-      dark: '#0f172a',
+      light: '#F5F6FA',
+      dark: '#000000',
       muted: '#f8fafc',
     },
     // Text colors

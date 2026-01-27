@@ -1,3 +1,4 @@
+import theme from "@/styles/theme";
 import React from "react";
 import {
   FaBuilding,
@@ -18,25 +19,25 @@ const About: React.FC = () => {
 
   const values = [
     {
-      icon: <FaBullseye className="text-4xl text-blue-500 mb-4" />,
+      icon: <FaBullseye className="text-4xl text-blue-900 mb-4" />,
       title: "Mission-Driven Engineering",
       description:
         "We build software that solves real problems, focusing on measurable business outcomes and user delight.",
     },
     {
-      icon: <FaRocket className="text-4xl text-blue-500 mb-4" />,
+      icon: <FaRocket className="text-4xl text-blue-900 mb-4" />,
       title: "AI-First Innovation",
       description:
         "Every solution we craft integrates intelligent automation, from computer vision to conversational interfaces.",
     },
     {
-      icon: <FaHandshake className="text-4xl text-blue-500 mb-4" />,
+      icon: <FaHandshake className="text-4xl text-blue-900 mb-4" />,
       title: "Partnership Mindset",
       description:
         "We embed with your teams as strategic partners, not just vendors, ensuring long-term success and growth.",
     },
     {
-      icon: <FaBolt className="text-4xl text-blue-500 mb-4" />,
+      icon: <FaBolt className="text-4xl text-blue-900 mb-4" />,
       title: "Rapid Iteration",
       description:
         "Agile delivery cycles, continuous feedback loops, and modern DevOps practices accelerate time-to-market.",
@@ -46,16 +47,18 @@ const About: React.FC = () => {
   return (
     <section
       id="about"
-      className="py-20 bg-gradient-to-br from-slate-50 via-white to-blue-50"
+      className="py-20"
+      style={{ backgroundColor: theme.colors.background.light }}
     >
       <div className="container mx-auto px-4">
         {/* Hero Section */}
         <div className="text-center max-w-4xl mx-auto mb-16">
-          <div className="inline-flex items-center px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-full text-blue-600 text-sm font-medium mb-6">
-            <FaBuilding className="inline mr-2" /> Trusted by Global Enterprises
-          </div>
+          Trusted by Global Enterprises
+          {/* </div> */}
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
-            We Build Intelligent Software That Scales With Your Vision
+            We Build
+            <span className="text-blue-900"> Intelligent </span>
+            Software That Scales With Your Vision
           </h2>
           <p className="text-xl text-slate-600 leading-relaxed">
             Axora Infotech bridges the gap between ambitious product strategy
@@ -70,7 +73,7 @@ const About: React.FC = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-20">
           {stats.map((stat, index) => (
             <div key={index} className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-blue-600 mb-2">
+              <div className="text-3xl md:text-4xl font-bold text-blue-900 mb-2">
                 {stat.number}
               </div>
               <div className="text-slate-600 font-medium">{stat.label}</div>
@@ -97,7 +100,7 @@ const About: React.FC = () => {
         </div>
 
         {/* Leadership & Story Section */}
-        <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl p-12 text-white text-center">
+        <div className="  rounded-3xl p-12 text-white text-center bg-blue-900">
           <h3 className="text-3xl md:text-4xl font-bold mb-6">
             From Startup to Scale: Our Journey
           </h3>

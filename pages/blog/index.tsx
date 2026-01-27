@@ -149,85 +149,112 @@ const Blog: NextPage = () => {
 
         <main className="flex-grow">
           {/* HERO SECTION */}
-          <section className="bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white py-20">
-            <div className="container mx-auto px-4">
+          <section className="relative bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white py-24 overflow-hidden">
+            <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:32px_32px]"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 to-transparent"></div>
+            
+            <div className="container mx-auto px-4 relative z-10">
               <div className="max-w-4xl mx-auto text-center">
-                <h1 className="text-5xl md:text-6xl font-bold mb-6">
+                <div className="inline-block mb-6">
+                  <span className="px-4 py-2 bg-blue-500/20 rounded-full border border-blue-400/30 text-blue-200 text-sm font-semibold">
+                    📚 Knowledge Hub
+                  </span>
+                </div>
+                <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-purple-200">
                   Insights & Articles
                 </h1>
-                <p className="text-xl text-gray-300">
-                  Explore the latest trends in AI, computer vision, and visual
-                  search technology
+                <p className="text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+                  Explore the latest trends in AI, SaaS platforms, cloud engineering, and digital transformation
                 </p>
+                <div className="flex flex-wrap justify-center gap-3 text-sm">
+                  <span className="px-4 py-2 bg-white/10 rounded-full border border-white/20">
+                    AI Product Engineering
+                  </span>
+                  <span className="px-4 py-2 bg-white/10 rounded-full border border-white/20">
+                    SaaS Development
+                  </span>
+                  <span className="px-4 py-2 bg-white/10 rounded-full border border-white/20">
+                    Cloud & DevOps
+                  </span>
+                  <span className="px-4 py-2 bg-white/10 rounded-full border border-white/20">
+                    CRM Modernization
+                  </span>
+                </div>
               </div>
             </div>
           </section>
 
           {/* BLOG POSTS GRID */}
-          <section className="py-20 bg-gray-50">
-            <div className="m-4">
-              <button
-                onClick={() => router.back()}
-                className="px-6 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:shadow-lg transition-all"
-              >
-                <FaArrowLeftLong />
-              </button>
-            </div>
+          <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
             <div className="container mx-auto px-4">
+              <div className="mb-8">
+                <button
+                  onClick={() => router.back()}
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-white border border-gray-200 text-gray-700 rounded-lg hover:bg-gray-50 hover:border-gray-300 hover:shadow-md transition-all"
+                >
+                  <FaArrowLeftLong />
+                  <span className="font-medium">Back</span>
+                </button>
+              </div>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
                 {postsSorted.map((post, index) => (
                   <article
                     key={index}
-                    className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
+                    className="group bg-white rounded-2xl overflow-hidden border border-gray-200 hover:border-blue-300 shadow-sm hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
                   >
-                    <div className="h-48 w-full bg-gradient-to-br from-blue-500 to-purple-500 relative">
-                      <Image
-                        src={post.image}
-                        alt={post.slug}
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
+                    <Link href={`/blog/${post.slug}`} className="block">
+                      <div className="h-56 w-full bg-gradient-to-br from-blue-500 to-purple-500 relative overflow-hidden">
+                        <Image
+                          src={post.image}
+                          alt={post.title}
+                          fill
+                          className="object-cover group-hover:scale-105 transition-transform duration-300"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                      </div>
 
-                    <div className="p-6">
-                      <div className="flex items-center gap-4 text-sm text-gray-500 mb-3">
-                        <span className="bg-blue-100 text-blue-600 px-3 py-1 rounded-full">
-                          {post.category}
-                        </span>
-                        <span>{post.readTime}</span>
-                      </div>
-                      <h2 className="text-2xl font-bold text-gray-900 mb-3 hover:text-blue-600 transition-colors">
-                        <Link href={`/blog/${post.slug}`}>{post.title}</Link>
-                      </h2>
-                      <p className="text-gray-600 mb-4 line-clamp-3">
-                        {post.excerpt}
-                      </p>
-                      <div className="flex items-center justify-between">
-                        <div className="text-sm text-gray-500">
-                          <p>{post.author}</p>
-                          <p>{formatDate(post.date)}</p>
+                      <div className="p-6">
+                        <div className="flex items-center gap-3 text-sm mb-4">
+                          <span className="bg-blue-50 text-blue-700 px-3 py-1 rounded-full font-semibold border border-blue-100">
+                            {post.category}
+                          </span>
+                          <span className="text-gray-500">{post.readTime}</span>
                         </div>
-                        <Link
-                          href={`/blog/${post.slug}`}
-                          className="text-blue-600 font-semibold hover:text-blue-700 flex items-center gap-2"
-                        >
-                          Read More
-                          <svg
-                            className="w-4 h-4"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M9 5l7 7-7 7"
-                            />
-                          </svg>
-                        </Link>
+                        <h2 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors line-clamp-2">
+                          {post.title}
+                        </h2>
+                        <p className="text-gray-600 mb-5 line-clamp-3 leading-relaxed">
+                          {post.excerpt}
+                        </p>
+                        <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+                          <div className="flex items-center gap-3">
+                            <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full flex items-center justify-center text-white font-bold text-sm">
+                              {post.author.charAt(0)}
+                            </div>
+                            <div className="text-sm">
+                              <p className="font-medium text-gray-900">{post.author}</p>
+                              <p className="text-gray-500">{formatDate(post.date)}</p>
+                            </div>
+                          </div>
+                          <div className="text-blue-600 font-semibold group-hover:text-blue-700 flex items-center gap-2">
+                            Read
+                            <svg
+                              className="w-4 h-4 group-hover:translate-x-1 transition-transform"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M9 5l7 7-7 7"
+                              />
+                            </svg>
+                          </div>
+                        </div>
                       </div>
-                    </div>
+                    </Link>
                   </article>
                 ))}
               </div>
@@ -255,29 +282,44 @@ const Blog: NextPage = () => {
           </section>
 
           {/* NEWSLETTER SIGNUP */}
-          <section className="py-20 bg-gradient-to-br from-blue-900 to-purple-900 text-white">
-            <div className="container mx-auto px-4 text-center">
-              <h2 className="text-4xl font-bold mb-4">
-                Stay Updated with Latest Insights
-              </h2>
-              <p className="text-xl text-blue-200 mb-8 max-w-2xl mx-auto">
-                Get notified when we publish new articles about AI, computer
-                vision, and visual search technology
-              </p>
-              <form className="max-w-md mx-auto flex gap-4">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="flex-1 px-6 py-3 rounded-xl text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-400"
-                  required
-                />
-                <button
-                  type="submit"
-                  className="px-8 py-3 bg-white text-blue-600 font-semibold rounded-xl hover:bg-blue-50 transition-all"
-                >
-                  Subscribe
-                </button>
-              </form>
+          <section className="relative py-24 bg-gradient-to-br from-slate-900 via-blue-900 to-purple-900 text-white overflow-hidden">
+            <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:32px_32px]"></div>
+            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl"></div>
+            
+            <div className="container mx-auto px-4 text-center relative z-10">
+              <div className="max-w-3xl mx-auto">
+                <div className="inline-block mb-6">
+                  <span className="px-4 py-2 bg-white/10 rounded-full border border-white/20 text-sm font-semibold">
+                    📬 Newsletter
+                  </span>
+                </div>
+                <h2 className="text-4xl md:text-5xl font-bold mb-6">
+                  Stay Updated with Latest Insights
+                </h2>
+                <p className="text-xl text-blue-200 mb-10 leading-relaxed">
+                  Get notified when we publish new articles about AI, SaaS platforms, cloud engineering, and digital transformation
+                </p>
+                <form className="max-w-lg mx-auto">
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    <input
+                      type="email"
+                      placeholder="Enter your email address"
+                      className="flex-1 px-6 py-4 rounded-xl text-gray-900 bg-white focus:outline-none focus:ring-2 focus:ring-blue-400 shadow-lg"
+                      required
+                    />
+                    <button
+                      type="submit"
+                      className="px-8 py-4 bg-white text-blue-600 font-bold rounded-xl hover:bg-blue-50 hover:shadow-xl transition-all transform hover:scale-105"
+                    >
+                      Subscribe
+                    </button>
+                  </div>
+                  <p className="text-sm text-blue-200 mt-4">
+                    Join 1,000+ professionals getting weekly insights
+                  </p>
+                </form>
+              </div>
             </div>
           </section>
         </main>

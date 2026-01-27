@@ -115,74 +115,101 @@ const ServicesIndex: NextPage = () => {
         />
       </Head>
 
-      <div className="min-h-screen flex flex-col">
-          <Nav />
+      <div className="min-h-screen flex flex-col bg-white">
+        <Nav />
 
         <main className="flex-grow">
-          <button>
-            <FaArrowLeftLong />
-          </button>
-          <section className="bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white py-20">
-            <div className="container mx-auto px-4 text-center max-w-3xl">
-              <h1 className="text-5xl font-bold mb-4">Our Services</h1>
-              <p className="text-xl text-blue-100">
+          {/* Hero Section */}
+          <section className="relative bg-slate-900 text-white py-24 overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-blue-900/50 to-slate-900"></div>
+            <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:32px_32px]"></div>
+            
+            <div className="container mx-auto px-6 text-center max-w-4xl relative z-10">
+              <div className="inline-block mb-6">
+                <span className="px-4 py-2 rounded-full bg-blue-500/20 text-blue-200 text-sm font-semibold">
+                  WHAT WE DO
+                </span>
+              </div>
+              <h1 className="text-5xl md:text-6xl font-bold mb-6">Our Services</h1>
+              <p className="text-xl text-slate-300 leading-relaxed">
                 Full-stack product delivery across AI, SaaS, web, mobile, cloud,
                 and data—designed to move metrics.
               </p>
             </div>
           </section>
 
-          <section className="py-16 bg-gray-50">
-            <div className="container mx-auto px-4 max-w-6xl">
+          {/* Services Grid */}
+          <section className="py-20 bg-slate-50">
+            <div className="container mx-auto px-6 max-w-7xl">
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {services.map((s) => (
                   <Link
                     key={s.slug}
                     href={`/services/${s.slug}`}
-                    className="block bg-white rounded-2xl p-6 shadow hover:shadow-xl hover:-translate-y-1 transition-all border"
+                    className="group block bg-white rounded-xl overflow-hidden border border-slate-200 hover:border-slate-300 hover:shadow-xl transition-all duration-300"
                   >
-                     <div className="h-48 w-full bg-gradient-to-br from-blue-500 to-purple-500 relative">
+                    <div className="h-48 w-full relative overflow-hidden bg-slate-100">
                       <Image
                         src={s.image}
-                        alt={s.slug}
+                        alt={s.title}
                         fill
-                        className="object-cover"
+                        className="object-cover group-hover:scale-105 transition-transform duration-300"
                       />
                     </div>
-                    <h2 className="text-xl font-bold mb-2">{s.title}</h2>
-                    <p className="text-slate-600 line-clamp-3">{s.excerpt}</p>
+                    <div className="p-6">
+                      <h2 className="text-xl font-bold mb-3 text-slate-900 group-hover:text-blue-600 transition-colors">
+                        {s.title}
+                      </h2>
+                      <p className="text-slate-600 line-clamp-3 mb-4">{s.excerpt}</p>
+                      <div className="inline-flex items-center gap-2 text-blue-600 font-semibold text-sm">
+                        Learn more
+                        <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                      </div>
+                    </div>
                   </Link>
                 ))}
               </div>
 
+              {/* Impact Section */}
               {highlights.length > 0 && (
-                <div className="mt-12">
-                  <h3 className="text-2xl font-bold mb-4">
-                    Impact we’ve delivered
-                  </h3>
-                  <ul className="grid md:grid-cols-3 gap-3">
+                <div className="mt-20">
+                  <div className="text-center mb-12">
+                    <h3 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+                      Impact We've Delivered
+                    </h3>
+                    <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+                      Real results from real projects
+                    </p>
+                  </div>
+                  <div className="grid md:grid-cols-3 gap-6">
                     {highlights.map((h, i) => (
-                      <li
+                      <div
                         key={`${h.service}-${i}`}
-                        className="flex items-start gap-3 bg-white rounded-xl p-4 border"
+                        className="bg-white rounded-xl p-6 border border-slate-200 hover:border-slate-300 hover:shadow-lg transition-all"
                       >
-                        <span className="mt-1 inline-block h-2.5 w-2.5 rounded-full bg-green-500" />
-                        <div>
-                          <div className="text-slate-800">{h.metric}</div>
-                          <div className="text-slate-500 text-sm">
-                            {h.service}
+                        <div className="flex items-start gap-4">
+                          <div className="flex-shrink-0 w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
+                            <svg className="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                            </svg>
+                          </div>
+                          <div>
+                            <div className="font-semibold text-slate-900 mb-1">{h.metric}</div>
+                            <div className="text-slate-600 text-sm">{h.service}</div>
                           </div>
                         </div>
-                      </li>
+                      </div>
                     ))}
-                  </ul>
+                  </div>
                 </div>
               )}
 
               <div className="mt-16 text-center">
                 <a
                   href="#enquiry"
-                  className="inline-block px-10 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-xl hover:shadow-xl transition-all"
+                  className="inline-block px-10 py-4 bg-slate-900 text-white font-semibold rounded-lg hover:bg-slate-800 transition-all"
                 >
                   Book Strategy Call
                 </a>
@@ -190,17 +217,26 @@ const ServicesIndex: NextPage = () => {
             </div>
           </section>
 
-          {/* Enquiry form section */}
-          <section className="py-16 bg-white" id="enquiry">
-            <div className="container mx-auto px-4 max-w-4xl">
-              <h2 className="text-3xl font-bold mb-6">Start Your Project</h2>
-              <EnquiryForm
-                context={{
-                  category: "Services",
-                  pageSlug: "services",
-                  pageTitle: "Services",
-                }}
-              />
+          {/* Enquiry Form */}
+          <section className="py-20 bg-white" id="enquiry">
+            <div className="container mx-auto px-6 max-w-4xl">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+                  Start Your Project
+                </h2>
+                <p className="text-lg text-slate-600">
+                  Let's discuss how we can help you achieve your goals
+                </p>
+              </div>
+              <div className="bg-slate-50 border border-slate-200 rounded-2xl p-8">
+                <EnquiryForm
+                  context={{
+                    category: "Services",
+                    pageSlug: "services",
+                    pageTitle: "Services",
+                  }}
+                />
+              </div>
             </div>
           </section>
         </main>

@@ -13,6 +13,7 @@ import {
 } from "react-icons/fa";
 import { SiNextdotjs } from "react-icons/si";
 import { GiArtificialIntelligence } from "react-icons/gi";
+import theme from "@/styles/theme";
 
 const roles = [
   {
@@ -99,7 +100,13 @@ const roles = [
 
 const HireTalentSection: React.FC = () => {
   return (
-    <section id="hire" className="py-20 bg-slate-900 text-white">
+    <section
+      id="hire"
+      className="py-20 
+
+    text-white"
+      style={{ backgroundColor: theme.colors.background.dark }}
+    >
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center px-4 py-2 bg-white/10 border border-white/20 rounded-full text-sm font-medium mb-6">

@@ -6,7 +6,7 @@ import Hero from "../components/Hero";
 import ServicesSection from "../components/ServicesSection";
 import HireTalentSection from "../components/HireTalentSection";
 import Products from "../components/Products";
-import Features from "../components/Features";
+// import Features from "../components/Features";
 import About from "../components/About";
 import Testimonials from "../components/Testimonials";
 import Portfolio from "../components/Portfolio";
@@ -14,6 +14,7 @@ import TechStack from "../components/TechStack";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 import Nav from "@/components/Nav";
+import WhyChooseAxora from "../components/Features";
 
 const Home: NextPage = () => {
 
@@ -212,7 +213,7 @@ const Home: NextPage = () => {
         />
       </Head>
 
-      <div className="min-h-screen flex flex-col font-bold">
+      <div className="min-h-screen flex flex-col ">
         {/* HEADER */}
           <Nav />
 
@@ -220,11 +221,11 @@ const Home: NextPage = () => {
         <main className="flex-grow">
           <Hero />
           <ServicesSection />
-          <HireTalentSection />
-          <Products />
-          <Features />
+          {/* <HireTalentSection /> */}
+          {/* <Products /> */}
+          <WhyChooseAxora />
           <About />
-          {/* <TechStack /> */}
+          <TechStack />
           {/* <Portfolio /> */}
           <Testimonials />
           <Contact />
