@@ -55,22 +55,7 @@ const services = [
     focusAreas: ["iOS & Android", "Flutter", "React Native"],
     icon: <FaMobileAlt className="text-2xl text-blue-900" />,
   },
-  {
-    title: "Cloud & DevOps Automation",
-    anchor: "service-cloud-devops",
-    description:
-      "Automate deployments, observability, and resilience across AWS, Azure, and GCP with infrastructure-as-code and FinOps best practices.",
-    focusAreas: ["IaC", "Kubernetes", "FinOps"],
-    icon: <FaCloud className="text-2xl text-blue-900" />,
-  },
-  {
-    title: "Data Engineering & Analytics",
-    anchor: "service-data-engineering",
-    description:
-      "Unlock insights with modern data stacks, governed pipelines, real-time dashboards, and AI-assisted analytics experiences.",
-    focusAreas: ["Modern Data Stack", "ETL/ELT", "BI Dashboards"],
-    icon: <FaChartBar className="text-2xl text-blue-900" />,
-  },
+
   {
     title: "Intelligent Process Automation",
     anchor: "service-automation",
@@ -86,14 +71,6 @@ const services = [
       "Build conversion-first eCommerce and marketplace experiences with headless architectures, personalization, and analytics.",
     focusAreas: ["Headless Commerce", "Personalization", "Growth"],
     icon: <FaShoppingCart className="text-2xl text-blue-900" />,
-  },
-  {
-    title: "SEO & Growth Marketing",
-    anchor: "service-seo-growth",
-    description:
-      "Accelerate organic and paid acquisition with technical SEO, content marketing, conversion optimization, and analytics insights.",
-    focusAreas: ["Technical SEO", "Content Ops", "CRO"],
-    icon: <FaChartLine className="text-2xl text-blue-900" />,
   },
 ];
 

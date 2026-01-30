@@ -68,7 +68,6 @@ const Contact: React.FC = () => {
     <section id="contact" className="py-24 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-         
           <h2 className="text-4xl md:text-6xl font-bold mb-6 text-gray-900">
             Ready to Transform Your Business?
           </h2>
@@ -83,8 +82,13 @@ const Contact: React.FC = () => {
           <div className="lg:w-1/2">
             <div className="bg-white p-10 rounded-3xl border-2 border-gray-200 shadow-2xl hover:shadow-3xl transition-all duration-300">
               <div className="mb-8">
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">Send us a message</h3>
-                <p className="text-gray-600">Fill out the form below and we'll get back to you within 24 hours</p>
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                  Send us a message
+                </h3>
+                <p className="text-gray-600">
+                  Fill out the form below and we'll get back to you within 24
+                  hours
+                </p>
               </div>
 
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -167,12 +171,23 @@ const Contact: React.FC = () => {
                   <div className="p-5 bg-green-50 border-2 border-green-500 rounded-xl">
                     <div className="flex items-center gap-3">
                       <div className="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
-                        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        <svg
+                          className="w-6 h-6 text-white"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M5 13l4 4L19 7"
+                          />
                         </svg>
                       </div>
                       <p className="text-green-800 font-semibold">
-                        Thank you! Your message has been sent successfully. We'll get back to you soon.
+                        Thank you! Your message has been sent successfully.
+                        We'll get back to you soon.
                       </p>
                     </div>
                   </div>
@@ -182,12 +197,23 @@ const Contact: React.FC = () => {
                   <div className="p-5 bg-red-50 border-2 border-red-500 rounded-xl">
                     <div className="flex items-center gap-3">
                       <div className="w-10 h-10 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0">
-                        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                        <svg
+                          className="w-6 h-6 text-white"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M6 18L18 6M6 6l12 12"
+                          />
                         </svg>
                       </div>
                       <p className="text-red-800 font-semibold">
-                        Sorry, there was an error sending your message. Please try again or contact us directly.
+                        Sorry, there was an error sending your message. Please
+                        try again or contact us directly.
                       </p>
                     </div>
                   </div>
@@ -221,8 +247,18 @@ const Contact: React.FC = () => {
                   ) : (
                     <span className="flex items-center justify-center gap-2">
                       Send Message
-                      <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                      <svg
+                        className="w-5 h-5 group-hover:translate-x-1 transition-transform"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M14 5l7 7m0 0l-7 7m7-7H3"
+                        />
                       </svg>
                     </span>
                   )}
@@ -234,9 +270,7 @@ const Contact: React.FC = () => {
           {/* Right side - Contact Info */}
           <div className="lg:w-1/2">
             <div className="bg-blue-900 p-10 rounded-3xl shadow-2xl h-full text-white">
-              <h3 className="text-3xl font-bold mb-3">
-                Contact Information
-              </h3>
+              <h3 className="text-3xl font-bold mb-3">Contact Information</h3>
               <p className="text-blue-100 mb-10 text-lg">
                 Reach out to us through any of these channels
               </p>
@@ -262,9 +296,7 @@ const Contact: React.FC = () => {
                     </div>
                   </div>
                   <div className="ml-5">
-                    <h4 className="text-xl font-bold mb-2">
-                      Phone
-                    </h4>
+                    <h4 className="text-xl font-bold mb-2">Phone</h4>
                     <a
                       href="tel:+916353969157"
                       className="text-blue-100 hover:text-white transition-colors text-lg font-medium"
@@ -281,9 +313,7 @@ const Contact: React.FC = () => {
                     </div>
                   </div>
                   <div className="ml-5">
-                    <h4 className="text-xl font-bold mb-2">
-                      WhatsApp
-                    </h4>
+                    <h4 className="text-xl font-bold mb-2">WhatsApp</h4>
                     <a
                       href="https://wa.me/916353969157?text=Hi%20I%20visited%20your%20website%20and%20want%20to%20know%20more."
                       target="_blank"
@@ -291,8 +321,18 @@ const Contact: React.FC = () => {
                       className="text-blue-100 hover:text-white transition-colors text-lg font-medium inline-flex items-center gap-2"
                     >
                       Chat with us
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                      <svg
+                        className="w-5 h-5"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M14 5l7 7m0 0l-7 7m7-7H3"
+                        />
                       </svg>
                     </a>
                   </div>
@@ -324,9 +364,7 @@ const Contact: React.FC = () => {
                     </div>
                   </div>
                   <div className="ml-5">
-                    <h4 className="text-xl font-bold mb-2">
-                      Location
-                    </h4>
+                    <h4 className="text-xl font-bold mb-2">Location</h4>
                     <p className="text-blue-100 text-lg">
                       Satellite,
                       <br />
@@ -335,8 +373,6 @@ const Contact: React.FC = () => {
                   </div>
                 </div>
               </div>
-
-           
             </div>
           </div>
         </div>

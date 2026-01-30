@@ -239,9 +239,9 @@ const Footer: React.FC = () => {
                   />
                 </svg>
                 <span className="text-gray-400">
-                  242 Tech Street,
+                  Satellite,
                   <br />
-                  Pune, Maharastra 411006
+                  Ahmedabad, Gujarat 411006
                 </span>
               </li>
               <li className="flex items-center">
