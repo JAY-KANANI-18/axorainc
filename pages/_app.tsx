@@ -13,7 +13,7 @@ const lato = Roboto({
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
-      {/* ✅ Tawk.to Script */}
+      {/* ✅ Tawk.to chat Script */}
       <Script
         id="tawk-to"
         strategy="afterInteractive"
