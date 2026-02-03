@@ -5,9 +5,7 @@ import theme from "@/styles/theme";
 
 const Hero: React.FC = () => {
   return (
-    <section
-      className="relative w-full h-full py-20 overflow-hidden"
-    >
+    <section className="relative w-full h-full py-20 overflow-hidden">
       {/* Floating animated background bubbles */}
 
       <div className="relative z-10 w-full px-4 md:px-20 py-20 flex flex-col md:flex-row">
@@ -34,9 +32,7 @@ const Hero: React.FC = () => {
 
         <div className="mb-10 md:mb-0">
           {/* =================== POLISHED HEADLINE =================== */}
-          <h1
-            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
-          >
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
             Building the{" "}
             <span className="relative inline-block">
               <span className="bg-gradient-to-r from-cyan-600 via-blue-700 to-indigo-700 bg-clip-text text-transparent">

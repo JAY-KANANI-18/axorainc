@@ -6,6 +6,21 @@ html {
   scroll-behavior: smooth;
 }
 
+
+html,
+body {
+  font-family: theme("fontFamily.sans");
+}
+
+
+body {
+  @apply font-sans;
+}
+
+body {
+  font-family: theme("fontFamily.sans") !important;
+}
+
 @layer utilities {
   .animation-delay-2000 {
     animation-delay: 2s;
